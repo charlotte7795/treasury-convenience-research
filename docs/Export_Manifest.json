@@ -1,0 +1,269 @@
+{
+  "prepared": "2026-10-13",
+  "research_snapshot": "2026-10-09",
+  "code_modules": 25,
+  "notebook_outputs_removed": true,
+  "raw_and_cleaned_market_data_included": false,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 296,
+      "sha256": "f8ef6aca7bc6937ba9c290941f54d606ef364a9843d948357a9d4385df0f4cc5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4670,
+      "sha256": "a3f3df94c76d2d3d90acf724e9f68905e8237ee5a0c86522b9dc496f3aac87a3"
+    },
+    {
+      "path": "docs/Data_Setup.md",
+      "bytes": 4437,
+      "sha256": "3e898344f579f104f8859a6d86317fab4b38ac22eb85f4355bf28ba7e3ce2195"
+    },
+    {
+      "path": "docs/Mentor_Brief.md",
+      "bytes": 2779,
+      "sha256": "d6ed89a8b6fc89c1a99d5f28f7af90d2ed101e31ef82aa2e4f0ef757eaca21f4"
+    },
+    {
+      "path": "docs/Readiness_Checks.json",
+      "bytes": 495,
+      "sha256": "1759c2dcb390d809a8f2af5da778735b69be2e631ac598d0b4e4519c9ed777c8"
+    },
+    {
+      "path": "docs/Research_Status.md",
+      "bytes": 2550,
+      "sha256": "30e90abbadefcda2a32ebe24cfeeabe0e009b78c73c1e956be7012d6dea819ef"
+    },
+    {
+      "path": "metadata/foreign_swap_spread_refresh_inputs.csv",
+      "bytes": 7253,
+      "sha256": "9c1983eb8d59c91b1b1305765c9ef00c62bc963a0219950b715499eaf56a3d2b"
+    },
+    {
+      "path": "notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication.ipynb",
+      "bytes": 60435,
+      "sha256": "5a07e677de974afda969898fbea8590025b4bfc4485467d89181dccfb001f371"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 239,
+      "sha256": "e65131012aff4581193a333bc4f998d175ff356c3a792c27605080a0070e0b2b"
+    },
+    {
+      "path": "results/Findings.md",
+      "bytes": 11203,
+      "sha256": "11adb1a1eae642d0b434d2a7a33b25fa552a475905fe2ea9ad6edb96a430f248"
+    },
+    {
+      "path": "results/Treasury_Convenience_Final_Presentation.pdf",
+      "bytes": 2859999,
+      "sha256": "b76782d275294a3112a0ff4dcca181dcc7e695292af1439fcc84c7b5c5914511"
+    },
+    {
+      "path": "results/Treasury_Convenience_Final_Presentation.pptx",
+      "bytes": 91657,
+      "sha256": "44ed9c4e3c2fb1277ea3b10d6d689454c81d8ffb5256282ac1409db7ca5c557c"
+    },
+    {
+      "path": "results/Treasury_Convenience_Presentation_Notes.md",
+      "bytes": 14626,
+      "sha256": "f30dab1645631522dd4f5d565318e0ad4b2f4fbe87199ffa991cc70293006898"
+    },
+    {
+      "path": "results/figures/treasury_final_foreign_legs.png",
+      "bytes": 73737,
+      "sha256": "cf5d77d8c79adfb40edaeb8b7ad9e276e047b5eea68dd682230b492551108e3a"
+    },
+    {
+      "path": "results/figures/treasury_final_rebound_accounting.png",
+      "bytes": 77044,
+      "sha256": "f3541d0080314c9ddde26c50519aadf31bb861e111260d62cff2960e5944ad53"
+    },
+    {
+      "path": "results/figures/treasury_final_recent_convenience.png",
+      "bytes": 105869,
+      "sha256": "d9acae214a64a9262454a06cd43c441022e8e35f6e0af322ac94bb205e9c06a7"
+    },
+    {
+      "path": "results/figures/treasury_final_validation_trend.png",
+      "bytes": 159118,
+      "sha256": "4cea5c75bb43e46e3913212ab3bbc93681414677894b22c20381b5c7b120b327"
+    },
+    {
+      "path": "results/tables/treasury_final_association_audit.csv",
+      "bytes": 1320,
+      "sha256": "2ca66deb7641bf515e9fd1f885d0451e13fcee587ea5021a82f7fab5408894d5"
+    },
+    {
+      "path": "results/tables/treasury_final_association_coefficients.csv",
+      "bytes": 15915,
+      "sha256": "0b8ba2dee102b14d9c1f5cfc9c3ae5deac832f489acd61ae050ed5c4224c0394"
+    },
+    {
+      "path": "results/tables/treasury_final_country_changes.csv",
+      "bytes": 56390,
+      "sha256": "4550f7a68cc16f3f599347e4bd82cf9aae1ce65823759b0a494b97c4c091fdcf"
+    },
+    {
+      "path": "results/tables/treasury_final_rebound_sensitivity.csv",
+      "bytes": 23285,
+      "sha256": "7658eb9c35c82d9d43b27f41873b6403557e443ceac2217ca51873b44bd32b6c"
+    },
+    {
+      "path": "results/tables/treasury_final_replication_validation.csv",
+      "bytes": 29483,
+      "sha256": "bc0b6e70208ffe9ad3eee9ff4accdfbf2c827d2298b785a477d48e24de745fe3"
+    },
+    {
+      "path": "results/tables/treasury_final_summary.json",
+      "bytes": 6009,
+      "sha256": "297cd7100849c404679f91ee36f141fad8dcd0f1545f23f396e52b9a6102f9d9"
+    },
+    {
+      "path": "src/analyze_eq5_supply_dealer_official.py",
+      "bytes": 25538,
+      "sha256": "9a4241d57b181811c1dfa33df6c10711cb9c14799188c84ff6131a6ec848c7c3"
+    },
+    {
+      "path": "src/analyze_eq5_supply_dealer_robustness.py",
+      "bytes": 28892,
+      "sha256": "a2beddefe5f850b7bfb36ecb90e24074e426e32449c7cda3788a91977a519d97"
+    },
+    {
+      "path": "src/analyze_eq5_supply_extension.py",
+      "bytes": 12509,
+      "sha256": "e8445c3f2538b3065b11b58de1616d139d46d6d447ba2303bab1f2875441475c"
+    },
+    {
+      "path": "src/analyze_eq5_ust_extension_first_pass.py",
+      "bytes": 16014,
+      "sha256": "289c48026788e0b79d2ef3464e520eef9d4470bcbae429652d786bd107fdd5d9"
+    },
+    {
+      "path": "src/analyze_foreign_swap_spread_rebound.py",
+      "bytes": 15164,
+      "sha256": "5e355fddac10edac428f0f5b051372ff289e8c237cc6f8caa8a558210175b461"
+    },
+    {
+      "path": "src/analyze_treasury_final.py",
+      "bytes": 19271,
+      "sha256": "4bc3d601b99d29489406bd065512a3788ea27b5f62efc8f7194afb3a62f7c6c4"
+    },
+    {
+      "path": "src/analyze_treasury_interim.py",
+      "bytes": 29306,
+      "sha256": "75f09e7673a3b8ba79a8df2bd4fb69b74fa237977974da651b3f07d45329c4c6"
+    },
+    {
+      "path": "src/build_current_data_completion_outputs.py",
+      "bytes": 14268,
+      "sha256": "426e8914f9aaf7e56ff7089ad3cc1009267f7f6081c3f630f6fb13a4b22953d8"
+    },
+    {
+      "path": "src/build_research_notebook.py",
+      "bytes": 54052,
+      "sha256": "22b3b029d76a149db2a5bff36f59efc9d2b8e2b849f160d0762a38cf4399ae8f"
+    },
+    {
+      "path": "src/build_treasury_supply_dealer_source_map.py",
+      "bytes": 12451,
+      "sha256": "3ea902cfb030f6048887247a0d88aad51be2d3f122faecac8432472499f68aa4"
+    },
+    {
+      "path": "src/check_em_5y_constructability.py",
+      "bytes": 2633,
+      "sha256": "44f768d0b93f576e1aa0eb286e479167ed2f02a6f8d663e76e03e2de53727379"
+    },
+    {
+      "path": "src/check_final_snapshot.py",
+      "bytes": 4998,
+      "sha256": "fb635f7bb5242a09461f377ea4cc145c4350c49fd23cda871ce64069209d500d"
+    },
+    {
+      "path": "src/identity_checks.py",
+      "bytes": 6626,
+      "sha256": "c02e7634af9949f23651f28ef4e8b5eb21cdab2b9b2dfe666e4a4040978cd1d4"
+    },
+    {
+      "path": "src/implement_validation_next_steps.py",
+      "bytes": 26988,
+      "sha256": "9db7745a89761a5495d7a674d87a5c57454deee3dad98bb853db7e40f935fdef"
+    },
+    {
+      "path": "src/load_and_clean.py",
+      "bytes": 8843,
+      "sha256": "2ff4092a457a7271e0ba391f64676ba24e6a0d53071e6859b1dec280b5326575"
+    },
+    {
+      "path": "src/load_public_cip.py",
+      "bytes": 1557,
+      "sha256": "efffba8043e7caf9325103efe5ad7cf755123549f186bfc93d238c32f364626e"
+    },
+    {
+      "path": "src/make_public_figures.py",
+      "bytes": 5209,
+      "sha256": "e90a377e1c3faf619f3b6a4d8a21f0f1057997eb0cc71fc715311c278dcd06e2"
+    },
+    {
+      "path": "src/make_replication_assets.py",
+      "bytes": 26277,
+      "sha256": "d2e68a9fcf1658290400e32aa4e67bbc8a42833debdb6af92e8ec11bd44bcd1f"
+    },
+    {
+      "path": "src/qc_downloaded_bloomberg_workbooks.py",
+      "bytes": 12079,
+      "sha256": "21c43e77d8550f3b2363b26e3a99881fbd46ee5020ece22c2f7bb2ed7b1c1a67"
+    },
+    {
+      "path": "src/refresh_treasury_5y10y.py",
+      "bytes": 9247,
+      "sha256": "47ee8a9b968a3ec29539688407e7dbb4fb93119eda49bb6d3aec6a170ab5b46b"
+    },
+    {
+      "path": "src/replicate_benchmark_eq6_g10_5y10y.py",
+      "bytes": 19552,
+      "sha256": "2b2a16bd3db387903795e60758734d881698a6f46e0f0dc9ac371e8dca57847c"
+    },
+    {
+      "path": "src/replicate_clean_figure3_long_tenors.py",
+      "bytes": 9613,
+      "sha256": "74b0b1f2cd1d6eb200daa492704ff5405f24845d80ad3eefe6b2ac306dcf9531"
+    },
+    {
+      "path": "src/replicate_clean_g10_5y.py",
+      "bytes": 12763,
+      "sha256": "ba3951ac0dc7f015efe9222fd0797b6cd5d7baf223ab289dcd6fd8fcc12bd07c"
+    },
+    {
+      "path": "src/replicate_em_5y_irs_bs_first_pass.py",
+      "bytes": 6806,
+      "sha256": "c8deb7a778b081fd5e105716fc6ed069cb405c97fa6acbc5b7a6f40c65ce96bd"
+    },
+    {
+      "path": "src/utils.py",
+      "bytes": 3094,
+      "sha256": "7ec5b0afd672d0823ff5e0584fd77a2236dae4ebb2980474e766e0139c6e20ab"
+    },
+    {
+      "path": "tests/test_foreign_swap_spread.py",
+      "bytes": 2122,
+      "sha256": "63e8b37db6dd28223b5bb99b46adadb07a02eb2c465975ffaea07d3293ba124b"
+    },
+    {
+      "path": "tests/test_treasury_final.py",
+      "bytes": 1498,
+      "sha256": "90f42cc3648809f00022965357ce98ee56a1ab6352ebd213257b3ced5e9aba69"
+    },
+    {
+      "path": "tests/test_treasury_interim.py",
+      "bytes": 2035,
+      "sha256": "72ef0639d7351f1e6a046b64e339c3f91d28376758867899375bb5e00aa4e932"
+    },
+    {
+      "path": "tests/test_treasury_refresh.py",
+      "bytes": 2669,
+      "sha256": "9544ead22aa4b863d595d47a943f0c01430642d9c33a136d7593ad21b062c082"
+    }
+  ]
+}

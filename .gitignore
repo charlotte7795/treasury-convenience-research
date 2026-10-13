@@ -1,0 +1,22 @@
+# Licensed inputs and generated outputs stay local, including in private repositories.
+/data/
+/output/
+/bbg/
+*.csv
+!metadata/*.csv
+!results/tables/*.csv
+*.xlsx
+*.xls
+*.xlsm
+*.html
+*_executed.ipynb
+.env
+.env.*
+*.pem
+*.key
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/

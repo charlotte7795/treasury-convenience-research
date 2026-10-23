@@ -1,17 +1,21 @@
 # Data Access and Reproduction
 
-## What Works Without Data Access
+## Shared Snapshot Available
 
-Read the mentor brief, findings, presentation and source notebook. Run the synthetic unit tests. The repository contains research code and reviewed analytical summaries, not a distributable market-data bundle.
+As of October 22, 2026, the private repository includes the public inputs, authorized Bloomberg numeric exports, the October 9 refresh workbook and selected derived panels. Charlotte explicitly confirmed private sharing with Qiyuan. See [data/README.md](../data/README.md) for file descriptions and sharing limits.
+
+Start with `python src/restore_shared_data.py`. This verifies the bundle checksums and restores the paths needed by the existing scripts. Then run `python src/load_public_cip.py` and `python -m src.analyze_treasury_final` to reproduce the final study from saved panels. Synthetic unit tests still work without data access.
 
 ## Required Local Inputs
 
-The final-core scripts expect these untracked files relative to the repository root:
+The final-core scripts expect these local paths relative to the repository root. The bundled data restore these paths, except for the six original Excel containers:
 
 | Path | Source and role |
 | --- | --- |
 | `data/cip_dataset_v4.csv` | Download public V4 from the Schreger CIP page. Do not silently substitute a later vintage for the recorded benchmark. |
-| `data/bloomberg/*.xlsx` | Six authorized saved-value Bloomberg workbooks listed below. Formulas without cached numeric values are insufficient. |
+| `output/cleaned/downloaded_bloomberg_values_long.csv` | The original numeric observations extracted from the six Bloomberg workbooks, restored from `data/bloomberg/downloaded_bloomberg_values_long.csv.gz`. |
+| `output/tables/downloaded_bloomberg_ticker_coverage.csv` | Recorded workbook/ticker coverage, restored from the shared data bundle. |
+| `data/bloomberg/*.xlsx` | Optional original saved-value containers if separately available. Needed only to rerun workbook extraction/QC; not included in the bundle. |
 | `data/refresh/Foreign_Spread_5Y10Y_2026-10-09.xlsx` | Authorized 54-block refresh workbook from the October 9 snapshot. |
 | `data/official/fiscal_mspd_table_3_market.csv` | Treasury MSPD security-level cache for maturity-bucket supply and reconciliation. |
 | `data/official/nyfed_PDPOSGSC-G3L6.csv` | NY Fed dealer net-position cache for the 3-to-6-year bucket. |
@@ -29,7 +33,7 @@ Macro_and_Financial_Controls_Bloomberg_BDH_Candidate.xlsx
 Treasury_Liquidity_Dealer_Capacity_Bloomberg_BDH_Candidate.xlsx
 ```
 
-The QC loader uses `data/bloomberg/` when that directory exists, otherwise the current user's Downloads directory. It does not require Charlotte's home path.
+The QC loader uses `data/bloomberg/` when that directory exists, otherwise the current user's Downloads directory. It does not require Charlotte's home path. The shared folder contains extracted values, not those six Excel files, so do not rerun workbook QC for the bundled snapshot. Use the restored numeric observations instead.
 
 Acquire market inputs only through permitted institutional access. Coordinate permitted data transfer separately with Charlotte. Publicly accessible constructed data do not confer rights to Bloomberg raw inputs, and private GitHub access does not change the license.
 
@@ -37,13 +41,11 @@ Public sources: [CIP data](https://sites.google.com/view/jschreger/CIP), [Treasu
 
 ## Final-Core Reproduction
 
-After the authorized inputs and official caches are present, run from the repository root:
+After installing `requirements.txt`, rebuild from the bundled original numeric exports as follows. The longer path below recalculates the derived panels rather than relying on the included derived snapshots:
 
 ```bash
-mkdir -p output/cleaned output/tables output/figures output/report
-cp metadata/foreign_swap_spread_refresh_inputs.csv output/tables/
+python src/restore_shared_data.py
 python src/load_public_cip.py
-python src/qc_downloaded_bloomberg_workbooks.py
 python -m src.replicate_clean_g10_5y
 python -m src.replicate_clean_figure3_long_tenors
 python -m src.replicate_benchmark_eq6_g10_5y10y
@@ -53,7 +55,7 @@ python -m src.refresh_treasury_5y10y
 python -m src.analyze_treasury_final
 ```
 
-The official-source helper scripts are included for acquisition and source mapping; exact recorded coefficients require the same cached vintages. Do not refresh public endpoints and then describe the result as the unchanged October 9 snapshot.
+The official-source helper scripts are included for acquisition and source mapping; exact recorded coefficients require the bundled cached vintages. Do not refresh public endpoints and then describe the result as the unchanged October 9 snapshot. If you have the six original saved-value workbooks and specifically want to recheck their Excel containers, the separate command is `python src/qc_downloaded_bloomberg_workbooks.py`.
 
 The final pipeline writes validation, cohort-month accounting, period-change sensitivity and association outputs locally under `output/`. Compare the aggregate results with `results/tables/treasury_final_summary.json`. Reproduction against the same snapshot should recover approximately +20.65 bps (5Y) and +11.12 bps (10Y), 20/20 combined-regime matches and 39/40 separate-regime matches.
 

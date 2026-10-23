@@ -1,5 +1,5 @@
-# Licensed inputs and generated outputs stay local, including in private repositories.
-/data/
+# Only the reviewed, authorized private-team data bundle is tracked below.
+/data/*
 /output/
 /bbg/
 *.csv
@@ -20,3 +20,34 @@ __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 .pytest_cache/
+
+# Charlotte confirmed private sharing with Qiyuan on October 22, 2026.
+!/data/README.md
+!/data/manifest.json
+!/data/cip_dataset_v4.csv.gz
+!/data/fred_GFDEBTN.csv
+!/data/fred_GFDEGDQ188S.csv
+!/data/bloomberg/
+/data/bloomberg/*
+!/data/bloomberg/downloaded_bloomberg_values_long.csv.gz
+!/data/bloomberg/downloaded_bloomberg_ticker_coverage.csv
+!/data/bloomberg/downloaded_bloomberg_workbook_summary.csv
+!/data/refresh/
+/data/refresh/*
+!/data/refresh/Foreign_Spread_5Y10Y_2026-10-09.xlsx
+!/data/official/
+/data/official/*
+!/data/official/*.csv
+!/data/source_discovery/
+/data/source_discovery/*
+!/data/source_discovery/nyfed_pd_seriesbreaks.json
+!/data/derived/
+/data/derived/*
+!/data/derived/raw_g10_benchmark_eq6_5y10y_panel.csv.gz
+!/data/derived/raw_g10_benchmark_eq6_5y10y_refreshed_panel.csv.gz
+!/data/derived/treasury_final_country_monthly.csv
+!/data/derived/treasury_final_monthly.csv
+!/data/derived/treasury_final_association_panel.csv
+!/data/derived/treasury_interim_monthly_panel.csv
+!/data/derived/eq5_ust_extension_monthly_panel.csv
+!/data/derived/raw_figure3_long_tenors_vs_public_comparison.csv

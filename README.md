@@ -23,8 +23,9 @@ This is a completed **bounded raw replication plus descriptive extension**. It i
 1. [Topic and progress brief for a potential mentor](docs/Mentor_Brief.md).
 2. [Final findings and caveats](results/Findings.md).
 3. [Presentation PDF](results/Treasury_Convenience_Final_Presentation.pdf) and [editable PowerPoint](results/Treasury_Convenience_Final_Presentation.pptx).
-4. [Full research notebook](notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication.ipynb). Notebook outputs are intentionally cleared for sharing. Section 15C contains the final study; earlier extension sections preserve historical diagnostics.
-5. [Data setup and reproduction](docs/Data_Setup.md), [remaining work](docs/Research_Status.md), and [speaker notes](results/Treasury_Convenience_Presentation_Notes.md).
+4. [Shared data and quick start](data/README.md): public inputs, authorized Bloomberg value exports, the refresh workbook and ready-to-analyze panels.
+5. [Full research notebook](notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication.ipynb). Notebook outputs are intentionally cleared for sharing. Section 15C contains the final study; earlier extension sections preserve historical diagnostics.
+6. [Data setup and reproduction](docs/Data_Setup.md), [remaining work](docs/Research_Status.md), and [speaker notes](results/Treasury_Convenience_Presentation_Notes.md).
 
 ## Installation and Tests
 
@@ -37,7 +38,7 @@ pip install -r requirements.txt
 python -m unittest discover -s tests
 ```
 
-The unit tests use synthetic data and run without Bloomberg access. Full numerical reproduction requires separately acquired, authorized input data. See [Data_Setup.md](docs/Data_Setup.md) before running the notebook.
+The unit tests use synthetic data and run without Bloomberg access. As of October 22, the private repository also includes the authorized input snapshot and selected derived panels. Run `python src/restore_shared_data.py` before the analysis; see [Data_Setup.md](docs/Data_Setup.md). This does not connect to or refresh Bloomberg.
 
 ## Repository Contents
 
@@ -46,11 +47,12 @@ src/          Research code and notebook builder
 tests/        Synthetic unit tests for accounting and methodological safeguards
 notebooks/    Original research log with Markdown and code, without saved outputs
 metadata/     Refresh instrument dictionary, without market quotes
+data/         Authorized private-team inputs and selected derived panels
 results/      Reviewed presentation, findings, figures and aggregate summary tables
 docs/         Mentor brief, setup, status and export provenance
 ```
 
-Raw workbooks, raw/cleaned market panels, the public CSV, rendered HTML containing detailed outputs, and local caches are intentionally absent. A private repository does not waive Bloomberg or institutional data-use restrictions. Teammates should use their own authorized access and confirm any permitted data transfer separately.
+Charlotte confirmed on October 22, 2026 that the Bloomberg exports may be shared privately with Qiyuan. The curated `data/` bundle includes the original exported numeric observations in CSV form, not the six original Excel containers, plus the October 9 refresh Excel and selected derived panels. This confirmation has not been independently reviewed as a data-license determination. Keep the repository private and do not forward licensed data or add recipients without checking the applicable permissions. Executed notebooks, detailed rendered HTML and unreviewed generated outputs remain untracked.
 
 ## Collaboration
 

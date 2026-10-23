@@ -1,24 +1,174 @@
 {
   "prepared": "2026-10-13",
   "research_snapshot": "2026-10-09",
-  "code_modules": 25,
+  "code_modules": 26,
   "notebook_outputs_removed": true,
-  "raw_and_cleaned_market_data_included": false,
+  "raw_and_cleaned_market_data_included": true,
   "files": [
     {
       "path": ".gitignore",
-      "bytes": 296,
-      "sha256": "f8ef6aca7bc6937ba9c290941f54d606ef364a9843d948357a9d4385df0f4cc5"
+      "bytes": 1390,
+      "sha256": "2a6a7f64c1a687a0ba3ffd72af983013b6a3ec4e31ad1a7db70aff82e3f17169"
     },
     {
       "path": "README.md",
-      "bytes": 4670,
-      "sha256": "a3f3df94c76d2d3d90acf724e9f68905e8237ee5a0c86522b9dc496f3aac87a3"
+      "bytes": 5278,
+      "sha256": "e12bf54428250fffab2a29279b3e6f40b68b72d9417e7a203a554dc7b9524d69"
+    },
+    {
+      "path": "data/README.md",
+      "bytes": 6612,
+      "sha256": "3320f957fc68193fdb5065985607b29ba7893fb49e5424c579d968b46d7a00a5"
+    },
+    {
+      "path": "data/bloomberg/downloaded_bloomberg_ticker_coverage.csv",
+      "bytes": 241904,
+      "sha256": "89771da9eec623847c41b533ec6d3ea3865e339646aba42ff66236dac767203e"
+    },
+    {
+      "path": "data/bloomberg/downloaded_bloomberg_values_long.csv.gz",
+      "bytes": 18119766,
+      "sha256": "95675bfc5b441a9501154660db013594bc46a794615fd0d7e6339e72db15f785"
+    },
+    {
+      "path": "data/bloomberg/downloaded_bloomberg_workbook_summary.csv",
+      "bytes": 927,
+      "sha256": "5354a575d6f24a82e01f77d49c59bb2fc2e1a0f4dd8dcfe73bd8c8c11ec12122"
+    },
+    {
+      "path": "data/cip_dataset_v4.csv.gz",
+      "bytes": 27924040,
+      "sha256": "186228bb708e8b5da08c29fe124b3729f97bb1e4b92ea2a005a634156a8422ee"
+    },
+    {
+      "path": "data/derived/eq5_ust_extension_monthly_panel.csv",
+      "bytes": 209434,
+      "sha256": "c906d30f7dd3b8d8a525cbe4f983772f86c8b373b8d447f079ff0ba5b427890d"
+    },
+    {
+      "path": "data/derived/raw_figure3_long_tenors_vs_public_comparison.csv",
+      "bytes": 2965,
+      "sha256": "8a2a3998355a32ff0f784f823aec4ab6fa9f0f3292f7f11f3ae7345a88821f1f"
+    },
+    {
+      "path": "data/derived/raw_g10_benchmark_eq6_5y10y_panel.csv.gz",
+      "bytes": 5699233,
+      "sha256": "eaafc37795c04795e6880cf5e34595cf6f31938af741b4ce20ed7def4ceb03f1"
+    },
+    {
+      "path": "data/derived/raw_g10_benchmark_eq6_5y10y_refreshed_panel.csv.gz",
+      "bytes": 5752797,
+      "sha256": "1c8e1424905336e178971f8798854a659d1437cf79a13b5484de5afd3ae08e76"
+    },
+    {
+      "path": "data/derived/treasury_final_association_panel.csv",
+      "bytes": 190111,
+      "sha256": "7b15ed82799d4a1e73464e1d9bb78dd927f1cb4360d39fc49d88ff9af0e30844"
+    },
+    {
+      "path": "data/derived/treasury_final_country_monthly.csv",
+      "bytes": 143084,
+      "sha256": "68db0c1ef5ceb225cb55dda0fcb87e3c9ca6b4bbd5756895f67c19d267f370d2"
+    },
+    {
+      "path": "data/derived/treasury_final_monthly.csv",
+      "bytes": 18378,
+      "sha256": "b9278be44bbed473b1c146eddd2a4c21b434439b3f1ee96b4814f08fc116e1ec"
+    },
+    {
+      "path": "data/derived/treasury_interim_monthly_panel.csv",
+      "bytes": 191500,
+      "sha256": "304643aeddcd7657396ca0c9de2768e923f728a76ee7b096f576957f75b218e9"
+    },
+    {
+      "path": "data/fred_GFDEBTN.csv",
+      "bytes": 7022,
+      "sha256": "2bac89ada53a9fd94affe958254a389275d87ca842f9c5943c834cc4f115a9ef"
+    },
+    {
+      "path": "data/fred_GFDEGDQ188S.csv",
+      "bytes": 4899,
+      "sha256": "2bd1ca53fa2cf7bfc51999e6eb1414a4de395eb0f84bb785f6b97ee0a2ca16d8"
+    },
+    {
+      "path": "data/manifest.json",
+      "bytes": 28039,
+      "sha256": "99536a93ac4552a46ac1d2d6b1550fe80d26e90525c918620ea88ce4aa67db5d"
+    },
+    {
+      "path": "data/official/fiscal_mspd_table_1.csv",
+      "bytes": 450423,
+      "sha256": "674a861d2f28784fb121e26c10157ccf5733fbab0e83bfacf92e1d82036b3554"
+    },
+    {
+      "path": "data/official/fiscal_mspd_table_3_market.csv",
+      "bytes": 23197455,
+      "sha256": "05d3903a6d04cf11d0e828c3a3e955e50f98899d279a9f2b5ecb23687b2f493d"
+    },
+    {
+      "path": "data/official/fiscal_mspd_table_4.csv",
+      "bytes": 109638,
+      "sha256": "78abb7c7f403d43f477038c77221a5f86134bd3c89a6cc68691b728b537fa6f1"
+    },
+    {
+      "path": "data/official/nyfed_PDFTR-USTET.csv",
+      "bytes": 48703,
+      "sha256": "3f2781e2620ed7d9608a34058b86c90c1ab5baf058eb297fc706da79e23022dc"
+    },
+    {
+      "path": "data/official/nyfed_PDGSWOEXTTOT.csv",
+      "bytes": 43565,
+      "sha256": "f109c7adabb29378303feaeacf863db479ac52175bca3e3830835a4bd94cc37f"
+    },
+    {
+      "path": "data/official/nyfed_PDPOSGS-B.csv",
+      "bytes": 39381,
+      "sha256": "0161900abea91f6ba45f416bcea170ec525211b431451cd7b29e3df63540c0ab"
+    },
+    {
+      "path": "data/official/nyfed_PDPOSGSC-G3L6.csv",
+      "bytes": 43444,
+      "sha256": "71d137e42f4cf1b0fcb337dd913ced45b89dbcbc5ca411da45da69f02c5a7494"
+    },
+    {
+      "path": "data/official/nyfed_PDPOSGSC-G7L11.csv",
+      "bytes": 44668,
+      "sha256": "1ea17c49f6a28f970b0958bd230d11543fffe5b62401f5ef47f337449c052eb6"
+    },
+    {
+      "path": "data/official/nyfed_PDPOSGSC-L2.csv",
+      "bytes": 40027,
+      "sha256": "f02ab4e009f69b4b6ebc3e437b55e4724c244d7dafd80a221e5d8534e6338cca"
+    },
+    {
+      "path": "data/official/nyfed_PDPOSGST-TOT.csv",
+      "bytes": 44738,
+      "sha256": "bd75ae26b9498405fc57212e5192c0a264fb7ad17bcef41af8af8d7ea85c8e6b"
+    },
+    {
+      "path": "data/official/nyfed_PDSIRRA-UTSETTOT.csv",
+      "bytes": 51050,
+      "sha256": "6c8d6e40c9b7cf81afcc9a95b6b9b44f84e9408faf4e776b95f776901c9f6978"
+    },
+    {
+      "path": "data/official/nyfed_PDSORA-UTSETTOT.csv",
+      "bytes": 44741,
+      "sha256": "8284eb5c26f4bd1802b5e3466ac19be23daf01f06a8c9244a6486b7a4cac18ea"
+    },
+    {
+      "path": "data/refresh/Foreign_Spread_5Y10Y_2026-10-09.xlsx",
+      "bytes": 706484,
+      "sha256": "bdfb0fc1b213fbc640ab24bd75c6e9ddd0f7f97a63c7dde9e58725550ec2e3a2"
+    },
+    {
+      "path": "data/source_discovery/nyfed_pd_seriesbreaks.json",
+      "bytes": 716,
+      "sha256": "ef2ba93b10af9551181daf5a6f013dab9774ad0c84b9136d51fc17b79164ab78"
     },
     {
       "path": "docs/Data_Setup.md",
-      "bytes": 4437,
-      "sha256": "3e898344f579f104f8859a6d86317fab4b38ac22eb85f4355bf28ba7e3ce2195"
+      "bytes": 5637,
+      "sha256": "b6af559b3b7d8d183052bfa55beeefbb512be6ccdf14288f108df4044e198bce"
     },
     {
       "path": "docs/Mentor_Brief.md",
@@ -241,6 +391,11 @@
       "sha256": "c8deb7a778b081fd5e105716fc6ed069cb405c97fa6acbc5b7a6f40c65ce96bd"
     },
     {
+      "path": "src/restore_shared_data.py",
+      "bytes": 1611,
+      "sha256": "81f1e74633a0ddba0151653e717f5ff46cc027bf48b3021d589eb09740ac9875"
+    },
+    {
       "path": "src/utils.py",
       "bytes": 3094,
       "sha256": "7ec5b0afd672d0823ff5e0584fd77a2236dae4ebb2980474e766e0139c6e20ab"
@@ -265,5 +420,9 @@
       "bytes": 2669,
       "sha256": "9544ead22aa4b863d595d47a943f0c01430642d9c33a136d7593ad21b062c082"
     }
-  ]
+  ],
+  "updated": "2026-10-22",
+  "original_six_excel_containers_included": false,
+  "data_bundle_manifest": "data/manifest.json",
+  "data_sharing_scope": "Charlotte confirmed private Bloomberg-data sharing with Qiyuan on 2026-10-22; repository must remain private."
 }

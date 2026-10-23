@@ -1,0 +1,17 @@
+currency,tenor,variable,ticker,field,type,unit,floating_leg,name,source,interpretation
+AUD,10y,aud_ibor_irs_10y_adsw10q,ADSW10Q CURNCY,PX_LAST,IRS,percent,3M Bank Bill,AUD SWAP (QTRLY)     10 YR,IBOR ticker supplement; SOFR ticker supplement,Term bank benchmark per supplied metadata
+AUD,5y,aud_sofr_irs_5y_adswap5q,ADSWAP5Q CURNCY,PX_LAST,IRS,percent,3M Bank Bill,AUD SWAP     5 YR,SOFR ticker supplement,Term bank benchmark per supplied metadata
+CAD,10y,cad_sofr_irs_10y_cdso10,CDSO10 CURNCY,PX_LAST,IRS,percent,CORRA,CAD SWAP     10 YR,SOFR ticker supplement,Overnight benchmark per supplied metadata
+CAD,5y,cad_sofr_irs_5y_cdso5,CDSO5 CURNCY,PX_LAST,IRS,percent,CORRA,CAD SWAP     5 YR,SOFR ticker supplement,Overnight benchmark per supplied metadata
+CHF,10y,chf_sofr_irs_10y_sfsnt10,SFSNT10 CURNCY,PX_LAST,IRS,percent,SARON Fixing  (At Close),CHF SWAP     10 YR,SOFR ticker supplement,Overnight benchmark per supplied metadata
+CHF,5y,chf_sofr_irs_5y_sfsnt5,SFSNT5 CURNCY,PX_LAST,IRS,percent,SARON Fixing  (At Close),CHF SWAP     5 YR,SOFR ticker supplement,Overnight benchmark per supplied metadata
+DKK,10y,dkk_ibor_irs_10y_dksw10v3,DKSW10V3 BLC3 CURNCY,PX_LAST,IRS,percent,3M Cibor,DKK SWAP (VS 3 MO)     10 YR (ALTERNATIVE SOURCE),IBOR ticker supplement,Term bank benchmark per supplied metadata
+DKK,5y,dkk_ibor_irs_5y_dksw5v3,DKSW5V3 BLC3 CURNCY,PX_LAST,IRS,percent,3M Cibor,DKK SWAP (VS 3 MO)      5 YR (ALTERNATIVE SOURCE),IBOR ticker supplement,Term bank benchmark per supplied metadata
+EUR,10y,eur_sofr_irs_10y_eeswe10,EESWE10 CURNCY,PX_LAST,IRS,percent,ESTR,EUR SWAP   10 YR,SOFR ticker supplement,Overnight benchmark per supplied metadata
+EUR,5y,eur_sofr_irs_5y_eeswe5,EESWE5 CURNCY,PX_LAST,IRS,percent,ESTR,EUR SWAP    5 YR,SOFR ticker supplement,Overnight benchmark per supplied metadata
+GBP,10y,gbp_sofr_irs_10y_bpsws10,BPSWS10 CURNCY,PX_LAST,IRS,percent,SONIA,GBP SWAP     10 YR,SOFR ticker supplement,Overnight benchmark per supplied metadata
+GBP,5y,gbp_sofr_irs_5y_bpsws5,BPSWS5 CURNCY,PX_LAST,IRS,percent,SONIA,GBP SWAP     5 YR,SOFR ticker supplement,Overnight benchmark per supplied metadata
+NZD,10y,nzd_sofr_irs_10y_ndso10,NDSO10 CURNCY,PX_LAST,IRS,percent,3M Bank Bill,NZD SWAP (VS NZOCRS)     10YR,SOFR ticker supplement,REVIEW: instrument name says OCR; floating_leg says Bank Bill; tenor adjustment also used
+NZD,5y,nzd_sofr_irs_5y_ndso5,NDSO5 CURNCY,PX_LAST,IRS,percent,3M Bank Bill,NZD SWAP (VS NZOCRS)     5 YR,SOFR ticker supplement,REVIEW: instrument name says OCR; floating_leg says Bank Bill; tenor adjustment also used
+SEK,10y,sek_ibor_irs_10y_sksw10,SKSW10 CURNCY,PX_LAST,IRS,percent,3M Stibor,SEK SWAP (VS 3M STIB)      10 YR,IBOR ticker supplement; SOFR ticker supplement,Term bank benchmark per supplied metadata
+SEK,5y,sek_ibor_irs_5y_sksw5,SKSW5 CURNCY,PX_LAST,IRS,percent,3M Stibor,SEK SWAP (VS 3M STIB)      5 YR,IBOR ticker supplement; SOFR ticker supplement,Term bank benchmark per supplied metadata

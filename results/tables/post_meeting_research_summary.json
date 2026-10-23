@@ -1,0 +1,22 @@
+{
+  "updated": "2026-10-23",
+  "scope": "Existing data only; VIX-only diagnostic, not complete Table 5 or the HY extension",
+  "risk_last_week": "2026-05-29",
+  "vix_last_observation": "2026-06-03",
+  "nzd_definition_status": "REVIEW: OCR-name versus Bank-Bill metadata conflict; no raw formula changed",
+  "all_cohort_rebounds_positive": true,
+  "all_cohort_foreign_spreads_decline": true,
+  "risk_model_fits": 40,
+  "risk_coefficient_rows": 72,
+  "missing_series": [
+    "SPX Index",
+    "LUACOAS Index",
+    "LF98OAS Index"
+  ],
+  "caveats": [
+    "Not exact paper replication: fixed-eight means, joint-date weekly means, VIX only.",
+    "A positive level rebound does not establish improved risk sensitivity or absolute safe-haven quality.",
+    "Pre/post interactions are conditional associations; regime and episode composition can confound them.",
+    "HAC 26-week intervals and p-values are exploratory and not multiplicity adjusted."
+  ]
+}

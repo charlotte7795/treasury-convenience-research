@@ -43,9 +43,9 @@ cells = [
 
 ## Raw Bloomberg Replication Notebook
 
-Updated: 2026-10-09. Refreshed market quotes end 2026-10-08/09. Final accounting uses complete months through 2026-09-30; supply/inventory regressions end 2026-05-31.
+Updated: 2026-10-23. Refreshed market quotes end 2026-10-08/09. Accounting uses complete months through 2026-09-30; supply/inventory regressions end 2026-05-31. The post-meeting VIX diagnostic ends in the complete week of 2026-05-29 because risk controls have not yet been refreshed.
 
-**Final results: Section 15C.** Earlier Sections 13-15B retain the historical diagnostic and reviewed May 2026 snapshots. The final presentation draws on Section 15C, not on the older exploratory regressions.
+**Reviewed accounting baseline: Section 15C. Latest research: Section 15D.** Earlier Sections 13-15B retain historical diagnostics. Section 15D adds benchmark-definition sensitivity and a VIX-only risk test after the Rob Reider / Calin Ciordas meeting; it does not replace the validated raw reconstruction or claim a completed credit-spread extension.
 
 The deliverable is a bounded raw G10 5Y/10Y replication plus a descriptive relative-convenience extension. It does not claim exact replication of every paper figure/table or causal identification.
 
@@ -62,7 +62,7 @@ This notebook is a living research log for the replication and extension project
 - official Treasury supply / NY Fed dealer-capacity diagnostics with reporting-break robustness checks;
 - a reviewed fixed-cohort interim study, additive rebound accounting, and calendar-aware uncertainty;
 - a same-sample foreign swap/government-yield split of the recent rebound, with endpoint and composition sensitivity;
-- next steps for remaining convention checks, EM formula classes, and liquidity/dealer-capacity extensions.
+- post-meeting benchmark audits, VIX-only weekly risk sensitivity, and a focused credit-spread data request.
 
 The immediate goal is not just to draw charts. The goal is to build a reproducible pipeline that can answer: can we reconstruct the paper's government bond CIP measures from raw Bloomberg inputs, and then extend the paper toward Treasury liquidity / dealer capacity?
 """
@@ -987,7 +987,7 @@ for name in ["foreign_swap_spread_country_legs.png", "foreign_swap_spread_monthl
 - All eight currencies have falling foreign spreads under each of the three baseline windows. Removing any single currency retains a positive convenience rebound: 5Y +19.23 to +23.95 bps, 10Y +7.44 to +15.18 bps. This is a broad result, although absolute yield directions differ across countries.
 - Holding the foreign-spread component unchanged, while retaining the other observed Eq.6 changes, would give -17.37 bps (5Y) and -28.99 bps (10Y), rather than the measured rebounds. This is an accounting exercise, **not** an identified equilibrium counterfactual.
 - German/EUR and UK/GBP 5Y combine falling swaps with rising government yields. CHF has both legs falling, with swaps falling more. A common spread direction is not evidence for one common cause.
-- The foreign benchmarks are heterogeneous: AUD, DKK, NZD and SEK use term bank rates, while CAD/CHF/EUR/GBP use overnight rates. A SOFR construction label does not make every foreign swap an OIS. This matters for economic interpretation.
+- The foreign benchmarks are heterogeneous. AUD/DKK/SEK are labeled term-bank rates; CAD/CHF/EUR/GBP are labeled overnight rates. NZD has conflicting OCR instrument-name / Bank-Bill floating-leg metadata and a tenor-basis adjustment; Section 15D retains this as REVIEW. A SOFR construction label does not make every foreign swap an OIS.
 
 [BIS (December 2024)](https://www.bis.org/publications/negative-interest-rate-swap-spreads-signal-pressure-government-debt-absorption) already discusses negative international swap spreads and cash-bond absorption, repo/balance-sheet costs, and swap receiving demand. These are competing hypotheses, not causes established by our data. [ECB (November 2024)](https://www.ecb.europa.eu/press/blog/date/2024/html/ecb.blog241114~6a3182c0bd.en.html) also discusses QT and OIS term premia, so QT is not restricted to the cash-bond leg. Our incremental question is how foreign spread changes alter **relative, currency-hedged Treasury convenience**.
 
@@ -1069,7 +1069,7 @@ display(final_changes[final_changes.baseline.eq('2023 annual average') &
 
 We compare three baseline averages and four endpoint windows and remove each currency in turn. The mean rebound remains positive in every displayed baseline/endpoint comparison. All 16 country-tenor foreign spreads decline in the primary comparison, while individual convenience changes vary. These accounting checks are descriptive, not confidence intervals or equilibrium counterfactuals.
 
-Foreign swap benchmarks remain heterogeneous: AUD/NZD bank-bill, DKK Cibor and SEK Stibor are term bank benchmarks. CAD/CHF/EUR/GBP use overnight benchmarks. The SOFR label describes the USD construction and does not make every foreign rate an OIS.
+Foreign swap benchmarks remain heterogeneous: AUD bank-bill, DKK Cibor and SEK Stibor are term bank benchmarks; CAD/CHF/EUR/GBP are labeled overnight benchmarks. NZD's OCR-name / Bank-Bill metadata conflict remains unresolved (Section 15D). The SOFR label describes the USD construction and does not make every foreign rate an OIS.
 """
     ),
     code(
@@ -1120,6 +1120,87 @@ The final presentation and its PDF are in `output/final/`. Native chart data der
     ),
     md(
         r"""
+## 15D. Post-Meeting Research: Benchmark Comparability and Risk Sensitivity
+
+### Question and boundary
+
+Charlotte and Qiyuan discussed the work with Rob Reider and Calin Ciordas. Calin highlighted raw-data replication and benchmark credit components; Rob suggested credit-risk variables as a possible extension. The approved proposal retains the rebound question and asks whether the higher convenience level is accompanied by improved behavior when risk rises.
+
+This section uses **existing data only**. It audits benchmark definitions and tests weekly changes against $\Delta\log(\mathrm{VIX})$. Equity returns and IG/HY spreads are absent from the current export, so neither full Table 5 replication nor the HY incremental-explanatory-power test is complete. The original paper already uses sovereign CDS in later tables; adding CDS is not automatically a new contribution.
+
+The research sequence is: measurement audit, benchmark-cohort sensitivity, matched-sample risk extension, then revisit supply/dealer associations. New Bloomberg templates request a few focused series, not a repeat of the full CIP download.
+"""
+    ),
+    code(
+        r"""
+from src.analyze_post_meeting_research import main as analyze_post_meeting
+post_meeting_summary = analyze_post_meeting()
+display(pd.Series(post_meeting_summary))
+benchmark_audit = pd.read_csv(TABLE_DIR / 'post_meeting_benchmark_definition_audit.csv')
+display(benchmark_audit[['currency', 'tenor', 'ticker', 'floating_leg', 'name', 'interpretation']])
+"""
+    ),
+    md(
+        r"""
+### Benchmark uncertainty does not explain away the rebound
+
+NZD's `NDSO5/NDSO10` names refer to OCR, but their supplement floating-leg labels say Bank Bill. The construction also uses `NZBBCO5/NZBBCO10` tenor basis. We retain the raw formula and public-series match; the economic label remains **REVIEW** until terminal DES confirms the rate and basis legs.
+
+Excluding NZD preserves the 2023-average to 2026-January-September rebound: about **20.63 bps (5Y)** and **9.09 bps (10Y)**. Excluding both NZD and DKK also preserves it. The overnight-metadata subset and term-bank-metadata subset each show positive rebounds and declining foreign spreads. These are descriptive cohort checks, not an experiment isolating credit risk.
+
+An additional NZD sensitivity defines a term-equivalent swap benchmark as the downloaded OCR candidate plus the signed tenor-basis adjustment. Adding that adjustment to **both** the benchmark-CIP proxy and the foreign swap spread leaves Eq.5 / Eq.6 Treasury convenience unchanged. The change reallocates about **0.58 bps (5Y)** and **0.41 bps (10Y)** between the fixed-eight components over this comparison. This is an algebraic sensitivity, not a claim that the alternative convention is correct.
+"""
+    ),
+    code(
+        r"""
+benchmark_sensitivity = pd.read_csv(TABLE_DIR / 'post_meeting_benchmark_sensitivity.csv')
+display(benchmark_sensitivity[['cohort', 'tenor', 'n_currencies', 'x_govt_raw_bps',
+    'x_rf_raw_bps', 'us_swap_spread_bps', 'foreign_swap_spread_bps']].round(3))
+display(pd.read_csv(TABLE_DIR / 'post_meeting_nzd_component_sensitivity.csv').round(3))
+display(Image(filename=str(FIGURE_DIR / 'post_meeting_benchmark_sensitivity.png')))
+"""
+    ),
+    md(
+        r"""
+### Weekly VIX diagnostic
+
+Use fixed-eight equal-country means calculated on **the same daily observations as VIX**. A week needs at least three joint trading days and one regime signature. Weekly means are differenced on a complete Friday calendar; missing weeks and benchmark-transition weeks are not bridged or filled. The last complete available week is **May 29, 2026**, not September. Annual/monthly rebound windows and weekly risk windows remain distinct.
+
+For each tenor, estimate the same-sample regressions for Treasury convenience and its three Eq.6 components, using 26-week calendar-aware Bartlett HAC. The coefficient identity must also reconcile. Period splits follow the paper's 2010-2015 / 2016-2020 / 2021-onward structure, but our fixed-eight means, joint-date coverage and extended endpoint differ from the paper. These are directional replication diagnostics, not exact Table 5 cells.
+
+The pooled pre/post-2023 model includes regime intercepts and a VIX interaction. A second interaction model restricts the sample to the latest common benchmark regime. Interaction confidence intervals test the coefficient difference directly; significance in one period and not another is not itself evidence of a change.
+"""
+    ),
+    code(
+        r"""
+vix_models = pd.read_csv(TABLE_DIR / 'post_meeting_vix_risk_models.csv')
+gov_risk = vix_models[vix_models.outcome.eq('x_govt_raw_bps')]
+display(gov_risk[['tenor', 'model', 'contrast', 'beta_bps_per_log_vix',
+    'ci95_low', 'ci95_high', 'n_weeks', 'n_pre2023', 'n_post2023',
+    'first_week', 'last_week']].round(3))
+display(Image(filename=str(FIGURE_DIR / 'post_meeting_vix_sensitivity.png')))
+display(vix_models[vix_models.model.eq('post2023_interaction') &
+    vix_models.contrast.eq('post2023_beta')][[
+    'tenor', 'outcome', 'beta_bps_per_log_vix', 'ci95_low', 'ci95_high']].round(3))
+"""
+    ),
+    md(
+        r"""
+### Interpretation and next empirical test
+
+**The level rebound is not evidence that risk-off behavior has recovered.** Post-2023 VIX coefficients for Treasury convenience are approximately **-4.00 (5Y)** and **-4.05 (10Y)** bps per unit log-VIX change, with exploratory 95% HAC intervals below zero. A 10% VIX increase corresponds to about **-0.38/-0.39 bps** of relative convenience change in this bivariate diagnostic, not a causal stress response.
+
+On these same regression dates, the dollar/basis proxy has positive VIX loadings (about **+1.63/+1.49** at 5Y/10Y), while U.S. swap spreads have negative loadings (**-2.86/-3.88**) and foreign swap spreads positive loadings (**+2.78/+1.66**). The Eq.6 coefficient bridge reconciles. The 10Y foreign-spread interval includes zero. Thus an average-level rebound driven by foreign-spread compression can coexist with negative risk-off convenience exposure; long-window level accounting and weekly risk covariation answer different questions.
+
+Claims about *improvement versus before 2023* are more fragile: the long-history interaction is negative, but the latest-regime-only comparison points toward a less-negative 5Y beta and an inconclusive 10Y change. The latter has only about half a year of pre-2023 weekly observations. Hence the defensible finding is that convenience levels rebounded while recent VIX exposure remains negative; the magnitude and direction of a structural beta shift are not settled.
+
+Next download `SPX Index`, `LUACOAS Index` (IG OAS candidate), `LF98OAS Index` (HY OAS candidate), and refresh `VIX Index` through September 2026. MOVE/BBDXY refreshes are optional robustness inputs. Confirm index definitions and percentage-point/basis-point units at the terminal; these credit indices are not yet confirmed as the original paper's exact IG series. Fit VIX/equity/IG and nested +HY models on **identical dates**, report HAC intervals, incremental fit and stability, and preserve a common recent-regime sensitivity. Do not infer an exogenous credit shock from HY OAS.
+
+The NZD template refreshes OCR, Bank-Bill swap and tenor-basis candidates on matched dates; DES definitions still require human confirmation. No raw formula should be selected merely because it maximizes a public-series match. Foreign supply/QT work remains conditional future work, not the immediate priority.
+"""
+    ),
+    md(
+        r"""
 ## 16. Current Findings
 
 ### Completed
@@ -1135,6 +1216,8 @@ The final presentation and its PDF are in `output/final/`. Native chart data der
 - Reviewed fixed-cohort interim results, reconciled nominal supply, additive rebound bridge, full-window break exclusion, calendar-aware HAC, and cohort/composition/COVID sensitivity.
 - Foreign-spread raw-leg decomposition: all 16 pairs decline; alternative windows and one-country exclusions preserve the relative-convenience rebound. Mechanism remains untested.
 - September 2026 refreshed accounting: 720 fixed-cohort country-tenor-months, 20/20 selected government-CIP checks, positive 5Y/10Y rebound under alternative baselines and endpoints. Section 15C is the controlling final evidence.
+- Post-meeting measurement sensitivity: excluding NZD or NZD/DKK preserves the rebound. NZD metadata remains REVIEW; reassigning its tenor adjustment between components leaves Treasury convenience unchanged.
+- Weekly VIX-only diagnostic through May 29, 2026: post-2023 relative-convenience betas remain negative. Pre/post changes depend on regime/sample choice; full equity/IG/HY risk tests remain pending.
 
 ### Mostly completed
 
@@ -1152,6 +1235,7 @@ The final presentation and its PDF are in `output/final/`. Native chart data der
 - EM NDS/CCS and country-specific formula rules.
 - Paper-specific benchmark-CIP convention reconciliation beyond the first G10 5Y/10Y pass.
 - Causal interpretation of supply/dealer results: persistence, common trends, reporting-break treatment, and identification remain open.
+- NZD OCR / Bank-Bill instrument definitions, updated VIX/equity/IG/HY data, and the matched-sample credit-spread extension.
 """
     ),
     md(
@@ -1160,9 +1244,9 @@ The final presentation and its PDF are in `output/final/`. Native chart data der
 
 1. Use Section 15C and `output/final/` for the bounded final descriptive presentation. Sections 15/15B preserve the reviewed May 2026 snapshots; Sections 1-12 remain the raw-replication evidence.
 2. Reproduce the final result with `python -m src.refresh_treasury_5y10y`, then `python -m src.analyze_treasury_final`, or run the canonical notebook top to bottom. The local archived refresh workbook avoids dependence on a Downloads-folder path.
-3. Prioritize the foreign-spread mechanism: comparable German/UK nominal bond supply and central-bank sovereign holdings, then a pre-specified identification design. Official public sources can provide the supply/QT inputs. Do not interpret endogenous stocks or a raw-leg accounting split as supply shocks.
+3. Follow Section 15D and the approved post-meeting proposal: reconcile benchmark metadata, refresh risk inputs, and compare VIX/equity/IG with nested +HY specifications on matched dates. The Bloomberg risk and NZD templates are in `output/report/post_meeting_bloomberg/`.
 4. Do not call dealer inventory measured capacity. A capacity claim requires separate balance-sheet/regulatory/liquidity evidence and a defensible design.
-5. No additional Bloomberg data are required for the completed descriptive scope. Extending supply regressions beyond May requires refreshed controls and official supply/inventory, without forward filling missing predictors.
+5. The completed descriptive accounting scope needs no new download, but the new risk extension needs equity/IG/HY and refreshed VIX. Foreign supply/QT and supply-regression refreshes are conditional later steps, without forward filling missing predictors.
 6. Keep direct benchmark-CIP reconciliation, 3M conventions, and EM rules as separate open tasks, not prerequisites for the bounded 5Y/10Y project.
 """
     ),

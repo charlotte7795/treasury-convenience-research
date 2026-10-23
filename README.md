@@ -2,6 +2,8 @@
 
 Research collaboration workspace for Charlotte Liu and Qiyuan Cong. Prepared October 13, 2026; results use the October 9 data snapshot. Market accounting ends September 2026 and supply/inventory regressions end May 2026.
 
+**October 23 research update:** [approved proposal](assignment/Project_Proposal.docx), [post-meeting results and next data request](docs/Post_Meeting_Research.md), and [Bloomberg refresh templates](templates/). The original notebook now includes Section 15D: benchmark-definition sensitivity and a VIX-only weekly diagnostic. The new credit-spread extension is not complete.
+
 ## Research Question
 
 How has U.S. Treasury convenience relative to foreign government bonds changed, and which components account for its recent rebound?
@@ -25,6 +27,7 @@ This is a completed **bounded raw replication plus descriptive extension**. It i
 3. [Presentation PDF](results/Treasury_Convenience_Final_Presentation.pdf) and [editable PowerPoint](results/Treasury_Convenience_Final_Presentation.pptx).
 4. [Shared data and quick start](data/README.md): public inputs, authorized Bloomberg value exports, the refresh workbook and ready-to-analyze panels.
 5. [Full research notebook](notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication.ipynb). Notebook outputs are intentionally cleared for sharing. Section 15C contains the final study; earlier extension sections preserve historical diagnostics.
+   Section 15D contains the latest post-meeting research; its risk-data endpoint is May 29, 2026, not September.
 6. [Data setup and reproduction](docs/Data_Setup.md), [remaining work](docs/Research_Status.md), and [speaker notes](results/Treasury_Convenience_Presentation_Notes.md).
 
 ## Installation and Tests

@@ -1,0 +1,9 @@
+ticker,variable,first_valid_date,last_valid_date,n_numeric
+BBDXY Index,bbdxy_index,2004-12-31,2026-06-03,5478
+DXY Curncy,dxy_currency_index,2000-01-03,2026-06-03,6864
+MOVE Index,move_index,2000-01-03,2026-06-03,6805
+VIX Index,vix_index,2000-01-03,2026-06-03,6674
+USGG10YR Index,us_generic_govt_10y_yield,2000-01-03,2026-06-03,6887
+USGG2YR Index,us_generic_govt_2y_yield,2000-01-03,2026-06-03,6887
+USGG30YR Index,us_generic_govt_30y_yield,2000-01-03,2026-06-03,6886
+USGG5YR Index,us_generic_govt_5y_yield,2000-01-03,2026-06-03,6887

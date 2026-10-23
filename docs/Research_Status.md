@@ -1,6 +1,6 @@
 # Research Readiness and Remaining Work
 
-Review date: October 13, 2026. Data snapshot: October 9, 2026.
+Review date: October 23, 2026. Data snapshot: October 9, 2026. See [post-meeting research](Post_Meeting_Research.md) and notebook Section 15D for the latest work.
 
 ## Assessment
 
@@ -29,9 +29,9 @@ No claim is made about satisfying a particular course rubric without seeing that
 
 ## Highest-Value Next Research
 
-1. Use mentor feedback to choose between a descriptive final project and a larger causal study.
-2. Examine competing foreign swap-spread explanations. The current leg decomposition does not identify foreign debt-supply, QT, hedging-flow or balance-sheet shocks.
-3. Resolve the DKK regime discrepancy if that currency becomes central to interpretation. Keep cohort-exclusion checks visible meanwhile.
-4. Refresh regressors only if extending supply/inventory models beyond May 2026 is necessary. An endpoint mismatch is explicitly disclosed in the current study.
+1. Reconcile the NZD OCR / Bank-Bill metadata conflict and retain DKK and cohort-exclusion checks. Current exclusions preserve the rebound.
+2. Refresh VIX and obtain equity/IG/HY data using `templates/`. The completed VIX-only diagnostic does not establish that risk-off behavior recovered with the level rebound.
+3. Compare risk specifications on identical dates, with regime/sample sensitivity and HAC uncertainty. This is the approved bounded extension after the mentor discussion.
+4. Keep foreign debt-supply/QT/hedging/balance-sheet mechanisms as untested hypotheses. Revisit supply/inventory models only after the measurement and risk checks; their May endpoint remains disclosed.
 
-Completeness should mean a finished, defensible research question with stated limits, not every possible extension. No new Bloomberg download is necessary for the currently stated final-project scope.
+Completeness should mean a finished, defensible research question with stated limits, not every possible extension. The existing descriptive accounting does not need another full CIP download, but the newly approved risk extension does need the focused Bloomberg request above.

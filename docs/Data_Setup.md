@@ -2,9 +2,9 @@
 
 ## Shared Snapshot Available
 
-As of October 22, 2026, the private repository includes the public inputs, authorized Bloomberg numeric exports, the October 9 refresh workbook and selected derived panels. Charlotte explicitly confirmed private sharing with Qiyuan. See [data/README.md](../data/README.md) for file descriptions and sharing limits.
+The November 16 sync includes the recorded public inputs, user-authorized Bloomberg numeric exports, October 9 refresh, November 2 risk/NZD workbooks, November 3 official sovereign-supply sources, and the derived/supporting files needed by the canonical notebook. Public-sharing permission was explicitly confirmed by Charlotte on November 16; this is not an independent license review. See [data/README.md](../data/README.md).
 
-Start with `python src/restore_shared_data.py`. This verifies the bundle checksums and restores the paths needed by the existing scripts. Then run `python src/load_public_cip.py` and `python -m src.analyze_treasury_final` to reproduce the final study from saved panels. Synthetic unit tests still work without data access.
+Start with `python src/restore_shared_data.py`. This verifies the checksums and restores the scripts' expected local paths. Then run `python -m unittest discover -s tests` and `python -m src.build_research_notebook --execute`. Some tests now use archived data; no Bloomberg login or live download is needed. The optional public-source collector uses `xlrd` for the older UK spreadsheet and `pypdf`/`lxml` for the Swedish source archive.
 
 ## Required Local Inputs
 
@@ -59,8 +59,15 @@ The official-source helper scripts are included for acquisition and source mappi
 
 The final pipeline writes validation, cohort-month accounting, period-change sensitivity and association outputs locally under `output/`. Compare the aggregate results with `results/tables/treasury_final_summary.json`. Reproduction against the same snapshot should recover approximately +20.65 bps (5Y) and +11.12 bps (10Y), 20/20 combined-regime matches and 39/40 separate-regime matches.
 
-## Full Historical Notebook
+## Full Canonical Notebook
 
-The source notebook preserves the complete original research log. Its saved outputs have been removed so that GitHub does not distribute detailed market data or local-path output. It remains readable as Markdown and Python code, but running every historical section requires the original earlier supporting artifacts, report matrices and diagnostic outputs in addition to the final-core inputs above. Those are not bundled as a licensed-data workaround.
+The source notebook has cleared outputs; the executed copy includes tables and figures for reading without running code. Supporting figures, historical replication matrices and cleaned snapshots are now bundled and restored by `restore_shared_data.py`. The complete notebook can be rerun from the recorded checkout. Restoring refuses to overwrite different local files: use a fresh checkout for the simplest reproduction rather than replacing your own modified data.
 
-The core calculation can be reproduced with the commands above; a clean checkout alone does not execute the entire historical notebook. Use Section 15C after supplying the authorized local workspace. Keep newly executed notebooks, cleaned panels and rendered HTML local and untracked.
+The canonical command is:
+
+```bash
+python src/restore_shared_data.py
+python -m src.build_research_notebook --execute
+```
+
+It writes both source and executed notebooks. Section 15C is the reviewed monthly accounting; Sections 15E-15I are the later risk, country-stress and supply sensitivities. New raw downloads must be treated as a new vintage, not silently substituted for this snapshot.

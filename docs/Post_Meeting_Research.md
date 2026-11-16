@@ -1,5 +1,8 @@
 # Post-Meeting Research Update
 
+Historical October plan. For completed risk/stress/supply results through November 3, see
+[Current_Progress.md](Current_Progress.md) and notebook Sections 15E-15I.
+
 Updated October 23, 2026. Accounting ends September 2026; the new VIX-only diagnostic ends May 29, 2026. This update implements the first stage of the approved proposal, not the completed credit-spread extension.
 
 ## Research Question

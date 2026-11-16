@@ -1,0 +1,3 @@
+tenor,n_joint_dates,first_date,last_date,gap_basis_corr,mae_same_sign_bps,mean_same_sign_gap_bps,mae_opposite_sign_bps,definition_status
+5y,967,2023-01-02,2026-09-30,0.9060201862773322,3.730266804550154,-3.7045166494312287,32.22095098241986,BDP NAME confirms OIS / 3M distinction; detailed DES conventions still unconfirmed
+10y,973,2023-01-02,2026-09-30,0.9220539122742565,4.204676053442961,-4.182363617677288,30.690930935251803,BDP NAME confirms OIS / 3M distinction; detailed DES conventions still unconfirmed

@@ -1,0 +1,8 @@
+date,ticker,variable,value,source
+2023-01-02,CDSO10 CURNCY,cad_sofr_irs_10y_cdso10,3.407,previous_exact_ticker_quote
+2023-01-03,CDSO10 CURNCY,cad_sofr_irs_10y_cdso10,3.298,previous_exact_ticker_quote
+2023-01-04,CDSO10 CURNCY,cad_sofr_irs_10y_cdso10,3.237,previous_exact_ticker_quote
+2023-01-05,CDSO10 CURNCY,cad_sofr_irs_10y_cdso10,3.276,previous_exact_ticker_quote
+2023-01-06,CDSO10 CURNCY,cad_sofr_irs_10y_cdso10,3.191,previous_exact_ticker_quote
+2023-01-09,CDSO10 CURNCY,cad_sofr_irs_10y_cdso10,3.1658,previous_exact_ticker_quote
+2023-01-10,CDSO10 CURNCY,cad_sofr_irs_10y_cdso10,3.20945,previous_exact_ticker_quote

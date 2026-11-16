@@ -1,0 +1,13 @@
+standard_name,actual_column
+date,date
+currency,currency
+group,group
+tenor,tenor
+rho,rho
+diff_y,diff_y
+cip_govt,cip_govt
+cip_govt_break_date,cip_govt_break_date
+rho_ibor,rho_ibor
+rho_sofr,rho_sofr
+cip_govt_ibor,cip_govt_ibor
+cip_govt_sofr,cip_govt_sofr

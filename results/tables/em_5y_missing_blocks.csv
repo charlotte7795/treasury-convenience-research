@@ -1,0 +1,5 @@
+currency,ticker,variable,type,status,error_summary
+CNH,HICNH3M INDEX,cnh_ibor_rate_benchmark_hicnh3m,Rate,NO_NUMERIC_DATA,
+ILS,ILUS3TSR5Y,ils_sofr_bs_5y_ilus3tsr5y,BS,NO_NUMERIC_DATA,
+PHP,PHUSNDS5Y,php_ibor_nds_5y_phusnds5y,NDS,NO_NUMERIC_DATA,
+ZAR,ZARCBS5Y=FMD,zar_ibor_bs_5y_zarcbs5y_fmd,BS,NO_NUMERIC_DATA,

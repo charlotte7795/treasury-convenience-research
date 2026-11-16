@@ -1,0 +1,5 @@
+variable,n_overlap,mae_bps,max_abs_revision_bps
+nzd_sofr_irs_5y_ndso5,905,0.0,0.0
+nzd_sofr_tbs_5y_nzbbco5,905,0.0,0.0
+nzd_sofr_irs_10y_ndso10,905,0.0,0.0
+nzd_sofr_tbs_10y_nzbbco10,905,0.0,0.0

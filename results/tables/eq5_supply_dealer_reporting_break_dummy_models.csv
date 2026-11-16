@@ -1,0 +1,5 @@
+target,spec,n_months,date_min,date_max,r_squared,adj_r_squared
+x_govt_raw_bps_5y,post2013_level_with_trend_and_break_dummies,153,2013-04-30,2026-05-31,0.7113961025794386,0.6866586256576763
+x_govt_raw_bps_5y,post2013_12m_change_with_break_dummies,136,2014-04-30,2026-05-31,0.6435593734433782,0.6119396404423876
+x_govt_raw_bps_10y,post2013_level_with_trend_and_break_dummies,153,2013-04-30,2026-05-31,0.7374942602554335,0.7149937682773279
+x_govt_raw_bps_10y,post2013_12m_change_with_break_dummies,136,2014-04-30,2026-05-31,0.5483924233949311,0.5083304609541589

@@ -1,0 +1,3 @@
+series,currencies,tenors,date_min,date_max,rows
+Raw G10 5Y Eq.5 UST convenience,10,5y,2000-01-03,2026-06-02,58722
+Raw G10 5Y/10Y Eq.5 UST convenience in Eq.6 panel,10,"10y,5y",2000-01-03,2026-06-03,116613

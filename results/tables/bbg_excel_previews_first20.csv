@@ -1,0 +1,521 @@
+source_file,source_sheet,row_number,row_values
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,1,Security | BV050082 BVLI Index | 
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,4,Period | D | 
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,5, |  | 
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,6,Date | PX_LAST | PX_BID
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,7,2026-05-29 00:00:00 | 4.1528 | 4.1528
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,8,2026-05-28 00:00:00 | 4.1716 | 4.1731
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,9,2026-05-27 00:00:00 | 4.1968 | 4.1984
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,10,2026-05-26 00:00:00 | 4.2004 | 4.202
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,11,2026-05-22 00:00:00 | 4.279 | 4.279
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,12,2026-05-21 00:00:00 | 4.2477 | 4.2492
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,13,2026-05-20 00:00:00 | 4.2483 | 4.2501
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,14,2026-05-19 00:00:00 | 4.341 | 4.3427
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,15,2026-05-18 00:00:00 | 4.2816 | 4.2833
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,16,2026-05-15 00:00:00 | 4.2789 | 4.2808
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,17,2026-05-14 00:00:00 | 4.1629 | 4.1648
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,18,2026-05-13 00:00:00 | 4.1374 | 4.139
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,19,2026-05-12 00:00:00 | 4.1431 | 4.1449
+bbg/euxusd/BV050082 BVLI Index.xlsx,Worksheet,20,2026-05-11 00:00:00 | 4.087 | 4.0887
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,1,Security | BV050910 BVLI Index | 
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,4,Period | D | 
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,5, |  | 
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,6,Date | PX_LAST | PX_BID
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,7,2026-05-29 00:00:00 | 2.5924 | 2.5924
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,8,2026-05-28 00:00:00 | 2.6241 | 2.6241
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,9,2026-05-27 00:00:00 | 2.6482 | 2.6482
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,10,2026-05-26 00:00:00 | 2.6534 | 2.6534
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,11,2026-05-25 00:00:00 | 2.6101 | 2.6101
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,12,2026-05-22 00:00:00 | 2.7082 | 2.7082
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,13,2026-05-21 00:00:00 | 2.7635 | 2.7635
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,14,2026-05-20 00:00:00 | 2.7567 | 2.7567
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,15,2026-05-19 00:00:00 | 2.8418 | 2.8418
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,16,2026-05-18 00:00:00 | 2.8145 | 2.8145
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,17,2026-05-15 00:00:00 | 2.8133 | 2.8133
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,18,2026-05-14 00:00:00 | 2.7258 | 2.7258
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,19,2026-05-13 00:00:00 | 2.7782 | 2.7782
+bbg/euxusd/BV050910 BVLI Index.xlsx,Worksheet,20,2026-05-12 00:00:00 | 2.7666 | 2.7666
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,1,Security | BV100082 BVLI Index | 
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,4,Period | D | 
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,5, |  | 
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,6,Date | PX_LAST | PX_BID
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,7,2026-05-29 00:00:00 | 4.4598 | 4.4598
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,8,2026-05-28 00:00:00 | 4.4723 | 4.4729
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,9,2026-05-27 00:00:00 | 4.5031 | 4.5039
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,10,2026-05-26 00:00:00 | 4.5124 | 4.5132
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,11,2026-05-22 00:00:00 | 4.5795 | 4.5795
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,12,2026-05-21 00:00:00 | 4.578 | 4.5788
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,13,2026-05-20 00:00:00 | 4.5906 | 4.5915
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,14,2026-05-19 00:00:00 | 4.6818 | 4.6825
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,15,2026-05-18 00:00:00 | 4.6253 | 4.6261
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,16,2026-05-15 00:00:00 | 4.6125 | 4.6134
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,17,2026-05-14 00:00:00 | 4.4967 | 4.4974
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,18,2026-05-13 00:00:00 | 4.4882 | 4.4891
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,19,2026-05-12 00:00:00 | 4.4845 | 4.485
+bbg/euxusd/BV100082 BVLI Index.xlsx,Worksheet,20,2026-05-11 00:00:00 | 4.4393 | 4.44
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,1,Security | BV100910 BVLI Index | 
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,4,Period | D | 
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,5, |  | 
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,6,Date | PX_LAST | PX_BID
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,7,2026-05-29 00:00:00 | 2.9228 | 2.9228
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,8,2026-05-28 00:00:00 | 2.9535 | 2.9535
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,9,2026-05-27 00:00:00 | 2.9762 | 2.9762
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,10,2026-05-26 00:00:00 | 2.9734 | 2.9734
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,11,2026-05-25 00:00:00 | 2.9372 | 2.9372
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,12,2026-05-22 00:00:00 | 3.0258 | 3.0258
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,13,2026-05-21 00:00:00 | 3.0877 | 3.0877
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,14,2026-05-20 00:00:00 | 3.0892 | 3.0892
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,15,2026-05-19 00:00:00 | 3.1741 | 3.1741
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,16,2026-05-18 00:00:00 | 3.147 | 3.147
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,17,2026-05-15 00:00:00 | 3.1422 | 3.1422
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,18,2026-05-14 00:00:00 | 3.0422 | 3.0422
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,19,2026-05-13 00:00:00 | 3.093 | 3.093
+bbg/euxusd/BV100910 BVLI Index.xlsx,Worksheet,20,2026-05-12 00:00:00 | 3.0864 | 3.0864
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,1,Security | EESWE10 BGN Curncy | 
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,6, |  | 
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | 2.7515 | 2.74101
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | 2.771 | 2.75783
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | 2.801 | 2.79291
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | 2.79 | 2.77622
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,12,2026-05-25 00:00:00 | 2.763 | 2.75746
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,13,2026-05-22 00:00:00 | 2.8554 | 2.83841
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,14,2026-05-21 00:00:00 | 2.862 | 2.85507
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,15,2026-05-20 00:00:00 | 2.89255 | 2.88451
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,16,2026-05-19 00:00:00 | 2.993 | 2.99144
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,17,2026-05-18 00:00:00 | 2.96705 | 2.95858
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,18,2026-05-15 00:00:00 | 2.979 | 2.96322
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,19,2026-05-14 00:00:00 | 2.854 | 2.85317
+bbg/euxusd/EESWE10 Curncy.xlsx,Worksheet,20,2026-05-13 00:00:00 | 2.891 | 2.87489
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,1,Security | EESWE5 BGN Curncy | 
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,6, |  | 
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | 2.501 | 2.49708
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | 2.522 | 2.51992
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | 2.5585 | 2.5555
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | 2.554 | 2.55268
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,12,2026-05-25 00:00:00 | 2.52 | 2.51777
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,13,2026-05-22 00:00:00 | 2.6232 | 2.62186
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,14,2026-05-21 00:00:00 | 2.6577 | 2.65634
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,15,2026-05-20 00:00:00 | 2.64905 | 2.6477
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,16,2026-05-19 00:00:00 | 2.754 | 2.75197
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,17,2026-05-18 00:00:00 | 2.7232 | 2.72136
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,18,2026-05-15 00:00:00 | 2.7466 | 2.74498
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,19,2026-05-14 00:00:00 | 2.62325 | 2.62196
+bbg/euxusd/EESWE5 Curncy.xlsx,Worksheet,20,2026-05-13 00:00:00 | 2.66575 | 2.66374
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,1,Security | EUXOQQ10 BGN Curncy | 
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,6, |  | 
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | -3.375 | -3.9915
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | -3.375 | -4.1499
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | -3.25 | -4.6505
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | -3.5 | -5.4651
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,12,2026-05-22 00:00:00 | -4.125 | -5.2528
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,13,2026-05-21 00:00:00 | -4.5 | -5.4783
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,14,2026-05-20 00:00:00 | -4.5 | -5.2664
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,15,2026-05-19 00:00:00 | -5 | -6.0019
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,16,2026-05-18 00:00:00 | -4.625 | -5.9556
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,17,2026-05-15 00:00:00 | -4.375 | -4.9751
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,18,2026-05-14 00:00:00 | -3.75 | -4.4543
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,19,2026-05-13 00:00:00 | -3.875 | -4.6841
+bbg/euxusd/EUXOQQ10 Curncy.xlsx,Worksheet,20,2026-05-12 00:00:00 | -3.875 | -4.7622
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,1,Security | EUXOQQ5 BGN Curncy | 
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,6, |  | 
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | -2.375 | -3.2269
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | -2.375 | -3.4366
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | -2.25 | -3.5354
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | -2.375 | -3.8793
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,12,2026-05-22 00:00:00 | -2.875 | -3.8272
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,13,2026-05-21 00:00:00 | -3.25 | -4.1145
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,14,2026-05-20 00:00:00 | -3.25 | -3.9778
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,15,2026-05-19 00:00:00 | -3.625 | -4.5359
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,16,2026-05-18 00:00:00 | -3.25 | -4.4554
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,17,2026-05-15 00:00:00 | -3 | -3.6569
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,18,2026-05-14 00:00:00 | -2.625 | -3.4039
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,19,2026-05-13 00:00:00 | -2.625 | -3.4953
+bbg/euxusd/EUXOQQ5 Curncy.xlsx,Worksheet,20,2026-05-12 00:00:00 | -2.75 | -3.5773
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,1,Security | USOSFR10 BGN Curncy | 
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,6, |  | 
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | 4.0338 | 4.03144
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | 4.03905 | 4.03768
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | 4.0781 | 4.07595
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | 4.083 | 4.08111
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,12,2026-05-22 00:00:00 | 4.1455 | 4.14259
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,13,2026-05-21 00:00:00 | 4.16027 | 4.15808
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,14,2026-05-20 00:00:00 | 4.1716 | 4.16998
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,15,2026-05-19 00:00:00 | 4.23745 | 4.23517
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,16,2026-05-18 00:00:00 | 4.1663 | 4.16461
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,17,2026-05-15 00:00:00 | 4.1613 | 4.15856
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,18,2026-05-14 00:00:00 | 4.05885 | 4.05652
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,19,2026-05-13 00:00:00 | 4.04319 | 4.04075
+bbg/euxusd/USOSFR10 Curncy.xlsx,Worksheet,20,2026-05-12 00:00:00 | 4.0435 | 4.04133
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,1,Security | USOSFR5 BGN Curncy | 
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,6, |  | 
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | 3.8651 | 3.86292
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | 3.8756 | 3.87419
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | 3.90265 | 3.9004
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | 3.8987 | 3.89681
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,12,2026-05-22 00:00:00 | 3.9774 | 3.97444
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,13,2026-05-21 00:00:00 | 3.9706 | 3.96799
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,14,2026-05-20 00:00:00 | 3.97135 | 3.96983
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,15,2026-05-19 00:00:00 | 4.0444 | 4.04218
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,16,2026-05-18 00:00:00 | 3.958 | 3.9563
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,17,2026-05-15 00:00:00 | 3.9695 | 3.96679
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,18,2026-05-14 00:00:00 | 3.86898 | 3.86654
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,19,2026-05-13 00:00:00 | 3.8338 | 3.83145
+bbg/euxusd/USOSFR5 Curncy.xlsx,Worksheet,20,2026-05-12 00:00:00 | 3.8375 | 3.83496
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,1,Security | BPSWS10 BGN Curncy | 
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,2,Start Date | 2022-01-04 00:00:00 | 
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,6, |  | 
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | 4.39154 | 4.38918
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | 4.3998 | 4.3924
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | 4.44207 | 4.43729
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | 4.4585 | 4.45142
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,12,2026-05-22 00:00:00 | 4.49916 | 4.49401
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,13,2026-05-21 00:00:00 | 4.54844 | 4.54521
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,14,2026-05-20 00:00:00 | 4.57225 | 4.56777
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,15,2026-05-19 00:00:00 | 4.69288 | 4.69025
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,16,2026-05-18 00:00:00 | 4.6395 | 4.63555
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,17,2026-05-15 00:00:00 | 4.7311 | 4.72418
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,18,2026-05-14 00:00:00 | 4.5907 | 4.58815
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,19,2026-05-13 00:00:00 | 4.61133 | 4.60328
+bbg/gbpusd/BPSWS10 Curncy.xlsx,Worksheet,20,2026-05-12 00:00:00 | 4.65863 | 4.65604
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,1,Security | BPSWS5 BGN Curncy | 
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,2,Start Date | 2022-01-04 00:00:00 | 
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,6, |  | 
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | 4.12401 | 4.12067
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | 4.14225 | 4.1323
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | 4.1745 | 4.1705
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | 4.20567 | 4.19954
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,12,2026-05-22 00:00:00 | 4.2564 | 4.24971
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,13,2026-05-21 00:00:00 | 4.28665 | 4.28377
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,14,2026-05-20 00:00:00 | 4.30675 | 4.30169
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,15,2026-05-19 00:00:00 | 4.4445 | 4.44195
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,16,2026-05-18 00:00:00 | 4.4048 | 4.39879
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,17,2026-05-15 00:00:00 | 4.4776 | 4.46778
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,18,2026-05-14 00:00:00 | 4.3462 | 4.34368
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,19,2026-05-13 00:00:00 | 4.3654 | 4.35689
+bbg/gbpusd/BPSWS5 Curncy.xlsx,Worksheet,20,2026-05-12 00:00:00 | 4.4126 | 4.40995
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,1,Security | BPXOQQ10 BGN Curncy | 
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,6, |  | 
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | -1.75 | -3.8276
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | -1.75 | -3.8396
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | -1.625 | -3.7282
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | -1.75 | -3.8474
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,12,2026-05-22 00:00:00 | -2.0625 | -4.0691
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,13,2026-05-21 00:00:00 | -2.5 | -4.5044
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,14,2026-05-20 00:00:00 | -2.25 | -4.2445
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,15,2026-05-19 00:00:00 | -2.5 | -4.483
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,16,2026-05-18 00:00:00 | -2.75 | -4.6912
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,17,2026-05-15 00:00:00 | -3 | -5.5
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,18,2026-05-14 00:00:00 | -2.875 | -4.9016
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,19,2026-05-13 00:00:00 | -2.875 | -4.9132
+bbg/gbpusd/BPXOQQ10 Curncy.xlsx,Worksheet,20,2026-05-12 00:00:00 | -3 | -5.0543
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,1,Security | BPXOQQ5 BGN Curncy | 
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,6, |  | 
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | 1.375 | -0.6784
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | 1.375 | -0.683
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | 1.375 | -0.7012
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | 1.375 | -0.6848
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,12,2026-05-22 00:00:00 | 1.125 | -0.912
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,13,2026-05-21 00:00:00 | 0.875 | -1.1545
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,14,2026-05-20 00:00:00 | 1.125 | -0.8881
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,15,2026-05-19 00:00:00 | 1 | -0.98
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,16,2026-05-18 00:00:00 | 1 | -0.9412
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,17,2026-05-15 00:00:00 | 0.875 | -1.1114
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,18,2026-05-14 00:00:00 | 1 | -1.0081
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,19,2026-05-13 00:00:00 | 0.875 | -1.136
+bbg/gbpusd/BPXOQQ5 Curncy.xlsx,Worksheet,20,2026-05-12 00:00:00 | 1 | -1.0093
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,1,Security | BV050110 BVLI Index | 
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,2,Start Date | 2021-12-31 00:00:00 | 
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,4,Period | D | 
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,5, |  | 
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,6,Date | PX_LAST | PX_BID
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,7,2026-05-29 00:00:00 | 4.3366 | 4.3366
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,8,2026-05-28 00:00:00 | 4.349 | 4.3498
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,9,2026-05-27 00:00:00 | 4.3963 | 4.3973
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,10,2026-05-26 00:00:00 | 4.4185 | 4.4193
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,11,2026-05-22 00:00:00 | 4.4564 | 4.4574
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,12,2026-05-21 00:00:00 | 4.5047 | 4.5056
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,13,2026-05-20 00:00:00 | 4.5197 | 4.5203
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,14,2026-05-19 00:00:00 | 4.6484 | 4.6493
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,15,2026-05-18 00:00:00 | 4.6546 | 4.6553
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,16,2026-05-15 00:00:00 | 4.662 | 4.6626
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,17,2026-05-14 00:00:00 | 4.5403 | 4.541
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,18,2026-05-13 00:00:00 | 4.603 | 4.6036
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,19,2026-05-12 00:00:00 | 4.6101 | 4.6108
+bbg/gbpusd/BV050110 BVLI Index.xlsx,Worksheet,20,2026-05-11 00:00:00 | 4.5257 | 4.5265
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,1,Security | BV100110 BVLI Index | 
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,2,Start Date | 2021-12-31 00:00:00 | 
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,4,Period | D | 
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,5, |  | 
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,6,Date | PX_LAST | PX_BID
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,7,2026-05-29 00:00:00 | 4.8278 | 4.8278
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,8,2026-05-28 00:00:00 | 4.8571 | 4.8575
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,9,2026-05-27 00:00:00 | 4.8752 | 4.8757
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,10,2026-05-26 00:00:00 | 4.8909 | 4.8913
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,11,2026-05-22 00:00:00 | 4.9154 | 4.9158
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,12,2026-05-21 00:00:00 | 4.9862 | 4.987
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,13,2026-05-20 00:00:00 | 5.0103 | 5.0112
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,14,2026-05-19 00:00:00 | 5.1072 | 5.1077
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,15,2026-05-18 00:00:00 | 5.1528 | 5.1533
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,16,2026-05-15 00:00:00 | 5.1908 | 5.1912
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,17,2026-05-14 00:00:00 | 5.009 | 5.0097
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,18,2026-05-13 00:00:00 | 5.081 | 5.0819
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,19,2026-05-12 00:00:00 | 5.1091 | 5.1098
+bbg/gbpusd/BV100110 BVLI Index.xlsx,Worksheet,20,2026-05-11 00:00:00 | 5.0173 | 5.0178
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,1,Security | BVCSEI05 BVLI Index | 
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,2,Start Date | 2021-12-30 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,4,Period | D | 
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,5, |  | 
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,6,Date | PX_LAST | PX_BID
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,7,2026-05-29 00:00:00 | 1.9669 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,8,2026-05-28 00:00:00 | 1.9906 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,9,2026-05-27 00:00:00 | 2.0109 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,10,2026-05-26 00:00:00 | 2.0488 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,11,2026-05-25 00:00:00 | 2.0377 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,12,2026-05-22 00:00:00 | 2.0718 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,13,2026-05-21 00:00:00 | 2.0888 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,14,2026-05-20 00:00:00 | 2.1037 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,15,2026-05-19 00:00:00 | 2.0974 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,16,2026-05-18 00:00:00 | 2.0659 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,17,2026-05-15 00:00:00 | 2.0572 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,18,2026-05-14 00:00:00 | 2.0023 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,19,2026-05-13 00:00:00 | 1.989 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI05 BVLI Index.xlsx,Worksheet,20,2026-05-12 00:00:00 | 1.9762 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,1,Security | BVCSEI10 BVLI Index | 
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,2,Start Date | 2021-12-30 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,4,Period | D | 
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,5, |  | 
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,6,Date | PX_LAST | PX_BID
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,7,2026-05-29 00:00:00 | 2.8142 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,8,2026-05-28 00:00:00 | 2.8436 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,9,2026-05-27 00:00:00 | 2.844 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,10,2026-05-26 00:00:00 | 2.8737 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,11,2026-05-25 00:00:00 | 2.8511 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,12,2026-05-22 00:00:00 | 2.9083 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,13,2026-05-21 00:00:00 | 2.9216 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,14,2026-05-20 00:00:00 | 2.9443 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,15,2026-05-19 00:00:00 | 2.9522 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,16,2026-05-18 00:00:00 | 2.8961 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,17,2026-05-15 00:00:00 | 2.8557 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,18,2026-05-14 00:00:00 | 2.7679 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,19,2026-05-13 00:00:00 | 2.7195 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/BVCSEI10 BVLI Index.xlsx,Worksheet,20,2026-05-12 00:00:00 | 2.691 | #N/A N/A
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,1,Security | EUR BGN Curncy | 
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,6, |  | 
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | 1.1659 | 1.1653
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | 1.1651 | 1.165
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | 1.1626 | 1.1623
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | 1.1631 | 1.1628
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,12,2026-05-25 00:00:00 | 1.1644 | 1.1642
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,13,2026-05-22 00:00:00 | 1.1603 | 1.1594
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,14,2026-05-21 00:00:00 | 1.1619 | 1.1616
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,15,2026-05-20 00:00:00 | 1.1624 | 1.1622
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,16,2026-05-19 00:00:00 | 1.1605 | 1.1603
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,17,2026-05-18 00:00:00 | 1.1656 | 1.1654
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,18,2026-05-15 00:00:00 | 1.1625 | 1.1623
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,19,2026-05-14 00:00:00 | 1.1669 | 1.1667
+bbg/spotfx3mforwardjpyusd/EUR Curncy.xlsx,Worksheet,20,2026-05-13 00:00:00 | 1.1711 | 1.1709
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,1,Security | EUR3M BGN Curncy | 
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,6, |  | 
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | 44.64 | 44.49
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | 44.92 | 44.77
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | 45.94 | 45.79
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | 45.44 | 45.29
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,12,2026-05-25 00:00:00 | 46.24 | 45.65
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,13,2026-05-22 00:00:00 | 45.51 | 45.36
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,14,2026-05-21 00:00:00 | 45.48 | 45.33
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,15,2026-05-20 00:00:00 | 46.34 | 46.19
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,16,2026-05-19 00:00:00 | 44.9 | 44.75
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,17,2026-05-18 00:00:00 | 45.25 | 45.1
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,18,2026-05-15 00:00:00 | 45.22 | 45.08
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,19,2026-05-14 00:00:00 | 45.68 | 45.53
+bbg/spotfx3mforwardjpyusd/EUR3M Curncy.xlsx,Worksheet,20,2026-05-13 00:00:00 | 47.12 | 46.97
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,1,Security | GBP BGN Curncy | 
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,6, |  | 
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | 1.3456 | 1.3442
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | 1.3445 | 1.3442
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | 1.3427 | 1.3424
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | 1.3446 | 1.3444
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,12,2026-05-25 00:00:00 | 1.3504 | 1.3499
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,13,2026-05-22 00:00:00 | 1.3433 | 1.3419
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,14,2026-05-21 00:00:00 | 1.3431 | 1.3428
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,15,2026-05-20 00:00:00 | 1.3435 | 1.3432
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,16,2026-05-19 00:00:00 | 1.3395 | 1.3393
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,17,2026-05-18 00:00:00 | 1.3434 | 1.3431
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,18,2026-05-15 00:00:00 | 1.3326 | 1.3319
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,19,2026-05-14 00:00:00 | 1.3403 | 1.34
+bbg/spotfx3mforwardjpyusd/GBP Curncy.xlsx,Worksheet,20,2026-05-13 00:00:00 | 1.3523 | 1.3522
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,1,Security | GBP3M BGN Curncy | 
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,6, |  | 
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | -2.98 | -3.09
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | -3.2 | -3.37
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | -3.16 | -3.28
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | -3.05 | -3.19
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,12,2026-05-25 00:00:00 | -3.23 | -4.09
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,13,2026-05-22 00:00:00 | -3.18 | -3.35
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,14,2026-05-21 00:00:00 | -3.37 | -3.57
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,15,2026-05-20 00:00:00 | -3.9 | -4.05
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,16,2026-05-19 00:00:00 | -4.89 | -5.06
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,17,2026-05-18 00:00:00 | -4.71 | -4.93
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,18,2026-05-15 00:00:00 | -5.23 | -5.4
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,19,2026-05-14 00:00:00 | -4.82 | -5
+bbg/spotfx3mforwardjpyusd/GBP3M Curncy.xlsx,Worksheet,20,2026-05-13 00:00:00 | -5.13 | -5.29
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,1,Security | JYBSS10Y BGN Curncy | 
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,6, |  | 
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | -35.5 | -36.2499
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | -35.625 | -36.4984
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | -35.875 | -36.7285
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | -36.75 | -37.9821
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,12,2026-05-25 00:00:00 | -37.375 | -38.5541
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,13,2026-05-22 00:00:00 | -37.625 | -38.4768
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,14,2026-05-21 00:00:00 | -37.875 | -38.9198
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,15,2026-05-20 00:00:00 | -37.625 | -38.8896
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,16,2026-05-19 00:00:00 | -38 | -39.19
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,17,2026-05-18 00:00:00 | -37.75 | -39.3704
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,18,2026-05-15 00:00:00 | -37.625 | -38.7341
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,19,2026-05-14 00:00:00 | -37.25 | -38.156
+bbg/spotfx3mforwardjpyusd/JYBSS10Y BGN Curncy.xlsx,Worksheet,20,2026-05-13 00:00:00 | -37.625 | -38.9812
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,1,Security | JYBSS5Y BGN Curncy | 
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,2,Start Date | 2022-01-03 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,6, |  | 
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | -29.688 | -30.2715
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | -29.8755 | -30.6835
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | -30 | -31.0992
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | -30.25 | -31.4787
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,12,2026-05-25 00:00:00 | -30.875 | -31.7289
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,13,2026-05-22 00:00:00 | -31.125 | -31.9171
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,14,2026-05-21 00:00:00 | -31.125 | -32.0955
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,15,2026-05-20 00:00:00 | -31.1255 | -32.203
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,16,2026-05-19 00:00:00 | -31.6245 | -32.6672
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,17,2026-05-18 00:00:00 | -31.6245 | -33.1457
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,18,2026-05-15 00:00:00 | -31.5 | -32.2014
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,19,2026-05-14 00:00:00 | -30.75 | -31.6293
+bbg/spotfx3mforwardjpyusd/JYBSS5Y BGN Curncy.xlsx,Worksheet,20,2026-05-13 00:00:00 | -31.3745 | -32.3662
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,1,Security | JYSO10 BGN Curncy | 
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,2,Start Date | 2022-01-04 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,6, |  | 
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | 2.452 | 2.448354
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | 2.4745 | 2.469627
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | 2.495 | 2.491509
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | 2.525 | 2.519726
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,12,2026-05-25 00:00:00 | 2.48125 | 2.476302
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,13,2026-05-22 00:00:00 | 2.545 | 2.54032
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,14,2026-05-21 00:00:00 | 2.553 | 2.549006
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,15,2026-05-20 00:00:00 | 2.5225 | 2.519144
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,16,2026-05-19 00:00:00 | 2.584 | 2.579711
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,17,2026-05-18 00:00:00 | 2.5175 | 2.513347
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,18,2026-05-15 00:00:00 | 2.53125 | 2.526349
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,19,2026-05-14 00:00:00 | 2.422 | 2.416725
+bbg/spotfx3mforwardjpyusd/JYSO10 Curncy.xlsx,Worksheet,20,2026-05-13 00:00:00 | 2.382 | 2.377428
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,1,Security | JYSO5 BGN Curncy | 
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,2,Start Date | 2022-01-04 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,3,End Date | 2026-05-29 00:00:00 | 
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,4,Period | D | 
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,5,Pricing Source | BGN | 
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,6, |  | 
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,7,Date | PX_LAST | PX_BID
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,8,2026-05-29 00:00:00 | 1.877 | 1.87328
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,9,2026-05-28 00:00:00 | 1.87625 | 1.871226
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,10,2026-05-27 00:00:00 | 1.92375 | 1.920038
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,11,2026-05-26 00:00:00 | 1.946 | 1.940631
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,12,2026-05-25 00:00:00 | 1.925 | 1.920149
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,13,2026-05-22 00:00:00 | 1.97875 | 1.973957
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,14,2026-05-21 00:00:00 | 1.98875 | 1.984864
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,15,2026-05-20 00:00:00 | 1.967 | 1.963606
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,16,2026-05-19 00:00:00 | 2 | 1.995754
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,17,2026-05-18 00:00:00 | 1.956 | 1.951914
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,18,2026-05-15 00:00:00 | 1.98125 | 1.976227
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,19,2026-05-14 00:00:00 | 1.9 | 1.896012
+bbg/spotfx3mforwardjpyusd/JYSO5 Curncy.xlsx,Worksheet,20,2026-05-13 00:00:00 | 1.881 | 1.877145

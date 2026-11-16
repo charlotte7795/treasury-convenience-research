@@ -1,0 +1,50 @@
+{
+  "calibration_start": "2010-01-15",
+  "calibration_end": "2022-12-30",
+  "calibration_weeks": 677,
+  "quantile": 0.9,
+  "threshold_dlog_vix": 0.14981996543936482,
+  "equivalent_vix_percent_increase": 16.162509123867583,
+  "threshold_inputs": "VIX-only calendar; no Treasury outcomes or post-2022 observations",
+  "bootstrap_block_weeks": 8,
+  "bootstrap_reps": 2000,
+  "seed": 20261102,
+  "updated": "2026-11-02",
+  "paper_sha256": "7ba103d5085e9effaccaee4aa6df7e2d0bddd2e0c4bafcd5059f3fe9c3092a49",
+  "paper_pages_inspected": [
+    13,
+    23,
+    24,
+    25,
+    50,
+    51
+  ],
+  "table5_rows": 54,
+  "joint_test_rows": 320,
+  "stress_result_rows": 192,
+  "input_receipts": [
+    {
+      "path": "output/cleaned/raw_g10_benchmark_eq6_5y10y_refreshed_panel.csv",
+      "sha256": "10b3961af010082c6f8e3b93276eed543acfa4677ce47ccf2ea935de3bdf2d02"
+    },
+    {
+      "path": "output/cleaned/public_cip_cleaned.csv",
+      "sha256": "783643c57bd05b9d13e553db31a9eb1c420b66c315a1f791037968a4873efb8b"
+    },
+    {
+      "path": "output/cleaned/credit_risk_downloaded_values.csv",
+      "sha256": "7cfb208d3ed23d540894b600552441c5f70807b37b98bba5d013d0823c3190dc"
+    },
+    {
+      "path": "output/cleaned/credit_risk_weekly_panel.csv",
+      "sha256": "f52e1efa034b61bfdbc8ac87f8c7630169992366f89f81737a137088a99acf49"
+    }
+  ],
+  "caveats": [
+    "Threshold fixed before this calculation; not an independent prospective preregistration.",
+    "Bootstrap conditions on the estimated historical threshold; blocks preserve calendar gaps and components.",
+    "Stress association and joint significance do not establish causality or absolute safety.",
+    "Holm adjustments cover six primary government-CIP joint tests and, separately, two primary stress contrasts; not the whole project.",
+    "Leave-one-stress-week-out ranges are influence diagnostics, not confidence intervals."
+  ]
+}

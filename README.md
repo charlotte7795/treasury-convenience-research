@@ -1,8 +1,8 @@
 # Treasury Convenience: Raw Replication and the Recent Rebound
 
-Research collaboration workspace for Charlotte Liu and Qiyuan Cong. Prepared October 13, 2026; results use the October 9 data snapshot. Market accounting ends September 2026 and supply/inventory regressions end May 2026.
+Research workspace for Charlotte Liu and Qiyuan Cong. Synchronized November 16, 2026; latest research run November 3. CIP outcomes use the October 9 quote snapshot, monthly accounting ends September 30, weekly risk tests end September 25, and the earlier U.S. supply/inventory regressions end May 2026. This synchronization is not a new market-data download.
 
-**October 23 research update:** [approved proposal](assignment/Project_Proposal.docx), [post-meeting results and next data request](docs/Post_Meeting_Research.md), and [Bloomberg refresh templates](templates/). The original notebook now includes Section 15D: benchmark-definition sensitivity and a VIX-only weekly diagnostic. The new credit-spread extension is not complete.
+**Latest research:** the [executed canonical notebook](notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication_executed.ipynb) now includes Sections 15E-15I: credit-risk tests, fixed-rule stress weeks, country attribution, and gross-versus-net sovereign-supply sensitivities. Start with the [current progress summary](docs/Current_Progress.md). The [approved proposal](assignment/Project_Proposal.docx) is unchanged by this sync.
 
 ## Research Question
 
@@ -17,17 +17,20 @@ We reconstruct government-bond covered interest parity (CIP) deviations from Blo
 - A fixed eight-currency cohort shows a mean rebound of about 20.65 bps at 5Y and 11.12 bps at 10Y, comparing the 2023 annual average with the 2026 January-September average.
 - Falling foreign swap spreads supply the positive accounting contribution. The dollar/basis proxy and U.S. swap-spread changes offset part of it. This accounting result does not establish a causal mechanism or an improvement in absolute U.S. Treasury liquidity.
 - Alternative baselines, endpoints and leave-one-currency-out checks preserve a positive cohort-mean rebound. Supply and dealer-inventory regressions are exploratory conditional associations with weaker results under alternative specifications.
+- Credit-risk extension: HY adds only about 0.11/0.12 percentage points of recent in-sample R-squared beyond VIX, equity returns and IG. This is not predictive validation.
+- A VIX-only threshold calibrated on 2010-2022 identifies 13 recent stress weeks. Treasury-convenience stress-minus-ordinary contrasts are approximately -1.24/-1.26 bps at 5Y/10Y. A level rebound is not evidence of restored safe-haven behavior.
+- AUD, Germany/EUR and SEK have the largest negative country contrasts on the same dates. The common U.S. term is counted once; this is accounting, not causal attribution.
+- Fixed-baseline net-supply associations remain positive in a six-market scope sensitivity. Standardized net-minus-gross intervals all include zero; historical release vintages are not fully verified. No stronger explanatory-power or causal claim is made.
 
 This is a completed **bounded raw replication plus descriptive extension**. It is not exact replication of every figure/table in the paper, independently validated dollar-convenience estimation, or causal identification.
 
 ## Start Here
 
-1. [Topic and progress brief for a potential mentor](docs/Mentor_Brief.md).
-2. [Final findings and caveats](results/Findings.md).
-3. [Presentation PDF](results/Treasury_Convenience_Final_Presentation.pdf) and [editable PowerPoint](results/Treasury_Convenience_Final_Presentation.pptx).
+1. [Current progress, evidence dates and remaining gaps](docs/Current_Progress.md).
+2. [Full executed notebook](notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication_executed.ipynb), the canonical research log. Section 15C is the reviewed monthly accounting; 15E-15I contain the later extensions.
+3. [Presentation PDF](results/Treasury_Convenience_Final_Presentation.pdf) and [editable PowerPoint](results/Treasury_Convenience_Final_Presentation.pptx) preserve the earlier descriptive presentation, not all November extensions.
 4. [Shared data and quick start](data/README.md): public inputs, authorized Bloomberg value exports, the refresh workbook and ready-to-analyze panels.
-5. [Full research notebook](notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication.ipynb). Notebook outputs are intentionally cleared for sharing. Section 15C contains the final study; earlier extension sections preserve historical diagnostics.
-   Section 15D contains the latest post-meeting research; its risk-data endpoint is May 29, 2026, not September.
+5. [Notebook source](notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication.ipynb), [result tables](results/tables/) and [figures](results/figures/). Section 15D is the older May-end risk diagnostic, superseded by Sections 15E-15F.
 6. [Data setup and reproduction](docs/Data_Setup.md), [remaining work](docs/Research_Status.md), and [speaker notes](results/Treasury_Convenience_Presentation_Notes.md).
 
 ## Installation and Tests
@@ -38,24 +41,32 @@ The original analysis used Python 3.13. Run from the repository root:
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python -m unittest discover -s tests
 ```
 
-The unit tests use synthetic data and run without Bloomberg access. As of October 22, the private repository also includes the authorized input snapshot and selected derived panels. Run `python src/restore_shared_data.py` before the analysis; see [Data_Setup.md](docs/Data_Setup.md). This does not connect to or refresh Bloomberg.
+Restore the bundled data before testing or executing the notebook; some tests now verify the recorded snapshot as well as synthetic safeguards:
+
+```bash
+python src/restore_shared_data.py
+python -m unittest discover -s tests
+python -m src.build_research_notebook --execute
+```
+
+The recorded snapshot requires no live Bloomberg connection. The source and executed notebooks preserve historical sections; do not interpret every historical draft result as the controlling latest result.
 
 ## Repository Contents
 
 ```text
 src/          Research code and notebook builder
-tests/        Synthetic unit tests for accounting and methodological safeguards
-notebooks/    Original research log with Markdown and code, without saved outputs
+tests/        Synthetic and archived-data checks
+notebooks/    Canonical source and executed research log
 metadata/     Refresh instrument dictionary, without market quotes
-data/         Authorized private-team inputs and selected derived panels
+data/         User-authorized Bloomberg inputs, official-source snapshots and derived panels
 results/      Reviewed presentation, findings, figures and aggregate summary tables
 docs/         Mentor brief, setup, status and export provenance
+outputs/      Sovereign-supply collection workbook, collection template and quarterly panel
 ```
 
-Charlotte confirmed on October 22, 2026 that the Bloomberg exports may be shared privately with Qiyuan. The curated `data/` bundle includes the original exported numeric observations in CSV form, not the six original Excel containers, plus the October 9 refresh Excel and selected derived panels. This confirmation has not been independently reviewed as a data-license determination. Keep the repository private and do not forward licensed data or add recipients without checking the applicable permissions. Executed notebooks, detailed rendered HTML and unreviewed generated outputs remain untracked.
+On November 16, 2026, Charlotte explicitly confirmed permission to redistribute the Bloomberg data publicly and requested that this existing repository, including its history, be made public. This records the owner's assertion, not an independent license review. No new rights to third-party data are granted. The numeric exports from the six original workbooks, October 9 refresh and November 2 risk/NZD saved-value workbooks are included. The six original Excel containers are not included; their extracted observations are preserved.
 
 ## Collaboration
 

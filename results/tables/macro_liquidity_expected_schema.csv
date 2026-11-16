@@ -1,0 +1,7 @@
+column,description
+date,"Date for merge; daily, monthly, or quarterly."
+debt_to_gdp,U.S. public debt or federal debt scaled by GDP.
+fiscal_deficit_to_gdp,Fiscal deficit scaled by GDP.
+marketable_treasury_debt,Marketable Treasury debt outstanding.
+treasury_bid_ask_spread,Treasury liquidity proxy.
+dealer_positions,Dealer position or intermediation-capacity proxy.

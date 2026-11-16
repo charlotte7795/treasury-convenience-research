@@ -1,0 +1,6 @@
+needed_channel,status,candidate_data,why_needed
+Treasury supply,missing,"Marketable Treasury debt outstanding, Treasury outstanding by maturity bucket, debt-to-GDP",Directly tests whether increasing supply reduces UST convenience.
+Dealer capacity,missing,"Primary dealer Treasury positions, repo/reverse repo, balance-sheet constraints, SLR-related proxies",Tests Samim's intermediation-capacity channel.
+Treasury liquidity,partial,"Current generic bid-ask proxy is available; stronger measures include depth, price impact, off/on-the-run spreads, yield-curve fitting error",Tests whether liquidity explains convenience changes and rebound.
+Rates volatility,available,MOVE Index,Controls for market-making risk and rates uncertainty.
+Risk / dollar conditions,available,"VIX, BBDXY/DXY",Separates broad risk and dollar strength from UST-specific convenience.

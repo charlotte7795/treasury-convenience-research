@@ -1,0 +1,20 @@
+currency,ibor_available_types,ibor_has_govt,ibor_has_rate_or_irs,ibor_has_basis_ccs_nds,ibor_constructability,sofr_available_types,sofr_has_govt,sofr_has_rate_or_irs,sofr_has_basis_ccs_nds,sofr_constructability,no_numeric_tickers
+BRL,"Govt, NDS, Rate",True,True,True,usable_candidate,"NDS, Rate",False,True,True,needs_review,
+CLP,"BS, Govt, IRS, Rate",True,True,True,usable_candidate,"BS, Rate",False,True,True,needs_review,
+CNH,"CCS, Govt",True,False,True,needs_review,CCS,False,False,True,needs_review,HICNH3M INDEX
+CNY,"Govt, NDS, Rate",True,True,True,usable_candidate,"Govt, NDS",True,False,True,needs_review,
+COP,"Govt, NDS, Rate",True,True,True,usable_candidate,"Govt, NDS",True,False,True,needs_review,
+HUF,"BS, Govt, IRS, Rate",True,True,True,usable_candidate,"BS, Govt, IRS",True,True,True,usable_candidate,
+IDR,"Govt, NDS, Rate",True,True,True,usable_candidate,"Govt, NDS",True,False,True,needs_review,
+ILS,"BS, Govt, IRS, Rate",True,True,True,usable_candidate,Govt,True,False,False,needs_review,ILUS3TSR5Y
+INR,"Govt, NDS, Rate",True,True,True,usable_candidate,"Govt, NDS",True,False,True,needs_review,
+KRW,"Govt, NDS, Rate",True,True,True,usable_candidate,"CCS, Govt, IRS, Rate",True,True,True,usable_candidate,
+MXN,"BS, Govt, IRS, Rate",True,True,True,usable_candidate,"BS, Govt",True,False,True,needs_review,
+MYR,"BS, Govt, IRS, Rate",True,True,True,usable_candidate,"BS, Govt, IRS",True,True,True,usable_candidate,
+PEN,"Govt, NDS, Rate",True,True,True,usable_candidate,"Govt, NDS",True,False,True,needs_review,
+PHP,"Govt, Rate",True,True,False,needs_review,"Govt, NDS",True,False,True,needs_review,PHUSNDS5Y
+PLN,"BS, Govt, IRS, Rate",True,True,True,usable_candidate,"BS, Govt",True,False,True,needs_review,
+RUB,"Govt, NDS, Rate",True,True,True,usable_candidate,"BS, IRS, Rate",False,True,True,needs_review,
+THB,"BS, Govt, IRS, Rate",True,True,True,usable_candidate,"BS, Govt, IRS, Rate",True,True,True,usable_candidate,
+TRY,"CCS, Govt, Rate",True,True,True,usable_candidate,"CCS, Govt, IRS, Rate",True,True,True,usable_candidate,
+ZAR,"Govt, IRS, Rate",True,True,False,needs_review,"BS, Govt",True,False,True,needs_review,ZARCBS5Y=FMD

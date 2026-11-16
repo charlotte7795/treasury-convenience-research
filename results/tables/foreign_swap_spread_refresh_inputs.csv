@@ -1,0 +1,55 @@
+currency,tenor,variable,ticker,field,type,unit,floating_leg,name,source
+AUD,10y,aud_ibor_irs_10y_adsw10q,ADSW10Q CURNCY,PX_LAST,IRS,percent,3M Bank Bill,AUD SWAP (QTRLY)     10 YR,IBOR ticker supplement; SOFR ticker supplement
+AUD,10y,aud_sofr_bs_10y_adbsqq10,ADBSQQ10 BGN CURNCY,PX_LAST,BS,bps,3M Bank Bill vs SOFR,AUD BASIS SWAP     10 YR,SOFR ticker supplement
+AUD,10y,aud_sofr_govt_10y_bv100127,BV100127 BVLI INDEX,PX_LAST,Govt,percent,,BVAL AUD AUSTRALIA SOVEREIGN     10 YR,SOFR ticker supplement
+AUD,5y,aud_sofr_irs_5y_adswap5q,ADSWAP5Q CURNCY,PX_LAST,IRS,percent,3M Bank Bill,AUD SWAP     5 YR,SOFR ticker supplement
+AUD,5y,aud_sofr_bs_5y_adbsqq5,ADBSQQ5 BGN CURNCY,PX_LAST,BS,bps,3M Bank Bill vs SOFR,AUD BASIS SWAP     5 YR,SOFR ticker supplement
+AUD,5y,aud_sofr_govt_5y_bv050127,BV050127 BVLI INDEX,PX_LAST,Govt,percent,,BVAL AUD AUSTRALIA SOVEREIGN     5 YR,SOFR ticker supplement
+CAD,10y,cad_sofr_irs_10y_cdso10,CDSO10 CURNCY,PX_LAST,IRS,percent,CORRA,CAD SWAP     10 YR,SOFR ticker supplement
+CAD,10y,cad_sofr_bs_10y_cdxoqq10,CDXOQQ10 BGN CURNCY,PX_LAST,BS,bps,CORRA vs. SOFR,CAD BASIS SWAP     10 YR,SOFR ticker supplement
+CAD,10y,cad_sofr_govt_10y_bv100101,BV100101 BVLI INDEX,PX_LAST,Govt,percent,,BVAL CAD CANADA SOVEREIGN     10 YR,SOFR ticker supplement
+CAD,5y,cad_sofr_irs_5y_cdso5,CDSO5 CURNCY,PX_LAST,IRS,percent,CORRA,CAD SWAP     5 YR,SOFR ticker supplement
+CAD,5y,cad_sofr_bs_5y_cdxoqq5,CDXOQQ5 BGN CURNCY,PX_LAST,BS,bps,CORRA vs. SOFR,CAD BASIS SWAP     5 YR,SOFR ticker supplement
+CAD,5y,cad_sofr_govt_5y_bv050101,BV050101 BVLI INDEX,PX_LAST,Govt,percent,,BVAL CAD CANADA SOVEREIGN     5 YR,SOFR ticker supplement
+CHF,10y,chf_sofr_irs_10y_sfsnt10,SFSNT10 CURNCY,PX_LAST,IRS,percent,SARON Fixing  (At Close),CHF SWAP     10 YR,SOFR ticker supplement
+CHF,10y,chf_sofr_bs_10y_sfxoqq10,SFXOQQ10 BGN CURNCY,PX_LAST,BS,bps,SARON Fixing (At Close) vs SOFR,CHF BASIS SWAP     10 YR,SOFR ticker supplement
+CHF,10y,chf_sofr_govt_10y_bv100256,BV100256 BVLI INDEX,PX_LAST,Govt,percent,,BVAL CHF SWITZERLAND SOVEREIGN     10 YR,SOFR ticker supplement
+CHF,5y,chf_sofr_irs_5y_sfsnt5,SFSNT5 CURNCY,PX_LAST,IRS,percent,SARON Fixing  (At Close),CHF SWAP     5 YR,SOFR ticker supplement
+CHF,5y,chf_sofr_bs_5y_sfxoqq5,SFXOQQ5 BGN CURNCY,PX_LAST,BS,bps,SARON Fixing (At Close) vs SOFR,CHF BASIS SWAP     5 YR,SOFR ticker supplement
+CHF,5y,chf_sofr_govt_5y_bv050256,BV050256 BVLI INDEX,PX_LAST,Govt,percent,,BVAL CHF SWITZERLAND SOVEREIGN     5 YR,SOFR ticker supplement
+DKK,10y,dkk_ibor_irs_10y_dksw10v3,DKSW10V3 BLC3 CURNCY,PX_LAST,IRS,percent,3M Cibor,DKK SWAP (VS 3 MO)     10 YR (ALTERNATIVE SOURCE),IBOR ticker supplement
+DKK,10y,dkk_sofr_bs_10y_dkxoqq10,DKXOQQ10 BGN CURNCY,PX_LAST,BS,bps,3M Cibor vs SOFR,DKK BASIS SWAP     10 YR,SOFR ticker supplement
+DKK,10y,dkk_sofr_govt_10y_bv100267,BV100267 BVLI INDEX,PX_LAST,Govt,percent,,BVAL DKK DANISH SOVEREIGN     10 YR,SOFR ticker supplement
+DKK,5y,dkk_ibor_irs_5y_dksw5v3,DKSW5V3 BLC3 CURNCY,PX_LAST,IRS,percent,3M Cibor,DKK SWAP (VS 3 MO)      5 YR (ALTERNATIVE SOURCE),IBOR ticker supplement
+DKK,5y,dkk_sofr_bs_5y_dkxoqq5,DKXOQQ5 BGN CURNCY,PX_LAST,BS,bps,3M Cibor vs SOFR,DKK BASIS SWAP     5 YR,SOFR ticker supplement
+DKK,5y,dkk_sofr_govt_5y_bv050267,BV050267 BVLI INDEX,PX_LAST,Govt,percent,,BVAL DKK DANISH SOVEREIGN     5 YR,SOFR ticker supplement
+EUR,10y,eur_sofr_irs_10y_eeswe10,EESWE10 CURNCY,PX_LAST,IRS,percent,ESTR,EUR SWAP   10 YR,SOFR ticker supplement
+EUR,10y,eur_sofr_bs_10y_euxoqq10,EUXOQQ10 BGN CURNCY,PX_LAST,BS,bps,ESTR vs SOFR,EUR-USD XCCY BASIS SW     10Y,SOFR ticker supplement
+EUR,10y,eur_sofr_govt_10y_bv100910,BV100910 BVLI INDEX,PX_LAST,Govt,percent,,BVAL EUR GERMANY SOVEREIGN     10 YR,SOFR ticker supplement
+EUR,5y,eur_sofr_irs_5y_eeswe5,EESWE5 CURNCY,PX_LAST,IRS,percent,ESTR,EUR SWAP    5 YR,SOFR ticker supplement
+EUR,5y,eur_sofr_bs_5y_euxoqq5,EUXOQQ5 BGN CURNCY,PX_LAST,BS,bps,ESTR vs SOFR,EUR-USD XCCY BASIS SW     5Y,SOFR ticker supplement
+EUR,5y,eur_sofr_govt_5y_bv050910,BV050910 BVLI INDEX,PX_LAST,Govt,percent,,BVAL EUR GERMANY SOVEREIGN     5 YR,SOFR ticker supplement
+GBP,10y,gbp_sofr_irs_10y_bpsws10,BPSWS10 CURNCY,PX_LAST,IRS,percent,SONIA,GBP SWAP     10 YR,SOFR ticker supplement
+GBP,10y,gbp_sofr_bs_10y_bpxoqq10,BPXOQQ10 BGN CURNCY,PX_LAST,BS,bps,SONIA vs SOFR,GBP BASIS SWAP     10 YR,SOFR ticker supplement
+GBP,10y,gbp_sofr_govt_10y_bv100110,BV100110 BVLI Index,PX_LAST,Govt,percent,,BVAL GBP UK GILTS      10 YR,SOFR ticker supplement
+GBP,5y,gbp_sofr_irs_5y_bpsws5,BPSWS5 CURNCY,PX_LAST,IRS,percent,SONIA,GBP SWAP     5 YR,SOFR ticker supplement
+GBP,5y,gbp_sofr_bs_5y_bpxoqq5,BPXOQQ5 BGN CURNCY,PX_LAST,BS,bps,SONIA vs SOFR,GBP BASIS SWAP     5 YR,SOFR ticker supplement
+GBP,5y,gbp_sofr_govt_5y_bv050110,BV050110 BVLI Index,PX_LAST,Govt,percent,,BVAL GBP UK GILTS      5 YR,SOFR ticker supplement
+NZD,10y,nzd_sofr_irs_10y_ndso10,NDSO10 CURNCY,PX_LAST,IRS,percent,3M Bank Bill,NZD SWAP (VS NZOCRS)     10YR,SOFR ticker supplement
+NZD,10y,nzd_sofr_bs_10y_ndbsqq10,NDBSQQ10 BGN CURNCY,PX_LAST,BS,bps,3M Bank Bill vs SOFR,NZD BASIS SWAP     10 YR,SOFR ticker supplement
+NZD,10y,nzd_sofr_govt_10y_bv100250,BV100250 INDEX,PX_LAST,Govt,percent,,BVAL NZD NEW ZEALAND GOVERNMENT      10 YR,SOFR ticker supplement
+NZD,10y,nzd_sofr_tbs_10y_nzbbco10,NZBBCO10 CURNCY,PX_LAST,TBS,bps,3M Bank Bill vs. NZ OCR,NZD SWAP (NFIX3FRA-NZOCRS)     10YR,SOFR ticker supplement
+NZD,5y,nzd_sofr_irs_5y_ndso5,NDSO5 CURNCY,PX_LAST,IRS,percent,3M Bank Bill,NZD SWAP (VS NZOCRS)     5 YR,SOFR ticker supplement
+NZD,5y,nzd_sofr_bs_5y_ndbsqq5,NDBSQQ5 BGN CURNCY,PX_LAST,BS,bps,3M Bank Bill vs SOFR,NZD BASIS SWAP     5 YR,SOFR ticker supplement
+NZD,5y,nzd_sofr_govt_5y_bv050250,BV050250 INDEX,PX_LAST,Govt,percent,,BVAL NZD NEW ZEALAND GOVERNMENT      5 YR,SOFR ticker supplement
+NZD,5y,nzd_sofr_tbs_5y_nzbbco5,NZBBCO5 CURNCY,PX_LAST,TBS,bps,3M Bank Bill vs. NZ OCR,NZD SWAP (NFIX3FRA-NZOCRS)     5 YR,SOFR ticker supplement
+SEK,10y,sek_ibor_irs_10y_sksw10,SKSW10 CURNCY,PX_LAST,IRS,percent,3M Stibor,SEK SWAP (VS 3M STIB)      10 YR,IBOR ticker supplement; SOFR ticker supplement
+SEK,10y,sek_sofr_bs_10y_skxoqq10,SKXOQQ10 BGN CURNCY,PX_LAST,BS,bps,3M Stibor vs SOFR,SEK BASIS SWAP     10 YR,SOFR ticker supplement
+SEK,10y,sek_sofr_govt_10y_bv100259,BV100259 BVLI INDEX,PX_LAST,Govt,percent,,SWEDISH GOVERNMENT      10 YR,SOFR ticker supplement
+SEK,5y,sek_ibor_irs_5y_sksw5,SKSW5 CURNCY,PX_LAST,IRS,percent,3M Stibor,SEK SWAP (VS 3M STIB)      5 YR,IBOR ticker supplement; SOFR ticker supplement
+SEK,5y,sek_sofr_bs_5y_skxoqq5,SKXOQQ5 BGN CURNCY,PX_LAST,BS,bps,3M Stibor vs SOFR,SEK BASIS SWAP     5 YR,SOFR ticker supplement
+SEK,5y,sek_sofr_govt_5y_bv050259,BV050259 BVLI INDEX,PX_LAST,Govt,percent,,SWEDISH GOVERNMENT      5 YR,SOFR ticker supplement
+USD,5y,usd_sofr_irs_5y_usosfr5,USOSFR5 BGN CURNCY,PX_LAST,IRS,percent,SOFR,USD SWAP     5 YR,SOFR ticker supplement
+USD,5y,usd_sofr_govt_5y_bv050082,BV050082 BVLI INDEX,PX_LAST,Govt,percent,,BVAL USD US TREASURY BONDS/NOTE      5 YR,SOFR ticker supplement
+USD,10y,usd_sofr_irs_10y_usosfr10,USOSFR10 BGN CURNCY,PX_LAST,IRS,percent,SOFR,USD SWAP     10 YR,SOFR ticker supplement
+USD,10y,usd_sofr_govt_10y_bv100082,BV100082 BVLI INDEX,PX_LAST,Govt,percent,,BVAL USD US TREASURY BONDS/NOTE      10 YR,SOFR ticker supplement

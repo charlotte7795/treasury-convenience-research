@@ -1,0 +1,54 @@
+{
+  "updated": "2026-11-02",
+  "currencies": [
+    "AUD",
+    "CAD",
+    "CHF",
+    "DKK",
+    "EUR",
+    "GBP",
+    "NZD",
+    "SEK"
+  ],
+  "weight": 0.125,
+  "start_week": "2023-01-06",
+  "end_week": "2026-09-25",
+  "country_week_rows": 3120,
+  "country_estimate_rows": 288,
+  "max_weekly_reconciliation_error_bps": 2.1316282072803006e-14,
+  "max_accounting_residual_bps": 1.5543122344752192e-15,
+  "stress_rule": "Reuse risk_properties_stress_calendar.csv unchanged; no threshold refit",
+  "inference": "HAC-26 country intervals are exploratory, unadjusted for multiple comparisons; ranking is descriptive",
+  "caveats": [
+    "Same fixed-eight joint dates; deleting a country never expands the calendar.",
+    "The common U.S. leg is counted once, not eight independent observations.",
+    "Country-specific includes pairwise dollar funding; it does not isolate a local causal shock.",
+    "Thirteen stress weeks and unresolved benchmark conventions limit mechanism claims."
+  ],
+  "input_receipts": [
+    {
+      "path": "output/cleaned/raw_g10_benchmark_eq6_5y10y_refreshed_panel.csv",
+      "sha256": "10b3961af010082c6f8e3b93276eed543acfa4677ce47ccf2ea935de3bdf2d02"
+    },
+    {
+      "path": "output/cleaned/credit_risk_downloaded_values.csv",
+      "sha256": "7cfb208d3ed23d540894b600552441c5f70807b37b98bba5d013d0823c3190dc"
+    },
+    {
+      "path": "output/cleaned/credit_risk_weekly_panel.csv",
+      "sha256": "f52e1efa034b61bfdbc8ac87f8c7630169992366f89f81737a137088a99acf49"
+    },
+    {
+      "path": "output/cleaned/risk_properties_stress_calendar.csv",
+      "sha256": "44426200045a1122699a083fd4b035995cd05e1e7e45192d8b1cdceded69076a"
+    },
+    {
+      "path": "output/tables/risk_properties_stress_results.csv",
+      "sha256": "a7bc89dacee2fc232bb652c871073b5c2ca65c3746dcb172f16029207239af91"
+    },
+    {
+      "path": "output/cleaned/public_cip_cleaned.csv",
+      "sha256": "783643c57bd05b9d13e553db31a9eb1c420b66c315a1f791037968a4873efb8b"
+    }
+  ]
+}

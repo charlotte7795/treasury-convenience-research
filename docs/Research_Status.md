@@ -1,6 +1,8 @@
 # Research Readiness and Remaining Work
 
-Review date: October 23, 2026. Data snapshot: October 9, 2026. See [post-meeting research](Post_Meeting_Research.md) and notebook Section 15D for the latest work.
+Synchronized November 16, 2026. Latest completed research run: November 3.
+See [current progress](Current_Progress.md) and notebook Sections 15E-15I for the controlling updates.
+The October 23 [post-meeting plan](Post_Meeting_Research.md) is retained as a historical plan.
 
 ## Assessment
 
@@ -18,6 +20,9 @@ No claim is made about satisfying a particular course rubric without seeing that
 - Alternative baseline/endpoint and leave-one-country-out sensitivity.
 - Break-aware, calendar-HAC supply/inventory association models through May 2026.
 - Notebook, supporting summary tables, editable deck and PDF reading copy.
+- Matched-sample VIX/equity/IG/HY models, joint risk tests and fixed-rule stress contrasts.
+- Country/rate/event accounting with country exclusions and public-overlap checks.
+- Archived official sovereign-supply collection and fixed-baseline gross/net sensitivities.
 
 ## Open Items That Do Not Block This Scope
 
@@ -29,9 +34,9 @@ No claim is made about satisfying a particular course rubric without seeing that
 
 ## Highest-Value Next Research
 
-1. Reconcile the NZD OCR / Bank-Bill metadata conflict and retain DKK and cohort-exclusion checks. Current exclusions preserve the rebound.
-2. Refresh VIX and obtain equity/IG/HY data using `templates/`. The completed VIX-only diagnostic does not establish that risk-off behavior recovered with the level rebound.
-3. Compare risk specifications on identical dates, with regime/sample sensitivity and HAC uncertainty. This is the approved bounded extension after the mentor discussion.
-4. Keep foreign debt-supply/QT/hedging/balance-sheet mechanisms as untested hypotheses. Revisit supply/inventory models only after the measurement and risk checks; their May endpoint remains disclosed.
+1. Preserve the validated rebound/risk/stress result and its distinction between relative convenience and absolute Treasury safety.
+2. Resolve detailed NZD pricing conventions and the paper's exact credit-index definitions when source evidence is available. Do not redownload the same risk history merely because the older plan requested it.
+3. Obtain vintage-confirmed, scope-matched holdings/GDP before describing the supply sensitivity as a pre-event information test. The six-market sensitivity is implemented, but standardized net-minus-gross uncertainty covers zero.
+4. Keep supply/QT/funding/dealer mechanisms as hypotheses. Inventory is not measured dealer capacity, and the completed accounting does not identify a causal shock.
 
-Completeness should mean a finished, defensible research question with stated limits, not every possible extension. The existing descriptive accounting does not need another full CIP download, but the newly approved risk extension does need the focused Bloomberg request above.
+Completeness means a finished, defensible question with stated limits, not every possible extension. No broad new Bloomberg download is required to reproduce the current snapshot. Additional source evidence is needed for stronger measurement or mechanism claims.

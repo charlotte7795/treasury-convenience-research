@@ -1,6 +1,6 @@
 # Shared Data: Where to Start
 
-Added October 22, 2026. This is the existing October 9 research snapshot, not a new data download. Market accounting ends September 2026; supply/inventory regressions end May 2026.
+Synchronized November 16, 2026. CIP outcomes retain the October 9 snapshot; risk/NZD workbooks were exported November 2 and public sovereign-supply sources collected November 3. Market accounting ends September 30; complete risk weeks end September 25; the earlier U.S. supply/inventory regressions end May 2026.
 
 ## Read or Analyze the Results First
 
@@ -29,8 +29,10 @@ Pandas reads `.csv.gz` directly; decompression is only needed to restore paths e
 | `bloomberg/downloaded_bloomberg_ticker_coverage.csv` | Coverage, dates, units and quality diagnostics: 747 metadata-enriched QC entries, 743 with numeric history and four without numeric data. Original local file paths are historical provenance, not paths required on a teammate's computer. |
 | `bloomberg/downloaded_bloomberg_workbook_summary.csv` | The recorded workbook-level quality summary. |
 | `refresh/Foreign_Spread_5Y10Y_2026-10-09.xlsx` | The actual saved-value 54-block refresh workbook, not an empty BDH template. |
+| `refresh/risk_extension_2026-11-02/` | Actual saved-value risk-factor and NZD benchmark-check workbooks. The similarly named files under `templates/` are empty download requests, not data. |
 | `cip_dataset_v4.csv.gz` | The complete original public processed CIP V4 CSV, compressed without changing its contents. Public benchmark data end June 2025. |
 | `official/*.csv` | Recorded U.S. Treasury MSPD and NY Fed primary-dealer data. These are the historical cached vintages used in the study, not current API responses. |
+| `official/stress_supply_2026-11-03/` | OECD GDP, BoC, NZDM, RBA, Riksbank, UK DMO/BoE and ECB source snapshots. Swedish PDFs retain original publication evidence. The German general-government pair has a wider scope than federal-only Bunds. |
 | `source_discovery/nyfed_pd_seriesbreaks.json` | NY Fed dealer-statistics reporting-break metadata. |
 | `fred_GFDEBTN.csv`, `fred_GFDEGDQ188S.csv` | Earlier public debt/debt-to-GDP inputs retained for the earlier supply exploration. |
 | `derived/` remaining files | Earlier reconstruction, control/regression panels and the Figure 3 validation cache needed to rerun the final-core analysis. |
@@ -52,12 +54,12 @@ python -m src.analyze_treasury_final
 
 The first command checks the bundled file hashes, decompresses/copies data to the existing scripts' expected local paths and leaves already-identical files alone. It refuses to overwrite a different local file. The second rebuilds the cleaned public benchmark. The third reruns the final descriptive study using the saved input panels. Compare `output/tables/treasury_final_summary.json` with `results/tables/treasury_final_summary.json`: approximately +20.65 bps (5Y), +11.12 bps (10Y), 20/20 combined-regime matches and 39/40 separate-regime matches.
 
-To rebuild from the original exported observations instead of the saved derived panels, follow the longer sequence in [Data_Setup.md](../docs/Data_Setup.md). Neither route requires a live Bloomberg connection for the recorded snapshot. Running every historical notebook section still requires additional historical report/diagnostic artifacts not bundled here.
+To rebuild the entire research notebook, run `python -m src.build_research_notebook --execute` after restoring. Cleaned snapshots, result tables, supporting report assets and figures are bundled. Detailed country/stress and credit-risk panels are in `derived/`; pandas reads the compressed snapshots directly. The quarterly supply panel and Excel collection are under [outputs/samim-stress-supply](../outputs/samim-stress-supply/), not hidden in a Bloomberg workbook.
 
-## Sources and Private Sharing
+## Sources and Sharing
 
 Public CIP source: [Jesse Schreger's CIP Data page](https://sites.google.com/view/jschreger/CIP). Attribute the data to Du, Keerati and Schreger (2025), *Decoupling Dollar and Treasury Privilege*; Du, Im and Schreger (2018), *The U.S. Treasury Premium*; and Du and Schreger (2016), *Local Currency Sovereign Risk*, as requested on that page.
 
 Official sources: [Treasury MSPD](https://fiscaldata.treasury.gov/datasets/monthly-statement-public-debt/), [NY Fed primary-dealer statistics](https://www.newyorkfed.org/markets/counterparties/primary-dealers-statistics), and FRED series [GFDEBTN](https://fred.stlouisfed.org/series/GFDEBTN) and [GFDEGDQ188S](https://fred.stlouisfed.org/series/GFDEGDQ188S).
 
-Charlotte explicitly confirmed on October 22, 2026 that sharing the Bloomberg exports with Qiyuan through this private repository is permitted. This records the user's confirmation, not an independent review of institutional contracts. Bloomberg exports and derived market panels are for the authorized private collaboration only: do not make the repository public, grant additional data access or redistribute the bundle without checking the applicable permissions. No new license to third-party data is granted.
+Charlotte confirmed private-team sharing on October 22 and explicitly confirmed permission for public redistribution on November 16, requesting publication of this existing repository and its history. The manifest preserves both confirmations. This is the user's assertion, not an independent review of institutional contracts; publication does not grant readers a new license to third-party data. Check applicable rights before further redistribution.

@@ -1,0 +1,15 @@
+{
+  "reviewed": "2026-10-13",
+  "data_snapshot": "2026-10-09",
+  "assessment": "Share with caveats: completed bounded replication plus descriptive extension",
+  "country_tenor_months": 720,
+  "months_per_pair": 45,
+  "minimum_daily_quotes": 16,
+  "independent_combined_matches": 20,
+  "max_mae_bps": 1.10654652149894,
+  "min_corr": 0.9906237497781993,
+  "rebound_5y_bps": 20.64605505245237,
+  "rebound_10y_bps": 11.118539965857924,
+  "executed_notebook_code_cells": 39,
+  "notebook_errors": 0
+}

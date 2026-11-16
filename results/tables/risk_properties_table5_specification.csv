@@ -1,0 +1,8 @@
+dimension,paper_evidence,implementation,remaining_gap
+Model,Equation 7 / Table 5: one risk factor at a time,Univariate comparison added; prior multi-factor models remain extensions,Aligned model form
+Periods,"2010-15, 2016-20, 2021-25; paper data end June 2025",Final comparison ends 2025-06-27 complete week,"Aligned dates; first change starts Jan 15, 2010 due available history"
+Frequency / inference,Weekly changes; Newey-West 26 weeks,Weekly means then changes; calendar-aware HAC 26,Partly aligned; within-week timing and exact original code unavailable
+G10 aggregation,G10 in Table 4/5; exact cross-country weighting is not specified in the inspected text,Raw fixed-eight mean plus public available-G10 mean/median sensitivities,Not claimed exact
+IG risk series,U.S. investment-grade corporate spread; exact ticker/unit not provided in Table 5,LUACOAS candidate; per-pp display for comparison only,Definition / scale unresolved
+Measure vintage,Frozen 71-page paper; source measurement described in Section 3,Existing public V4 and validated raw reconstruction,Public appendix warns released data differ from paper data
+Coverage,"Table 5 includes additional tenors, dollar and all components",18 government-CIP cells at 5Y/10Y only,Partial replication

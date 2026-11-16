@@ -1,0 +1,7 @@
+workstream,current_status,evidence,can_do_with_existing_data,remaining_blocker
+Public processed identity,completed,best-match mean absolute identity error 0.00001207 bps,Write validation section and use public data as benchmark.,
+G10 5Y raw government CIP,validated,10/10 GOOD_MATCH; min corr 0.994; max MAE 1.31 bps,Use as first stable raw dependent variable; include final plot/table.,
+Figure 3 long-tenor G10,mostly completed,25/28 GOOD_MATCH,Use long-tenor partial replication with convention notes.,3M FX convention; JPY 20Y/30Y and NOK 1Y convention checks.
+Equation 1 / Equation 6 G10 5Y/10Y,first pass completed,20/20 govt-CIP checks; 40/40 identity checks,Write decomposition memo; use x_rf_raw_bps as first dollar-convenience proxy.,Direct public/paper benchmark-CIP validation.
+EM 5Y diagnostic,diagnostic only,"REVIEW: 3, USABLE_DIAGNOSTIC: 2, VALIDATED: 2",Show constructability and validated/usable/review country split.,NDS/CCS/country-specific rules and 4 no-numeric ticker blocks.
+Macro/liquidity exploratory,exploratory appendix,"VIX, MOVE, DXY/BBDXY, generic UST yields, and generic UST bid/ask candidate fields are downloaded.",Compute simple level/change correlations and z-score visuals.,Paper regression specification and debt/dealer-capacity datasets.

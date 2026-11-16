@@ -1,0 +1,7 @@
+candidate_identity,n,mean_absolute_error,median_absolute_error,max_absolute_error,best_match,holds_approximately
+cip_govt = diff_y - rho,1241047,73.53721003766132,40.3523911,8886.29703,False,False
+cip_govt = rho - diff_y,1241047,75.02281024063134,41.1675909,9065.81817,False,False
+cip_govt = 100 * (diff_y - rho),1241047,1.2066992189677304e-05,8.000000001118224e-06,0.000600000000304135,True,True
+cip_govt = 100 * (rho - diff_y),1241047,148.5600202876643,81.51998099999992,17952.1146,False,False
+cip_govt = (diff_y - rho) / 100,1241047,74.2725821381315,40.755915001,8975.1599943,False,False
+cip_govt = (rho - diff_y) / 100,1241047,74.28743814016117,40.764066999,8976.9552057,False,False

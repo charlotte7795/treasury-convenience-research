@@ -1,0 +1,3 @@
+currency,n,spot_mean,series_3m_mean,median_abs_diff,median_abs_diff_to_spot_ratio,interpretation
+EUR,1150,1.0945833043478261,52.53008695652174,48.74565,44.821525447105884,3M series does not appear close to spot; may be forward points or different convention
+GBP,1150,1.2767635652173912,7.222017391304347,6.0331,4.741325788832567,3M series does not appear close to spot; may be forward points or different convention

@@ -1,0 +1,7 @@
+block,status,evidence,next_action,claim_level
+Bloomberg workbook QC,PASS_WITH_EM_GAPS,"743/747 ticker blocks non-empty; 4 no-numeric blocks, all EM-related",Keep no-numeric EM tickers in review bucket.,data_availability
+Public processed identity,VALIDATED,best-match mean absolute identity error 0.00001207 bps,Use as public benchmark unit/sign convention.,validated
+G10 5Y government CIP,VALIDATED,10/10 GOOD_MATCH; min corr 0.994; max MAE 1.31 bps,Use as main validated Treasury-convenience dependent variable.,validated_raw_replication
+Figure 3 long-tenor G10,MOSTLY_VALIDATED,"25/28 GOOD_MATCH; CHECK rows: JPY 20y, JPY 30y, NOK 1y",Keep 3M excluded; review JPY 20Y/30Y and NOK 1Y conventions.,partial_raw_replication
+EM 5Y,DIAGNOSTIC_ONLY,REVIEW: 3; USABLE_DIAGNOSTIC: 2; VALIDATED: 2,Split by instrument class before final EM claims.,diagnostic
+Equation 1 / 6 G10 5Y/10Y,FIRST_PASS_COMPONENT_VALIDATION_PENDING,20/20 govt-CIP GOOD_MATCH; 20/20 rho diagnostic-good; 40/40 identity OK,"Add component-level validation for x_rf, swap spreads, and regime breaks.",first_pass

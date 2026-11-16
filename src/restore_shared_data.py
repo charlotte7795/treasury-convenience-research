@@ -1,4 +1,4 @@
-"""Verify the private data bundle and restore paths expected by research scripts."""
+"""Verify the published research snapshot and restore paths expected by its scripts."""
 
 import gzip
 import hashlib
@@ -17,7 +17,7 @@ def file_hash(path: Path) -> str:
 
 def main() -> None:
     manifest = json.loads((ROOT / "data/manifest.json").read_text())
-    for folder in ["cleaned", "tables", "figures", "report"]:
+    for folder in ["cleaned", "tables", "figures", "report", "final"]:
         (ROOT / "output" / folder).mkdir(parents=True, exist_ok=True)
     for item in manifest["files"]:
         source = ROOT / item["path"]

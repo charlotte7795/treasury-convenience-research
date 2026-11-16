@@ -1,0 +1,6 @@
+question,answer,evidence,implication
+Can Eq.5 estimate UST convenience directly for G10 5Y?,Yes,10/10 G10 currencies GOOD_MATCH; max MAE 1.31 bps,Use G10 5Y Eq.5 series as validated UST-convenience dependent variable.
+Can Eq.5 estimate G10 5Y/10Y UST convenience in the Eq.6 workbook?,Yes,20/20 selected-regime x_govt checks GOOD_MATCH,Use 5Y/10Y Eq.5 direct estimates for medium/long-tenor extension work.
+Does unresolved raw 3M block the UST-convenience decline result?,No for government-CIP / UST-convenience decline,Excluding 3M decline is -52.03 bps; 5Y/10Y-only decline is -53.79 bps,"3M can be deferred for UST-convenience extension, but not for full benchmark-CIP validation."
+Is Eq.1 / USD convenience still necessary?,Yes for full paper decomposition; not necessary for a direct Eq.5 UST-convenience extension,"20/20 rho checks diagnostic-good; 40/40 Eq.6 residual checks OK, but x_rf lacks direct public validation",Prioritize Eq.5 UST extension first; keep Eq.1/6 validation as the next path if decomposition is required.
+What is the main new research pattern?,Recent UST-convenience rebound is mechanically driven by rho falling more than diff_y,x_govt moved 28.04 bps; diff_y moved -34.85 bps; rho moved -63.66 bps,Extension should test whether hedging/swap-market/liquidity channels offset debt-supply pressure.

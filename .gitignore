@@ -1,4 +1,4 @@
-# Only the reviewed, authorized private-team data bundle is tracked below.
+# Only the reviewed, user-authorized research data bundle is tracked below.
 /data/*
 /output/
 /bbg/
@@ -21,7 +21,7 @@ __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
 
-# Charlotte confirmed private sharing with Qiyuan on October 22, 2026.
+# Public redistribution permission confirmed by Charlotte on November 16, 2026.
 !/data/README.md
 !/data/manifest.json
 !/data/cip_dataset_v4.csv.gz
@@ -38,6 +38,9 @@ __pycache__/
 !/data/official/
 /data/official/*
 !/data/official/*.csv
+!/data/official/*.pdf
+!/data/official/stress_supply_2026-11-03/
+!/data/official/stress_supply_2026-11-03/**
 !/data/source_discovery/
 /data/source_discovery/*
 !/data/source_discovery/nyfed_pd_seriesbreaks.json
@@ -51,3 +54,11 @@ __pycache__/
 !/data/derived/treasury_interim_monthly_panel.csv
 !/data/derived/eq5_ust_extension_monthly_panel.csv
 !/data/derived/raw_figure3_long_tenors_vs_public_comparison.csv
+!/data/derived/*.csv.gz
+!/data/refresh/risk_extension_2026-11-02/
+!/data/refresh/risk_extension_2026-11-02/*.xlsx
+!/results/notebook-assets/*.csv
+!/notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication_executed.ipynb
+!/templates/*.xlsx
+!/outputs/samim-stress-supply/*.xlsx
+!/outputs/samim-stress-supply/*.csv

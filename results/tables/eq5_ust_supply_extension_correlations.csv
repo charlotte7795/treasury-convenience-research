@@ -1,0 +1,9 @@
+target,supply_proxy,n_months,date_min,date_max,level_corr
+x_govt_raw_bps_5y,federal_debt_to_gdp_pct,318,2000-01-31,2026-06-30,-0.8221247933232324
+x_govt_raw_bps_5y,federal_debt_total_millions,318,2000-01-31,2026-06-30,-0.8122853644080772
+x_govt_raw_bps_5y,federal_debt_to_gdp_change_12m,306,2001-01-31,2026-06-30,0.25748408538544904
+x_govt_raw_bps_5y,federal_debt_total_growth_12m_pct,306,2001-01-31,2026-06-30,0.2531309926763538
+x_govt_raw_bps_10y,federal_debt_to_gdp_pct,318,2000-01-31,2026-06-30,-0.8356793635888723
+x_govt_raw_bps_10y,federal_debt_total_millions,318,2000-01-31,2026-06-30,-0.8107498498170076
+x_govt_raw_bps_10y,federal_debt_to_gdp_change_12m,306,2001-01-31,2026-06-30,0.06728267990878574
+x_govt_raw_bps_10y,federal_debt_total_growth_12m_pct,306,2001-01-31,2026-06-30,0.008791812775060966

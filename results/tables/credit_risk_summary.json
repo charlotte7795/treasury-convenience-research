@@ -1,0 +1,29 @@
+{
+  "updated": "2026-11-02",
+  "sources": [
+    {
+      "path": "data/refresh/risk_extension_2026-11-02/Risk_Extension_Bloomberg_BDH_Template.xlsx",
+      "sha256": "10c71211fbe041d626926b0f67d84908343d750981e942e2a38f5c01201f48c8"
+    },
+    {
+      "path": "data/refresh/risk_extension_2026-11-02/NZD_Benchmark_Check_Bloomberg_BDH_Template.xlsx",
+      "sha256": "866e9b01e2a2733eb904e68bca0408d3fe485db9a1eca38172bb6975319d998e"
+    }
+  ],
+  "numeric_series": 12,
+  "numeric_quotes": 31329,
+  "last_quote": "2026-09-30",
+  "last_complete_risk_week": "2026-09-25",
+  "regression_fits": 304,
+  "coefficient_rows": 1600,
+  "unit_convention": "IG/HY raw percentage points converted x100 to bps; manual unit cells still blank",
+  "nzd_status": "OIS/3M names resolved by terminal BDP; detailed DES and pricing conventions remain open",
+  "outcome_snapshot": "2026-10-09 CIP snapshot unchanged; new market factors and NZD diagnostics only",
+  "caveats": [
+    "Not full/exact paper Table 5 replication: fixed-eight means, matched dates and candidate IG series.",
+    "R-squared changes are in-sample conditional fit, not predictive or causal evidence.",
+    "Corporate OAS embeds a Treasury benchmark and may share mechanical drivers with swap spreads.",
+    "HAC intervals and p-values are exploratory, not multiplicity-adjusted.",
+    "Latest common-regime pre-2023 comparison is short; do not infer a structural break from one specification."
+  ]
+}

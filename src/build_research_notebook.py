@@ -43,9 +43,9 @@ cells = [
 
 ## Raw Bloomberg Replication Notebook
 
-Updated: 2026-10-23. Refreshed market quotes end 2026-10-08/09. Accounting uses complete months through 2026-09-30; supply/inventory regressions end 2026-05-31. The post-meeting VIX diagnostic ends in the complete week of 2026-05-29 because risk controls have not yet been refreshed.
+Updated: 2026-11-03. CIP outcomes retain the October 9 quote snapshot and monthly accounting through September 30. The new risk/NZD exports contain observations through September 30; weekly risk models use complete weeks through September 25. U.S. supply/inventory regressions still end in May 2026. Section 15D's older VIX-only test ends May 29 and is retained as a historical snapshot.
 
-**Reviewed accounting baseline: Section 15C. Latest research: Section 15D.** Earlier Sections 13-15B retain historical diagnostics. Section 15D adds benchmark-definition sensitivity and a VIX-only risk test after the Rob Reider / Calin Ciordas meeting; it does not replace the validated raw reconstruction or claim a completed credit-spread extension.
+**Reviewed accounting baseline: Section 15C. Latest research: Sections 15E-15I.** Sections 15E-15G cover risk tests and country stress attribution. Sections 15H-15I compare pre-sample debt exposures and a narrower net bond stock on matched stress weeks. Convenience levels rebounded, but the recent stress-week evidence does not establish restored safe-haven behavior. These are relative-price associations, not causal effects or exact Table 5 replication.
 
 The deliverable is a bounded raw G10 5Y/10Y replication plus a descriptive relative-convenience extension. It does not claim exact replication of every paper figure/table or causal identification.
 
@@ -62,7 +62,9 @@ This notebook is a living research log for the replication and extension project
 - official Treasury supply / NY Fed dealer-capacity diagnostics with reporting-break robustness checks;
 - a reviewed fixed-cohort interim study, additive rebound accounting, and calendar-aware uncertainty;
 - a same-sample foreign swap/government-yield split of the recent rebound, with endpoint and composition sensitivity;
-- post-meeting benchmark audits, VIX-only weekly risk sensitivity, and a focused credit-spread data request.
+- post-meeting benchmark audits, the historical VIX-only diagnostic, and a matched-sample equity/IG/HY risk extension with updated NZD instrument names;
+- paper-aligned risk-factor comparisons, joint loading tests and a fixed-rule stress-week check separating convenience levels from risk behavior;
+- same-calendar country and raw-rate accounting for stress weeks, keeping the shared U.S. leg separate and checking country/event influence.
 
 The immediate goal is not just to draw charts. The goal is to build a reproducible pipeline that can answer: can we reconstruct the paper's government bond CIP measures from raw Bloomberg inputs, and then extend the paper toward Treasury liquidity / dealer capacity?
 """
@@ -1126,7 +1128,7 @@ The final presentation and its PDF are in `output/final/`. Native chart data der
 
 Charlotte and Qiyuan discussed the work with Rob Reider and Calin Ciordas. Calin highlighted raw-data replication and benchmark credit components; Rob suggested credit-risk variables as a possible extension. The approved proposal retains the rebound question and asks whether the higher convenience level is accompanied by improved behavior when risk rises.
 
-This section uses **existing data only**. It audits benchmark definitions and tests weekly changes against $\Delta\log(\mathrm{VIX})$. Equity returns and IG/HY spreads are absent from the current export, so neither full Table 5 replication nor the HY incremental-explanatory-power test is complete. The original paper already uses sovereign CDS in later tables; adding CDS is not automatically a new contribution.
+**October 23 snapshot, retained for audit.** This section uses the earlier exports and tests weekly changes against $\Delta\log(\mathrm{VIX})$. Equity and IG/HY inputs were absent from those exports; Section 15E now uses the newly supplied files and supersedes this section for current risk conclusions. The original paper already uses sovereign CDS in later tables; adding CDS is not automatically a new contribution.
 
 The research sequence is: measurement audit, benchmark-cohort sensitivity, matched-sample risk extension, then revisit supply/dealer associations. New Bloomberg templates request a few focused series, not a repeat of the full CIP download.
 """
@@ -1201,6 +1203,543 @@ The NZD template refreshes OCR, Bank-Bill swap and tenor-basis candidates on mat
     ),
     md(
         r"""
+## 15E. November Data: Matched-Sample Credit-Risk Extension
+
+### Inputs and scope
+
+The two returned Bloomberg workbooks contain **12 numeric series / 31,329 quotes** and successful cached NAME/identifier responses. Observations end September 30, 2026. Original files are archived under `data/refresh/risk_extension_2026-11-02/` with SHA-256 receipts; spreadsheet text is treated as data, never executable instructions.
+
+SPX is the price index. We provisionally interpret the downloaded LUACOAS/LF98OAS levels as percentage-point OAS and multiply changes by 100 to express bps. The manual DES/unit cells remain blank. R-squared, VIX loadings and tests of a credit coefficient are invariant to a constant rescaling of that credit regressor, but the numerical per-bp coefficient depends on the unit convention. Neither index has been established as the original paper's exact IG series.
+
+The validated CIP outcome panel is unchanged. The new factors and both comparison cohorts use the same joint daily dates. We require all six risk inputs to be observed, including optional MOVE/BBDXY, to keep all displayed specifications on one calendar. Weekly means require at least three joint dates and one regime signature; differences never bridge missing weeks or benchmark transitions. The incomplete week containing September 30 is excluded. The last complete week is **September 25**, with **173/172 post-2023 observations at 5Y/10Y**.
+"""
+    ),
+    code(
+        r"""
+from src.analyze_credit_risk_extension import main as analyze_credit_risk
+credit_summary = analyze_credit_risk()
+display(pd.Series({k: credit_summary[k] for k in [
+    'updated', 'numeric_series', 'numeric_quotes', 'last_quote',
+    'last_complete_risk_week', 'nzd_status', 'unit_convention', 'outcome_snapshot']}))
+credit_qc = pd.read_csv(TABLE_DIR / 'credit_risk_download_qc.csv')
+display(credit_qc[['sheet', 'ticker', 'live_name', 'expected_unit', 'n_numeric',
+    'first_date', 'last_date', 'n_errors', 'unit_status']])
+"""
+    ),
+    md(
+        r"""
+### Question and estimators
+
+Following the mentor suggestion, test whether HY adds information after VIX, equity and IG, rather than searching for a significant new variable. On identical dates, compare:
+
+$$
+\Delta x_t = \alpha + \beta_V\Delta\log VIX_t
+ + \beta_E\Delta\log SPX_t + \beta_I\Delta IG_t + \varepsilon_t,
+$$
+
+with the nested model adding $\beta_H\Delta HY_t$. A VIX-only specification is a reference; MOVE and dollar-index changes provide a further robustness specification. These are conditional associations, not identified credit shocks. OAS uses a Treasury reference curve and can share mechanical drivers with swap spreads.
+
+We retain 2010-2015, 2016-2020 and 2021-2025 comparisons, plus the post-2023 extension. The fixed-eight and excluding-NZD cohorts keep identical observation dates. Inference uses calendar-aware HAC at 26 weeks, with 13-week sensitivity for recent models. Interactions allow **all included risk slopes** to change after 2023, rather than forcing non-VIX slopes to remain constant. P-values/intervals are exploratory and not multiplicity-adjusted. No in-sample fit improvement is described as forecasting performance.
+"""
+    ),
+    code(
+        r"""
+credit_coef = pd.read_csv(TABLE_DIR / 'credit_risk_coefficients.csv')
+credit_fits = pd.read_csv(TABLE_DIR / 'credit_risk_model_fits.csv')
+credit_increment = pd.read_csv(TABLE_DIR / 'credit_risk_hy_incremental.csv')
+credit_recent = credit_coef[
+    credit_coef.cohort.eq('fixed8') & credit_coef.window.eq('post2023') &
+    credit_coef.outcome.eq('x_govt_raw_bps') & credit_coef.hac_weeks.eq(26)]
+display(credit_recent[['tenor', 'spec', 'factor', 'beta', 'ci95_low',
+    'ci95_high', 'p_exploratory', 'n_weeks']].round(4))
+display(Image(filename=str(FIGURE_DIR / 'credit_risk_vix_conditional.png')))
+"""
+    ),
+    md(
+        r"""
+### Current finding: no clear incremental HY signal
+
+For the recent fixed-eight sample, adding HY to VIX/equity/IG changes in-sample R-squared from approximately **7.93% to 8.04% (5Y)** and **7.55% to 7.66% (10Y)**: gains of only **0.11 / 0.12 percentage points**. The HY coefficients are approximately **+0.0076 / -0.0083 bps of convenience per 1 bp of HY change** under the provisional unit convention. Their 95% HAC intervals cross zero; exploratory p-values are approximately **0.70 / 0.60**.
+
+Ordinary R-squared cannot decrease when a nested OLS model adds a variable, so a small positive gain is not itself evidence for HY. Adjusted R-squared actually declines: about **6.29% to 5.85% (5Y)** and **5.90% to 5.45% (10Y)**. Neither fit measure is an out-of-sample test.
+
+This is not evidence that credit risk is irrelevant. It is a bounded negative result: these HY series do not provide a clear **additional** recent signal conditional on the selected controls. Excluding NZD, changing HAC from 26 to 13 weeks, and adding MOVE/BBDXY do not reveal a robust recent HY effect. Other historical windows and component outcomes are retained in the output tables; they are not substitutes for the pre-specified recent test.
+"""
+    ),
+    code(
+        r"""
+increment_display = credit_increment[
+    credit_increment.cohort.eq('fixed8') & credit_increment.outcome.eq('x_govt_raw_bps') &
+    ~credit_increment.window.str.endswith('interaction')][[
+    'tenor', 'window', 'n_weeks_base', 'r_squared_base', 'r_squared_hy', 'delta_r_squared',
+    'adj_r_squared_base', 'adj_r_squared_hy']].copy()
+for col in ['r_squared_base', 'r_squared_hy', 'delta_r_squared', 'adj_r_squared_base', 'adj_r_squared_hy']:
+    increment_display[col] *= 100
+display(increment_display.rename(columns={
+    'r_squared_base': 'Base R2 (%)', 'r_squared_hy': 'With HY R2 (%)',
+    'delta_r_squared': 'R2 increase (percentage points)',
+    'adj_r_squared_base': 'Base adjusted R2 (%)', 'adj_r_squared_hy': 'With HY adjusted R2 (%)'}).round(3))
+display(Image(filename=str(FIGURE_DIR / 'credit_risk_hy_incremental_fit.png')))
+hy_robustness = credit_coef[
+    credit_coef.window.eq('post2023') & credit_coef.spec.isin(['plus_HY', 'plus_HY_controls']) &
+    credit_coef.outcome.eq('x_govt_raw_bps') & credit_coef.factor.eq('d_hy_bps')]
+display(hy_robustness[['cohort', 'tenor', 'spec', 'hac_weeks', 'beta',
+    'ci95_low', 'ci95_high', 'p_exploratory']].round(4))
+"""
+    ),
+    md(
+        r"""
+### How this changes the earlier VIX interpretation
+
+On the refreshed matched sample, VIX-only coefficients remain negative: about **-3.73 / -3.89** at 5Y/10Y. With equity and IG controls they become approximately **-2.78 / -2.79**, and their 95% intervals just include zero. The +HY model similarly gives about **-2.89 / -2.67** with intervals covering zero. Adding MOVE/BBDXY preserves negative point estimates but gives different significance across tenors.
+
+Therefore the stronger October 23 bivariate statement must not be promoted into a robust causal or conditional safe-haven conclusion. The defensible current account is: **relative-convenience levels rebounded, but the available conditional risk tests do not establish recovery of safe-haven behavior**. Neither a positive beta recovery nor a uniquely identified deterioration is demonstrated. The all-history and latest-regime interaction checks remain sample-sensitive, and the latter has only **29/27 pre-2023 observations**.
+"""
+    ),
+    code(
+        r"""
+credit_interactions = credit_coef[
+    credit_coef.cohort.eq('fixed8') & credit_coef.window.str.endswith('interaction') &
+    credit_coef.spec.eq('plus_HY') & credit_coef.outcome.eq('x_govt_raw_bps') &
+    credit_coef.factor.eq('dlog_vix')]
+display(credit_interactions[['tenor', 'window', 'contrast', 'beta', 'ci95_low',
+    'ci95_high', 'n_pre2023', 'n_post2023']].round(3))
+credit_weekly = pd.read_csv(CLEANED_DIR / 'credit_risk_weekly_panel.csv')
+credit_joint = credit_weekly[credit_weekly.cohort.eq('fixed8') &
+    credit_weekly.tenor.eq('5y') & credit_weekly.valid_change & credit_weekly.week.ge('2023-01-01')]
+display(credit_joint[['dlog_vix', 'spx_return', 'd_ig_bps', 'd_hy_bps']].corr().round(3))
+"""
+    ),
+    md(
+        r"""
+### NZD: names resolved, pricing conventions still open
+
+The cached terminal NAME fields identify `NDSO5/10` as **NZD SWAP OIS**, `NDSWAP5/10` as **NZD SWAP SA(V 3M)**, and `NZBBCO5/10` as **NZD BS (3M VS OIS)**. The earlier Bank-Bill label for the NDSO instrument is therefore inconsistent with the terminal name. The four re-downloaded OIS/basis legs match the old snapshot on **905 dates each**, with no numeric revision.
+
+Across 967/973 joint dates, the raw bank-swap-minus-OIS gap tracks the downloaded basis (correlations about **0.906 / 0.922**), but is not identical: the same-sign MAE is about **3.73 / 4.20 bps** at 5Y/10Y. The opposite-sign gap is substantially larger. This supports further convention reconciliation, not automatic substitution or an exact par-swap identity. The `SA(V 3M)` name suggests a fixed-leg frequency issue worth checking, but detailed DES frequencies, day counts, quote timing and basis leg conventions remain unconfirmed. The user has no DES screenshots for now; this uncertainty is retained.
+
+No validated Treasury-convenience outcome is overwritten. The prior exclusion and component-reallocation sensitivity remains relevant. Next narrow measurement task: obtain the detailed NZD DES terms when convenient, then decide whether an aligned benchmark requires an explicit convention adjustment. Do not choose a formula solely by whichever matches the public series best.
+"""
+    ),
+    code(
+        r"""
+display(pd.read_csv(TABLE_DIR / 'credit_risk_nzd_checks.csv').round(4))
+display(pd.read_csv(TABLE_DIR / 'credit_risk_nzd_revisions.csv').round(6))
+display(Image(filename=str(FIGURE_DIR / 'credit_risk_nzd_quote_check.png')))
+"""
+    ),
+    md(
+        r"""
+### Research decision
+
+The new exports are numerically usable for this bounded first pass; another broad Bloomberg download is not needed. The primary HY test is now implemented and its weak incremental result should be reported, not removed. The project remains anchored in raw replication, robust level accounting and the distinction between convenience levels and risk sensitivity.
+
+NZD's detailed conventions remain an open measurement task. Section 15F now organizes the paper-period comparison, joint risk tests and stress-week evidence; this section retains the conditional-beta and incremental-HY results. A causal foreign-supply or dealer-capacity claim still needs a separate design; the HY covariate does not provide it. Updated plots, QC, coefficient tables, matched-sample fit comparisons and source receipts are in `output/figures/` and `output/tables/credit_risk_*`.
+"""
+    ),
+    md(
+        r"""
+## 15F. Risk Properties After the Rebound
+
+### Question and scope
+
+Does the recent rebound in relative Treasury convenience also indicate a return of safe-haven behavior? These are different hypotheses: a higher average convenience level need not mean that convenience rises during market stress. This section adds three checks using existing data only. The outcomes remain the validated fixed-eight 5Y/10Y measures; excluding NZD is a same-calendar sensitivity.
+
+**Main result:** recent risk exposure is jointly nonzero, while stress-week Treasury convenience changes are negative and dollar-convenience proxy changes are positive. This supports separating the rebound in levels from claims of restored safe-haven behavior. It does not identify why pricing changed or establish an absolute Treasury-return effect.
+
+Sources: the local frozen `Decoupling Dollar and Treasury Privilege.pdf`, Section 5.3 / Equation 7 and Table 5 (PDF pages 23-25 and 51); the November archived exports and the existing cleaned raw/public panels. Input and paper hashes, parameters and caveats are saved in `output/tables/risk_properties_summary.json`. Full results remain inspectable in the `risk_properties_*` CSVs, not just the displayed subsets.
+"""
+    ),
+    code(
+        r"""
+from src.analyze_risk_properties import main as analyze_risk_properties
+risk_properties_summary = analyze_risk_properties()
+risk_paper = pd.read_csv(TABLE_DIR / 'risk_properties_table5_comparison.csv')
+risk_wald = pd.read_csv(TABLE_DIR / 'risk_properties_joint_tests.csv')
+risk_stress = pd.read_csv(TABLE_DIR / 'risk_properties_stress_results.csv')
+"""
+    ),
+    md(
+        r"""
+### 1. Align the risk specification with Table 5
+
+Equation 7 / Table 5 uses **one risk factor at a time**, not a joint VIX/equity/IG regression. The inspected paper's data end in **June 2025**. The comparison therefore uses 2010-2015, 2016-2020 and 2021-June 2025, ending at the complete week of June 27. The Section 15E multivariate and post-2023 models remain extensions rather than exact Table 5 replications.
+
+The bounded comparison covers 18 government-CIP cells: two tenors, three periods and three factors. Weekly means are differenced, using the existing joint daily calendar, valid adjacent weeks and calendar-aware Newey-West 26. Public available-G10 mean and median variants share the raw model's dates; neither is selected by whichever best matches the paper. The exact original cross-country aggregation, IG ticker/unit and data vintage are not fully reconciled. In particular, the IG per-percentage-point display is only a candidate scale. Do not call the 54 variant rows 54 independently replicated paper cells.
+"""
+    ),
+    code(
+        r"""
+risk_spec = pd.read_csv(TABLE_DIR / 'risk_properties_table5_specification.csv')
+display(risk_spec[['dimension', 'remaining_gap']])
+risk_vix = risk_paper[risk_paper.variant.eq('raw_fixed8_mean') & risk_paper.factor.eq('dlog_vix')]
+display(risk_vix[['tenor', 'period', 'n_weeks', 'beta_on_display_scale',
+    'ci95_low', 'ci95_high', 'paper_printed_beta']].round(3))
+"""
+    ),
+    code(
+        r"""
+display(Image(filename=str(FIGURE_DIR / 'risk_properties_table5_vix_comparison.png')))
+"""
+    ),
+    md(
+        r"""
+The raw fixed-eight VIX betas move from **+5.28 to -3.97** at 5Y and **+3.50 to -3.65** at 10Y between the first and final paper windows. Their directions agree with the paper, but magnitudes are not identical. Public aggregation sensitivity matters: the 2021-June 2025 5Y public median beta is about -1.18 and its interval covers zero, unlike the raw and public-mean variants. Sign agreement is not exact numerical validation, and within-period confidence intervals do not test a between-period difference.
+
+### 2. Test risk exposure jointly
+
+For the +HY specification, test whether all four post-2023 loadings are zero. In the interaction models, separately test whether all four slope changes are zero. Intercepts and regime intercept controls are not part of these restrictions. Use the full HAC covariance, including cross-coefficient covariance; this is not a collection of independent single-coefficient tests.
+
+The six labeled primary government-CIP tests use the fixed-eight sample and HAC-26: two post-period loading tests, two full-history change tests and two latest-regime change tests. Holm adjustment applies to this six-test family only, not all analyses in the project. Excluding NZD, using HAC-13 and dropping HY are recorded as sensitivities. These are bounded exploratory tests, not independently preregistered confirmatory evidence.
+"""
+    ),
+    code(
+        r"""
+risk_primary = risk_wald[risk_wald.p_holm_primary_family.notna()]
+display(risk_primary[['tenor', 'window', 'test', 'n_pre2023', 'n_post2023',
+    'p_exploratory', 'p_holm_primary_family']].round(6))
+risk_change_sensitivity = risk_wald[risk_wald.spec.eq('plus_HY') &
+    risk_wald.outcome.eq('x_govt_raw_bps') & risk_wald.window.eq('full_interaction') &
+    risk_wald.test.eq('slope_changes_zero')]
+display(risk_change_sensitivity.pivot(index=['cohort', 'tenor'],
+    columns='hac_weeks', values='p_exploratory').round(4))
+"""
+    ),
+    md(
+        r"""
+Post-2023 risk loadings are jointly nonzero at both tenors (Holm p about **0.00148 / 0.000012**, 5Y/10Y). This also holds in the recorded HAC-13 / excluding-NZD sensitivities. It does not contradict the individual VIX/HY intervals covering zero: correlated factors can be informative as a group without their individual effects being precisely isolated. This is in-sample association, not out-of-sample predictive performance or a direction-of-safety test.
+
+The slope-change evidence is less robust. For fixed-eight full-history 5Y, p moves from **0.029** with HAC-26 to **0.080** with HAC-13. For 10Y excluding NZD, it moves from **0.034** to **0.060**. The latest-regime change tests reject in this calculation but use only **29/27 pre-2023 weeks**; large-sample Wald inference with so short a reference period is fragile. None of these results establishes a causal structural break or a recovered safe-haven premium.
+
+### 3. Fix stress weeks without using Treasury outcomes
+
+Use the 90th percentile of weekly VIX log increases in 2010-2022, estimated from the **VIX-only native calendar**, not the CIP-covered calendar. A week needs at least three VIX quotes; a missing week prevents the next change from bridging the gap. The stress rule is:
+
+$$
+S_t=\mathbf{1}\{\Delta\log(\overline{\mathrm{VIX}}_t)>\tau\},
+\qquad \tau=Q_{0.90,\,2010:2022}(\Delta\log\overline{\mathrm{VIX}}).
+$$
+
+The 677 calibration changes give **tau = 0.14982**, equivalent to a weekly-average VIX increase above **16.16%**. This threshold is fixed before these outcome comparisons and never recalibrated on post-2022 Treasury results. It is not a genuinely prospective preregistration: the broader post-2023 pattern was already known.
+
+The outcome analysis uses the unchanged joint-date CIP weekly panel, while stress labels use native VIX dates. This distinction is intentional; the stress dummy does not replace the matched-date VIX regressor in earlier models. There are 195 calendar weeks in the recent window, **13 usable stress weeks** and **160/159 ordinary weeks** at 5Y/10Y. Missing/invalid outcome weeks are excluded, not imputed. The units are changes in relative convenience, not bond price or total returns.
+"""
+    ),
+    code(
+        r"""
+risk_post = risk_stress[risk_stress.cohort.eq('fixed8') & risk_stress.period.eq('post2023')]
+display(risk_post[risk_post.contrast.eq('stress_mean') &
+    risk_post.outcome.isin(['x_govt_raw_bps', 'x_rf_raw_bps'])][[
+    'tenor', 'outcome', 'estimate_bps', 'hac26_ci_low', 'hac26_ci_high', 'n_stress']].round(3))
+risk_stress_net = risk_post[risk_post.outcome.eq('x_govt_raw_bps') &
+    risk_post.contrast.eq('stress_minus_ordinary')]
+display(risk_stress_net[['tenor', 'estimate_bps', 'hac26_ci_low', 'hac26_ci_high',
+    'bootstrap_ci_low', 'bootstrap_ci_high', 'p_holm_stress_primary_family']].round(4))
+"""
+    ),
+    code(
+        r"""
+display(Image(filename=str(FIGURE_DIR / 'risk_properties_stress_comparison.png')))
+"""
+    ),
+    md(
+        r"""
+Recent stress weeks show average Treasury-convenience changes of **-1.09 / -1.07 bps**, versus ordinary-week changes of about **+0.14 / +0.19 bps** at 5Y/10Y. The stress-minus-ordinary contrasts are **-1.24 / -1.26 bps**. Both HAC-26 intervals and the paired moving-block bootstrap intervals are below zero. A separate Holm correction for these two primary stress contrasts gives p about **0.0115 / 0.0060**; other component comparisons remain exploratory.
+
+Bootstrap settings are fixed at eight-calendar-week circular blocks, 2,000 draws and seed 20261102. Calendar gaps, stress states and all four components are sampled together; the additive identity is checked in every draw. Percentile intervals condition on the historical threshold and do not incorporate threshold-estimation uncertainty. Only 13 stress observations support the recent estimate, so finite-sample uncertainty, time-varying conditions and non-random coverage remain material.
+
+### 4. Reconcile the stress result with Equation 6
+
+The dollar-convenience proxy increases on stress weeks: about **+0.64 / +0.54 bps**. Its stress-minus-ordinary difference is **+0.73 / +0.63 bps**; the 10Y stress-mean interval alone includes zero. Thus these are not identical statements about significance.
+
+The stress-minus-ordinary Treasury differences satisfy the same accounting bridge:
+
+$$
+\begin{aligned}
+\text{5Y: } -1.235 &\simeq +0.728 -0.713 -1.251,\\
+\text{10Y: } -1.255 &\simeq +0.632 -0.957 -0.930.
+\end{aligned}
+$$
+
+The terms on the right are dollar convenience, U.S. swap spread and **minus** the foreign swap spread. Positive dollar-convenience contributions are more than offset by the point-estimated swap-spread terms. The two individual spread terms have wide intervals, especially at 10Y. Their accounting contribution is not proof of a supply, credit, dealer or monetary-policy mechanism, and the benchmark proxy retains the convention limitations documented above.
+"""
+    ),
+    code(
+        r"""
+display(Image(filename=str(FIGURE_DIR / 'risk_properties_stress_components.png')))
+"""
+    ),
+    md(
+        r"""
+### Influence checks and research conclusion
+
+Excluding NZD preserves negative recent stress-minus-ordinary contrasts (about **-1.41 bps at both tenors**). Deleting each stress week in turn keeps the fixed-eight contrast negative: approximately **[-1.48, -0.77]** at 5Y and **[-1.50, -0.91]** at 10Y. These are point-estimate influence ranges, **not confidence intervals** and not evidence that every reduced-sample test is significant. The historical positive-to-negative contrast in the figure is descriptive; a change in the stress response has not been causally identified.
+
+The strongest current synthesis is: **a rebound in average relative convenience can coexist with a negative convenience response during VIX-defined stress, even while dollar convenience rises.** The first-pass HY extension offers little incremental recent fit; the joint tests show that this does not imply risk is irrelevant. This narrows the economic question from "did Treasury safety return?" to "which relative swap/government pricing terms drive levels and stress behavior, and how sensitive are those conclusions to benchmarks?"
+
+No additional broad Bloomberg export is required for these completed checks. The detailed NZD DES terms and the original paper's exact aggregation/IG definition remain necessary if seeking an exact Table 5 replication. Section 15G now implements country-level stress-component accounting with current raw data; a causal foreign-supply/QT/dealer explanation still needs a separate design and appropriately matched evidence. Do not promote the accounting identity or this stress association into that claim.
+"""
+    ),
+    md(
+        r"""
+## 15G. Which Markets Account for the Stress-Week Contrast?
+
+### Keep the comparison fixed
+
+This is an attribution of the Section 15F result, **not a new search for stress events or a newly balanced sample**. Reuse its saved VIX flags unchanged, the fixed-eight joint daily dates, Friday weekly means, valid adjacent weeks and the September 25, 2026 endpoint. Every country has the same 13 stress weeks and 160/159 ordinary weeks at 5Y/10Y. Holidays, incomplete weeks and regime transitions are still excluded. Removing a country never adds dates that were unavailable in the original fixed-eight calculation.
+
+The markets are AUD/Australia, CAD/Canada, CHF/Switzerland, DKK/Denmark, **EUR/Germany's government-bond leg**, GBP/UK, NZD/New Zealand and SEK/Sweden. EUR is not a pooled euro-area sovereign portfolio. JPY/NOK and EM remain outside this fixed-eight extension.
+
+Let the stress-minus-ordinary contrast operator be $C(z)=E[\Delta z\mid S=1]-E[\Delta z\mid S=0]$. For currency pair $i$ define $D_i=C(x_i^{Govt})$ and $w=1/8$:
+
+$$
+D=\frac{1}{8}\sum_i D_i
+ = C(s^{US})+\frac{1}{8}\sum_i\left[C(x_i^{Rf})-C(s_i^{foreign})\right].
+$$
+
+The U.S. swap-spread input is identical across these pairs in the recent window and is counted **once** in the second expression. A pair's weighted contribution $D_i/8$ includes one-eighth of this common U.S. term. Do not add the common term again to the weighted-pair contributions. The country-specific term excludes the shared U.S. component but still includes pairwise dollar funding; it is not an isolated local causal shock.
+
+Sources are the unchanged raw panel, November market inputs, saved weekly panel and stress calendar. `output/tables/country_stress_summary.json` records their hashes. The script checks weekly mean reconciliation, each pair's Equation 6 identity and the aggregate ledger; all countries share the same calendar, not independent samples.
+"""
+    ),
+    code(
+        r"""
+from src.analyze_country_stress_attribution import main as analyze_country_stress
+country_stress_summary = analyze_country_stress()
+country_stress_attribution = pd.read_csv(TABLE_DIR / 'country_stress_attribution.csv')
+country_stress_estimates = pd.read_csv(TABLE_DIR / 'country_stress_estimates.csv')
+country_stress_ledger = pd.read_csv(TABLE_DIR / 'country_stress_accounting_ledger.csv')
+country_stress_omissions = pd.read_csv(TABLE_DIR / 'country_stress_leave_one_country_out.csv')
+country_stress_events = pd.read_csv(TABLE_DIR / 'country_stress_event_contributions.csv', parse_dates=['week'])
+display(pd.read_csv(TABLE_DIR / 'country_stress_weekly_reconciliation.csv').round(12))
+"""
+    ),
+    md(
+        r"""
+### 1. Negative pair contrasts are concentrated, not uniform
+
+AUD, EUR/Germany and SEK have the largest negative pair contrasts at both tenors. At 5Y their own pair contrasts are about **-3.99, -2.57 and -2.46 bps**; at 10Y they are **-3.74, -2.46 and -2.42 bps**. Dividing by eight gives their contributions to the fixed-eight average. CAD/CHF 5Y are slightly positive, GBP 5Y and NZD 5Y are near zero, and GBP 10Y is positive.
+
+This is a descriptive ranking, not evidence that each of the three effects is statistically different from every other country. The figure's country-level HAC-26 intervals are exploratory and **not adjusted for multiple comparisons**. The eight country observations within a stress week are correlated; 13 stress weeks do not become 104 independent stress observations.
+"""
+    ),
+    code(
+        r"""
+display(country_stress_attribution.pivot(index='currency', columns='tenor',
+    values=['pair_contrast_bps', 'weighted_pair_contribution_bps']).round(3))
+"""
+    ),
+    code(
+        r"""
+display(Image(filename=str(FIGURE_DIR / 'country_stress_pair_contrasts.png')))
+"""
+    ),
+    md(
+        r"""
+### 2. Separate the shared U.S. term from the country terms
+
+The U.S. swap-spread contrast contributes **-0.713 / -0.957 bps** to the 5Y/10Y aggregate. The country-specific terms sum to **-0.522 / -0.298 bps**, recovering the previously reported **-1.235 / -1.255 bps**. Country contributions are signed and can offset, so percentages of the small net total can be misleading.
+
+After taking out the common U.S. term, AUD/EUR/SEK remain negative at both tenors. Their weighted country-specific contributions are about **-0.409/-0.232/-0.218 bps** at 5Y and **-0.348/-0.188/-0.183 bps** at 10Y. Most other country-specific terms offset part of these declines. NZD is not the main negative contributor in this calculation, although its benchmark documentation still needs confirmation.
+
+The plot counts the gray U.S. bar only once. Green and brown country bars may offset; their diamond is the signed country-specific sum. It is not a confidence interval or an estimate of a policy effect.
+"""
+    ),
+    code(
+        r"""
+country_stress_net_ledger = country_stress_ledger[
+    country_stress_ledger.contrast.eq('stress_minus_ordinary')]
+display(country_stress_net_ledger[['tenor', 'previous_aggregate_bps', 'common_us_bps',
+    'dollar_bps', 'minus_foreign_spread_bps', 'reconstructed_bps', 'residual_bps']].round(4))
+display(country_stress_attribution[['currency', 'tenor', 'dollar_contribution_bps',
+    'minus_foreign_spread_contribution_bps', 'country_specific_contribution_bps']].round(3))
+"""
+    ),
+    code(
+        r"""
+display(Image(filename=str(FIGURE_DIR / 'country_stress_component_contributions.png')))
+"""
+    ),
+    md(
+        r"""
+### 3. What moves inside the foreign spread?
+
+Using the same dates, split $-C(s_i^{foreign})$ into **minus the swap-rate change plus the government-yield change**, with both raw quotes converted from percentage points to bps. This adds no instruments or new benchmark assumptions to the existing construction.
+
+For AUD/EUR/SEK, government-yield changes are more negative than their local swap-rate changes in the stress-minus-ordinary comparison. At 5Y, for example, AUD's contrasts are approximately **-4.08 bps for the swap** and **-7.81 bps for the government yield**. Its foreign spread therefore widens by about **3.73 bps**, contributing about **-0.466 bps** after the one-eighth weight. EUR/Germany and SEK foreign spreads widen by about **2.84 / 2.31 bps** at 5Y, and the analogous pattern holds at 10Y.
+
+Economically, this describes the **relative pricing of foreign government bonds versus their local swap benchmark**, which enters the hedged-U.S.-Treasury comparison. It is consistent with comparatively stronger foreign-government-bond pricing, but it does not establish investor flows, a demand shock, or deterioration in U.S. Treasury prices/returns. AUD/SEK bank-linked and EUR overnight benchmarks are not homogeneous pure risk-free rates. No new supply, credit or dealer mechanism is identified by splitting these observed quotes.
+"""
+    ),
+    code(
+        r"""
+country_stress_foreign_legs = country_stress_estimates[
+    country_stress_estimates.contrast.eq('stress_minus_ordinary') &
+    country_stress_estimates.currency.isin(['AUD', 'EUR', 'SEK']) &
+    country_stress_estimates.metric.isin([
+        'foreign_swap_bps', 'foreign_govt_yield_bps', 'foreign_swap_spread_bps'])]
+display(country_stress_foreign_legs.pivot(index=['currency', 'tenor'],
+    columns='metric', values='estimate_bps').round(3))
+"""
+    ),
+    md(
+        r"""
+### 4. Country and event influence
+
+All eight one-country exclusions retain negative aggregate point estimates: about **[-1.439, -0.842] bps** at 5Y and **[-1.491, -0.900] bps** at 10Y. These use seven-country equal weights on the unchanged original calendar. The deletion effect is not simply the original weighted contribution: the surviving weights are renormalized. In particular,
+
+$$
+D_{-i}=\frac{8D-D_i}{7}.
+$$
+
+**Precision is not equally robust.** Removing AUD leaves 5Y at about **-0.842 bps**, but its unadjusted 95% HAC-26 interval is **[-1.700, +0.016]**. The corresponding 10Y interval remains below zero. Do not interpret "all deletion point estimates remain negative" as "every test remains significant."
+
+The heatmap includes all 13 observed stress weeks, not selected stories. Each cell is that currency pair's weekly change minus its ordinary-week mean. To convert it into an aggregate event contribution, divide by **8 times 13**. Summing all cells with that weight exactly recovers the overall stress-minus-ordinary contrast.
+
+The week ending **April 11, 2025** has the largest negative aggregate event contribution: approximately **-0.525 / -0.415 bps** at 5Y/10Y. Removing it still leaves **-0.770 / -0.910 bps**. These are data-defined influence observations, not causal event-study estimates or externally verified event explanations. Even when one country and one stress week are both removed, all recorded point estimates remain negative; the least-negative cases are about **-0.447 / -0.577 bps**. That is a sensitivity range, not a simultaneous confidence band.
+"""
+    ),
+    code(
+        r"""
+display(country_stress_omissions[['tenor', 'omitted_currency', 'estimate_bps',
+    'hac26_ci_low', 'hac26_ci_high']].round(3))
+country_stress_event_totals = country_stress_events.groupby(
+    ['tenor', 'week']).aggregate_contribution_bps.sum()
+display(country_stress_event_totals.unstack('tenor').round(3))
+"""
+    ),
+    code(
+        r"""
+display(Image(filename=str(FIGURE_DIR / 'country_stress_week_heatmap.png')))
+"""
+    ),
+    md(
+        r"""
+### Research conclusion and next boundary
+
+The aggregate result is **not uniform across foreign markets**. It combines a negative common U.S. swap-spread term with particularly negative AUD, German/EUR and SEK pair accounting. Other markets offset part of that movement. This strengthens the distinction between a rebound in average convenience and a general recovery of safe-haven behavior, while cautioning against treating a fixed-eight average as one universal property of Treasuries.
+
+An additional public-overlap QC uses identical raw/public daily dates, valid adjacent weeks and the unchanged VIX flags. It covers **10 stress / 104 ordinary weeks** per tenor through the week of June 27, 2025, not the full recent extension. AUD/EUR/SEK raw-versus-public contrast gaps are below **0.00001 bps**, and weekly-change MAEs are about 0.00001 bps. DKK retains nonzero contrast gaps of about **0.089/0.182 bps** and weekly-change MAEs of about **0.670/0.450 bps** at 5Y/10Y. Keep that reconciliation caveat rather than declaring every country exact. This overlap check supports the dominant-country measurement; it is not independent validation of all 13 extended-sample stress weeks.
+
+The country/rate/event ledger now answers where the observed contrast sits; it does not answer why those relative prices moved. The most focused next investigation is to audit the dominant AUD/EUR/SEK raw legs on the existing stress dates, then distinguish a bond-side explanation from swap-benchmark/funding effects. The date list must remain fixed, and any external event explanation should be source-verified before causal language is considered. NZD DES and the original-paper definitions remain separate measurement tasks. No additional broad Bloomberg download is required for the completed attribution.
+"""
+    ),
+    code(
+        r"""
+display(pd.read_csv(TABLE_DIR / 'country_stress_public_overlap_check.csv')[[
+    'currency', 'tenor', 'n_stress', 'n_ordinary', 'raw_contrast_bps',
+    'public_contrast_bps', 'contrast_gap_bps', 'weekly_change_mae_bps']].round(6))
+"""
+    ),
+    md(
+        r"""
+## 15H. Does Pre-Stress Bond Supply Explain Country Differences?
+
+[Du, Keerati and Schreger](https://www.federalreserve.gov/econres/ifdp/files/ifdp1427.pdf) already study the supply-level relationship (Section 6 and Table A4) and the April 2025 tariff episode (Figure 7). The proposed extension tests **whether pre-stress supply is associated with relative repricing across stress weeks beyond the tariff window**. A positive slope means higher foreign supply goes with a less negative Treasury-convenience response.
+
+### Feasibility screen with a fixed pre-sample vintage
+
+Use **2021 general-government gross debt as a percent of GDP**, reported in [IMF Fiscal Monitor, October 2022, Table A7](https://www.imf.org/-/media/files/publications/fiscal-monitor/2022/october/english/msa.pdf). This single vintage predates the 2023-2026 sample. It is not marketable central-government bond stock, is not net of central-bank holdings, and has no tenor matching. Keep the original eight countries, fixed VIX flags and matched calendars. Estimate one country slope per week, then compare those slopes between stress and ordinary weeks. This removes common U.S. weekly movements from the cross-country slope and avoids using country-week rows as independent shocks. Calendar HAC-26 intervals are exploratory and conditional on these countries and this exposure; they do not account for country selection, proxy error or multiple testing.
+"""
+    ),
+    code(
+        r"""
+from src.analyze_stress_supply_pilot import main as run_stress_supply_pilot
+stress_supply = run_stress_supply_pilot()
+display(stress_supply.query("omitted == 'none'").round(3))
+display(stress_supply.query("omitted != 'none'").groupby(['tenor', 'sample'])['bps_per_10pp'].agg(['min', 'max']).round(3))
+"""
+    ),
+    md(
+        r"""
+At 5Y/10Y the full-sample stress interaction is **+0.163/+0.134 bps per 10 percentage points of debt/GDP**. Removing weeks ending April 4 and 11, 2025 leaves **+0.114/+0.124** and both exploratory intervals cross zero. Every one-country deletion retains a positive point estimate, but the 5Y no-tariff result can be close to zero. The 5Y component point estimates are primarily on the foreign swap-spread side; 10Y is split between that side and the dollar-convenience proxy. These are not independently identified mechanisms. The screen is directional evidence, not a result about net marketable supply or a causal test.
+
+### Next measurement and test
+
+Collect matched nominal central-government marketable debt outstanding, the face value of the same instruments held by the relevant domestic central bank/Eurosystem, and trailing four-quarter nominal GDP. Use the latest quarter for which **all three exact vintages were public before the week began**. Do not backdate revised downloads to a first release date; if vintage verification fails, label any lagged latest-vintage exercise separately. Keep a common-sample gross-versus-net comparison. Compare stress interactions with country and week effects, show the amount of within-country exposure variation, and report exclusions of tariff weeks, countries, and contiguous stress episodes. Do not present more country-week rows as more independent events. Freeze the design before examining the new supply results. Additional regimes or separately selected events may be needed if the recent sample remains too small.
+
+[BIS debt securities](https://data.bis.org/topics/DSS) gives six candidate quarterly nominal central-government stock series in local currency for this cohort, but candidate instrument coverage must be checked before matching to holders. National sources are needed for gaps and aligned holdings. The collection sheet keeps empty inputs separate from zero, records vintage dates and links, and calculates net supply only for valid amounts.
+"""
+    ),
+    md(
+        r"""
+## 15I. Does Subtracting Central-Bank Holdings Change the Stress Result?
+
+### Matched-sample design and data
+
+Compare general-government debt from Section 15H with gross bond stock and net bond stock on the **same countries and weeks**. Hold the stock observation quarter fixed: 2021 Q4 for CAD/GBP/NZD/SEK, then 2022 Q2 for the same four, then add AUD and finally Germany. Australia's June 2022 gross leg is AUD 830.512 billion from [AOFM's original 2021-22 report, Note 2](https://www.aofm.gov.au/sites/default/files/2022-10-14/AOFM_Annual%20Report%202021-22_PRINT%20FA%20v2.pdf); the holding comes from [RBA A3.1, AGSHSTOT](https://www.rba.gov.au/statistics/tables/). The original collection is in `outputs/samim-stress-supply/sovereign_stress_supply_public_panel.csv` and its workbook. GBP subtracts only monetary-policy APF holdings. These are market-specific bond-stock measures, not matched 5Y/10Y issuance or tradable free float.
+
+Germany is a **scope sensitivity** using long-term general-government securities at face value in both [ECB CSEC (issuance)](https://data.ecb.europa.eu/data/datasets/CSEC/CSEC.M.N.DE.W0.S13.S1.N.L.LE.F3.L._Z.EUR._T.F.V.N._T) and [ECB SHSS (euro-area central bank holdings)](https://data.ecb.europa.eu/data/datasets/SHSS/SHSS.Q.N.U2.DE.S121.S13.N.A.LE.F3.L._Z.XDC._T.F.V.N._T). This pair is not federal-only Bund supply. The complete 19-quarter supplemental series is saved separately; it is not silently substituted into the federal target panel. The latest holdings observation is provisional, and neither current download establishes a historical release vintage.
+
+The quarter labels precede the stress sample, but most exact value vintages and publication dates are not verified. **This is a fixed-baseline, latest-vintage sensitivity; not an as-of backtest.** No later exposure observations are used in these estimates. Compare one cross-country slope per week, using the unchanged VIX labels and outcome calendars from Section 15G. The exposure is in units of 10 GDP percentage points. To avoid mistaking different cross-country dispersion for economic strength, also compare the associations for one full-cohort standard deviation of each exposure. HAC intervals are exploratory and conditional on this small, selected set of markets.
+"""
+    ),
+    code(
+        r"""
+from src.analyze_stress_supply_pilot import run_paired_diagnostic
+supply_exposures, supply_estimates, supply_advantage = run_paired_diagnostic()
+supply_government = supply_estimates.query("outcome == 'd_x_govt_raw_bps'")
+supply_full = supply_government.query("omitted == 'none' and sample in ['all', 'ex_tariff']")
+display(supply_exposures.round(3))
+display(supply_full[['design', 'tenor', 'sample', 'exposure', 'n_stress',
+    'bps_per_10pp', 'ci_low', 'ci_high', 'bps_per_full_cohort_sd']].round(3))
+"""
+    ),
+    code(
+        r"""
+import matplotlib.pyplot as plt
+
+fig, axes = plt.subplots(1, 2, figsize=(10, 4), sharex=True, sharey=True)
+design_labels = {'2021Q4_four': '2021 Q4 | 4 markets', '2022Q2_four': '2022 Q2 | 4 markets',
+                 '2022Q2_plus_AUD': '2022 Q2 | add Australia', '2022Q2_plus_AUD_DE': '2022 Q2 | add Germany'}
+plot_data = supply_full.query("sample == 'ex_tariff'")
+for ax, tenor in zip(axes, ['5y', '10y']):
+    for field, label, color, offset in [
+        ('imf_gross_pct_gdp', 'IMF gross debt', '#655F73', -0.18),
+        ('gross_market_pct_gdp', 'Gross bond stock', '#AA6B20', 0),
+        ('net_market_pct_gdp', 'Net bond stock', '#007C72', 0.18),
+    ]:
+        part = plot_data.query("tenor == @tenor and exposure == @field").set_index('design').loc[list(design_labels)]
+        ax.scatter(part.bps_per_full_cohort_sd, [j + offset for j in range(len(design_labels))],
+                   label=label, color=color, s=34)
+    ax.axvline(0, color='0.45', linewidth=0.8)
+    ax.set(yticks=range(len(design_labels)), yticklabels=list(design_labels.values()), title=tenor.upper(),
+           xlabel='Stress slope, bps per cohort SD')
+    ax.grid(axis='x', alpha=0.2)
+axes[0].invert_yaxis()
+axes[0].legend(loc='lower center', bbox_to_anchor=(1.05, -0.38), ncol=3, frameon=False)
+fig.suptitle('Gross versus net supply | excluding the two April 2025 tariff weeks')
+fig.tight_layout()
+plot_path = FIGURE_DIR / 'stress_supply_gross_net_comparison.png'
+fig.savefig(plot_path, dpi=160, bbox_inches='tight')
+plt.close(fig)
+display(Image(filename=str(plot_path)))
+"""
+    ),
+    code(
+        r"""
+supply_net = supply_government.query("exposure == 'net_market_pct_gdp'")
+display(supply_net.query("sample == 'ex_tariff' and omitted != 'none'")[
+    ['design', 'tenor', 'omitted', 'bps_per_10pp', 'ci_low', 'ci_high']].round(3))
+display(supply_net[supply_net['sample'].str.startswith('ex_episode_')].groupby(
+    ['design', 'tenor']).bps_per_10pp.agg(['min', 'max', 'count']).round(3))
+display(supply_advantage.query("sample == 'ex_tariff'").round(3))
+"""
+    ),
+    md(
+        r"""
+### Result and stopping rule
+
+- In the four-country 2021 Q4 design, excluding the tariff weeks, the 5Y/10Y slope is **+0.26/+0.30 bps per 10 GDP percentage points** for gross bonds and **+0.63/+0.54** for net bonds. After scaling by the cross-country standard deviation, the comparison is **+0.54/+0.61** versus **+0.77/+0.66 bps**. The 10Y gain in magnitude is small on the comparable scale.
+- Moving to 2022 Q2 and adding Australia leaves the net slopes positive (**+0.70/+0.61** without tariff weeks); also adding Germany leaves **+0.60/+0.52**. Both signs survive dropping any one country in that six-market design, but some intervals cross zero. Dropping any one observed contiguous stress block from the full sample preserves both signs. The four-country 5Y result changes sign without Sweden (**about -0.14 bps** without tariff weeks); its 10Y result falls to **about +0.08**.
+- The formal same-week comparison uses the **difference** of the two standardized slopes, including their covariance. All exploratory intervals cover zero. For the six-market sample without tariff weeks, the differences are **+0.25 bps [-0.24, +0.74]** at 5Y and **+0.10 bps [-0.49, +0.70]** at 10Y. This does not establish a stronger association after subtracting central-bank holdings.
+- For the 2021 Q4 design without tariff weeks, the net association mainly loads onto **minus the foreign swap spread** (about **+0.64/+0.42 bps** per 10 points), not the benchmark-CIP component (about **-0.01/+0.12 bps**). The common U.S. term drops out of a cross-country slope by construction. This locates the association in the relative price; it does not identify a supply shock or demonstrate that net stock predicts better out of sample.
+
+The net-stock signal is worth reporting as a sensitivity, **not as a standalone mechanism or the headline capstone claim**. Do not promote it to a point-in-time panel until scope-matched holdings and pre-event vintages are verified. Outstanding gaps are Danish and Swiss matched holdings, German federal-only holdings if that scope is required, and the historic vintages of holdings and GDP. [The authors' public release](https://cip.jesseschreger.com/data/2024q4) ends in June 2025 and does not resolve these exposure gaps. A dated static-vintage baseline with confirmed holdings and GDP is a useful intermediate step; a fully rolling historical-vintage model is not required to report the bounded diagnostic.
+"""
+    ),
+    md(
+        r"""
 ## 16. Current Findings
 
 ### Completed
@@ -1217,7 +1756,15 @@ The NZD template refreshes OCR, Bank-Bill swap and tenor-basis candidates on mat
 - Foreign-spread raw-leg decomposition: all 16 pairs decline; alternative windows and one-country exclusions preserve the relative-convenience rebound. Mechanism remains untested.
 - September 2026 refreshed accounting: 720 fixed-cohort country-tenor-months, 20/20 selected government-CIP checks, positive 5Y/10Y rebound under alternative baselines and endpoints. Section 15C is the controlling final evidence.
 - Post-meeting measurement sensitivity: excluding NZD or NZD/DKK preserves the rebound. NZD metadata remains REVIEW; reassigning its tenor adjustment between components leaves Treasury convenience unchanged.
-- Weekly VIX-only diagnostic through May 29, 2026: post-2023 relative-convenience betas remain negative. Pre/post changes depend on regime/sample choice; full equity/IG/HY risk tests remain pending.
+- Archived weekly VIX-only diagnostic through May 29, 2026: post-2023 relative-convenience betas remain negative. Sections 15E-15F supersede its missing-input status and qualify the risk interpretation.
+- November 2 risk exports: all 12 series contain numeric data through September 30. Section 15E implements matched-sample equity/IG/HY tests through the week of September 25; the earlier missing-input status is superseded.
+- HY adds only about 0.11/0.12 percentage points of recent in-sample R-squared and has HAC intervals covering zero. VIX point estimates stay negative but conditional significance is specification-sensitive.
+- NZD terminal names resolve OIS versus 3M instrument identity. Raw bank/OIS gaps are not identical to tenor-basis quotes; pricing-convention reconciliation remains open and validated outcomes are unchanged.
+- Table 5-style univariate 5Y/10Y comparisons now use paper-period windows through June 2025. Risk-loading directions agree, but exact aggregation, IG definition and vintage differences prevent an exact-replication claim.
+- Joint post-2023 risk exposure is nonzero; slope-change inference is sensitive to HAC/cohort choices and the short latest-regime pre-period. Joint significance is not a recovered-safety test.
+- A VIX-only 2010-2022 threshold defines recent stress weeks independently of Treasury outcomes. The 13 observed stress weeks have Treasury-convenience changes around -1.1 bps; stress-minus-ordinary differences around -1.24/-1.26 bps persist under the recorded bootstrap and excluding-NZD checks. This is association, not causality or an absolute-return finding.
+- Country stress accounting reconciles exactly to that aggregate on the same dates. AUD, Germany/EUR and SEK have the largest negative pair contrasts, alongside a negative shared U.S. swap-spread term. One-country deletions retain negative point estimates, but 5Y excluding AUD loses conventional HAC significance; the pattern is heterogeneous and not a causal country ranking.
+- Fixed-baseline sovereign-supply sensitivity: net-stock slopes are positive across four designs, including a six-market sensitivity, but four-country 5Y reverses without Sweden. The standardized net-minus-gross intervals all cover zero. Historical release vintages are not fully verified.
 
 ### Mostly completed
 
@@ -1235,7 +1782,7 @@ The NZD template refreshes OCR, Bank-Bill swap and tenor-basis candidates on mat
 - EM NDS/CCS and country-specific formula rules.
 - Paper-specific benchmark-CIP convention reconciliation beyond the first G10 5Y/10Y pass.
 - Causal interpretation of supply/dealer results: persistence, common trends, reporting-break treatment, and identification remain open.
-- NZD OCR / Bank-Bill instrument definitions, updated VIX/equity/IG/HY data, and the matched-sample credit-spread extension.
+- Detailed NZD DES terms, confirmed credit-index units/definitions and the exact original-paper IG specification. The first-pass matched-sample credit-spread test is implemented, not pending download.
 """
     ),
     md(
@@ -1244,16 +1791,22 @@ The NZD template refreshes OCR, Bank-Bill swap and tenor-basis candidates on mat
 
 1. Use Section 15C and `output/final/` for the bounded final descriptive presentation. Sections 15/15B preserve the reviewed May 2026 snapshots; Sections 1-12 remain the raw-replication evidence.
 2. Reproduce the final result with `python -m src.refresh_treasury_5y10y`, then `python -m src.analyze_treasury_final`, or run the canonical notebook top to bottom. The local archived refresh workbook avoids dependence on a Downloads-folder path.
-3. Follow Section 15D and the approved post-meeting proposal: reconcile benchmark metadata, refresh risk inputs, and compare VIX/equity/IG with nested +HY specifications on matched dates. The Bloomberg risk and NZD templates are in `output/report/post_meeting_bloomberg/`.
+3. Reproduce the current risk extension with `python -m src.analyze_credit_risk_extension`, then `python -m src.analyze_risk_properties` and `python -m src.analyze_country_stress_attribution`. Sections 15E-15G use the archived November 2 inputs. Inspect the table-specification gaps, six-test joint family and two-test stress family before interpreting p-values. Country intervals/rankings are exploratory, not multiplicity-adjusted causal tests.
 4. Do not call dealer inventory measured capacity. A capacity claim requires separate balance-sheet/regulatory/liquidity evidence and a defensible design.
-5. The completed descriptive accounting scope needs no new download, but the new risk extension needs equity/IG/HY and refreshed VIX. Foreign supply/QT and supply-regression refreshes are conditional later steps, without forward filling missing predictors.
+5. The descriptive accounting, first-pass credit-risk extension and country stress attribution have the required numeric inputs. Audit the dominant AUD/EUR/SEK legs on the unchanged stress dates before adding a mechanism claim. Confirm NZD DES terms and credit-index/original-paper definitions when available, rather than downloading the same broad history again. Causal foreign supply/QT and supply-regression refreshes remain conditional later steps.
 6. Keep direct benchmark-CIP reconciliation, 3M conventions, and EM rules as separate open tasks, not prerequisites for the bounded 5Y/10Y project.
+7. Run `python -m src.build_research_notebook --execute` to rebuild and execute this notebook end to end, including both stress-supply screens. This uses archived inputs, not live Bloomberg or silently refreshed official vintages.
 """
     ),
 ]
 
 
 def main() -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--execute", action="store_true", help="Also execute and save the notebook with its outputs")
+    args = parser.parse_args()
     NOTEBOOK_DIR.mkdir(parents=True, exist_ok=True)
     nb = {
         "cells": cells,
@@ -1273,6 +1826,16 @@ def main() -> None:
     }
     NOTEBOOK_PATH.write_text(json.dumps(nb, indent=2), encoding="utf-8")
     print(NOTEBOOK_PATH)
+    if args.execute:
+        import nbformat
+        from nbclient import NotebookClient
+
+        notebook = nbformat.read(NOTEBOOK_PATH, as_version=4)
+        executed = NotebookClient(notebook, timeout=600).execute(cwd=str(NOTEBOOK_DIR))
+        nbformat.validate(executed)
+        path = NOTEBOOK_PATH.with_name(NOTEBOOK_PATH.stem + "_executed.ipynb")
+        nbformat.write(executed, path)
+        print(path)
 
 
 if __name__ == "__main__":

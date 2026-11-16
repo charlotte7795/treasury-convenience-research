@@ -1,0 +1,153 @@
+quarter_end,currency,nominal_gdp_4q_lcu_bn,outstanding_lcu_bn,cb_held_lcu_bn,outstanding_public_date,outstanding_release_source,holdings_public_date,gdp_public_date,historical_eligibility,coverage,bis_all_scope_gross_lcu_bn,net_supply_pct_gdp
+2021-12-31,AUD,2208.31,,272.127,,,,,Not verified,Holdings only,,
+2022-03-31,AUD,2267.953,,288.127,,,,,Not verified,Holdings only,,
+2022-06-30,AUD,2336.902,,288.127,,,,,Not verified,Holdings only,,
+2022-09-30,AUD,2417.977,,285.967,,,,,Not verified,Holdings only,,
+2022-12-31,AUD,2491.84,,283.892,,,,,Not verified,Holdings only,,
+2023-03-31,AUD,2549.163,,283.892,,,,,Not verified,Holdings only,,
+2023-06-30,AUD,2577.014,,270.706,,,,,Not verified,Holdings only,,
+2023-09-30,AUD,2603.788,,270.706,,,,,Not verified,Holdings only,,
+2023-12-31,AUD,2631.195,,270.706,,,,,Not verified,Holdings only,,
+2024-03-31,AUD,2653.445,,270.706,,,,,Not verified,Holdings only,,
+2024-06-30,AUD,2680.025,,249.668,,,,,Not verified,Holdings only,,
+2024-09-30,AUD,2703.248,,249.668,,,,,Not verified,Holdings only,,
+2024-12-31,AUD,2726.844,,236.32,,,,,Not verified,Holdings only,,
+2025-03-31,AUD,2750.065,,236.32,,,,,Not verified,Holdings only,,
+2025-06-30,AUD,2777.012,,216.127,,,,,Not verified,Holdings only,,
+2025-09-30,AUD,2813.254,,216.127,,,,,Not verified,Holdings only,,
+2025-12-31,AUD,2856.57,,197.041,,,,,Not verified,Holdings only,,
+2026-03-31,AUD,2892.16,,197.041,,,,,Not verified,Holdings only,,
+2026-06-30,AUD,2927.146,,177.439,,,,,Not verified,Holdings only,,
+2021-12-31,CAD,2535.818,1016.322,389.472,,,,,Not verified,Paired,,24.719833994395497
+2022-03-31,CAD,2617.241,1026.97,385.277,,,,,Not verified,Paired,,24.517917914322755
+2022-06-30,CAD,2714.187,1050.82,370.224,,,,,Not verified,Paired,,25.07550143007833
+2022-09-30,CAD,2805.968,1045.989,359.77,,,,,Not verified,Paired,,24.45569585968194
+2022-12-31,CAD,2864.159,1048.19,350.181,,,,,Not verified,Paired,,24.370469656188778
+2023-03-31,CAD,2897.335,1032.031,323.924,,,,,Not verified,Paired,,24.439942222766785
+2023-06-30,CAD,2907.847,1038.206,299.243,,,,,Not verified,Paired,,25.412719445005184
+2023-09-30,CAD,2931.104,1020.767,284.293,,,,,Not verified,Paired,,25.126164066508732
+2023-12-31,CAD,2965.201,1050.274,279.735,,,,,Not verified,Paired,,25.986063002137115
+2024-03-31,CAD,2997.999,1079.024,269.558,,,,,Not verified,Paired,,27.00020913949604
+2024-06-30,CAD,3037.212,1077.398,238.973,,,,,Not verified,Paired,,27.605086506967574
+2024-09-30,CAD,3068.519,1098.638,228.93,,,,,Not verified,Paired,,28.342923736173702
+2024-12-31,CAD,3108.551,1125.416,224.868,,,,,Not verified,Paired,,28.97002494088082
+2025-03-31,CAD,3152.915,1165.5749999999998,212.813,,,,,Not verified,Paired,,30.218448641970998
+2025-06-30,CAD,3180.827,1190.314,207.386,,,,,Not verified,Paired,,30.90164916230905
+2025-09-30,CAD,3217.87,1200.061,181.566,,,,,Not verified,Paired,,31.65121648792524
+2025-12-31,CAD,3245.257,1250.502,181.566,,,,,Not verified,Paired,,32.938408267819774
+2026-03-31,CAD,3269.299,1270.285,161.03,,,,,Not verified,Paired,,33.92944481370472
+2026-06-30,CAD,3326.984,1290.15,153.315,,,,,Not verified,Paired,,34.170137277486155
+2021-12-31,CHF,768.2793,,,,,,,Not verified,BIS candidate only,75.169,
+2022-03-31,CHF,786.4401,,,,,,,Not verified,BIS candidate only,76.431,
+2022-06-30,CHF,800.1305,,,,,,,Not verified,BIS candidate only,73.425,
+2022-09-30,CHF,810.6605,,,,,,,Not verified,BIS candidate only,74.579,
+2022-12-31,CHF,819.7036,,,,,,,Not verified,BIS candidate only,83.932,
+2023-03-31,CHF,827.777,,,,,,,Not verified,BIS candidate only,88.119,
+2023-06-30,CHF,832.0698,,,,,,,Not verified,BIS candidate only,85.442,
+2023-09-30,CHF,834.7408999999999,,,,,,,Not verified,BIS candidate only,85.392,
+2023-12-31,CHF,837.1595,,,,,,,Not verified,BIS candidate only,86.403,
+2024-03-31,CHF,839.0395,,,,,,,Not verified,BIS candidate only,88.344,
+2024-06-30,CHF,845.1849,,,,,,,Not verified,BIS candidate only,83.264,
+2024-09-30,CHF,853.0296000000001,,,,,,,Not verified,BIS candidate only,83.462,
+2024-12-31,CHF,860.932,,,,,,,Not verified,BIS candidate only,83.599,
+2025-03-31,CHF,870.2234,,,,,,,Not verified,BIS candidate only,85.136,
+2025-06-30,CHF,876.6381000000001,,,,,,,Not verified,BIS candidate only,84.312,
+2025-09-30,CHF,879.6907000000001,,,,,,,Not verified,BIS candidate only,81.996,
+2025-12-31,CHF,881.5717,,,,,,,Not verified,BIS candidate only,83.756,
+2026-03-31,CHF,882.0699000000001,,,,,,,Not verified,BIS candidate only,87.995,
+2026-06-30,CHF,887.4477999999999,,,,,,,Not verified,BIS candidate only,,
+2021-12-31,DKK,2553.2604,,,,,,,Not verified,BIS candidate only,725.959300227,
+2022-03-31,DKK,2629.1777,,,,,,,Not verified,BIS candidate only,668.766655687,
+2022-06-30,DKK,2713.8465,,,,,,,Not verified,BIS candidate only,661.001716473,
+2022-09-30,DKK,2794.6844,,,,,,,Not verified,BIS candidate only,659.653142943,
+2022-12-31,DKK,2831.2696,,,,,,,Not verified,BIS candidate only,642.018812305,
+2023-03-31,DKK,2854.9109000000003,,,,,,,Not verified,BIS candidate only,653.177846255,
+2023-06-30,DKK,2837.5042999999996,,,,,,,Not verified,BIS candidate only,656.643891113,
+2023-09-30,DKK,2796.2872,,,,,,,Not verified,BIS candidate only,653.345546746,
+2023-12-31,DKK,2781.3277,,,,,,,Not verified,BIS candidate only,615.847872717,
+2024-03-31,DKK,2784.7616000000003,,,,,,,Not verified,BIS candidate only,626.120477587,
+2024-06-30,DKK,2829.3835999999997,,,,,,,Not verified,BIS candidate only,638.393520978,
+2024-09-30,DKK,2897.9737,,,,,,,Not verified,BIS candidate only,646.457346385,
+2024-12-31,DKK,2985.5547,,,,,,,Not verified,BIS candidate only,584.496572439,
+2025-03-31,DKK,3041.7264,,,,,,,Not verified,BIS candidate only,582.011620488,
+2025-06-30,DKK,3071.6681999999996,,,,,,,Not verified,BIS candidate only,592.418831283,
+2025-09-30,DKK,3103.7389,,,,,,,Not verified,BIS candidate only,617.106624045,
+2025-12-31,DKK,3118.5375999999997,,,,,,,Not verified,BIS candidate only,581.761540989,
+2026-03-31,DKK,3132.9291000000003,,,,,,,Not verified,BIS candidate only,589.803736786,
+2026-06-30,DKK,3164.4309,,,,,,,Not verified,BIS candidate only,,
+2021-12-31,EUR,3713.09,,,,,,,Not verified,BIS candidate only,1648.4840898841,
+2022-03-31,EUR,3797.09,,,,,,,Not verified,BIS candidate only,1652.311154351,
+2022-06-30,EUR,3874.84,,,,,,,Not verified,BIS candidate only,1669.714381448,
+2022-09-30,EUR,3943.53,,,,,,,Not verified,BIS candidate only,1659.9760730118,
+2022-12-31,EUR,4010.63,,,,,,,Not verified,BIS candidate only,1737.4700994989,
+2023-03-31,EUR,4083.61,,,,,,,Not verified,BIS candidate only,1778.7312256063,
+2023-06-30,EUR,4141.81,,,,,,,Not verified,BIS candidate only,1806.2365778228,
+2023-09-30,EUR,4197.73,,,,,,,Not verified,BIS candidate only,1851.4601251279,
+2023-12-31,EUR,4254.93,,,,,,,Not verified,BIS candidate only,1860.245183383,
+2024-03-31,EUR,4287.7,,,,,,,Not verified,BIS candidate only,1853.2308165637,
+2024-06-30,EUR,4326.06,,,,,,,Not verified,BIS candidate only,1855.4607063662,
+2024-09-30,EUR,4359.23,,,,,,,Not verified,BIS candidate only,1876.3971916815,
+2024-12-31,EUR,4386.94,,,,,,,Not verified,BIS candidate only,1891.0645390258,
+2025-03-31,EUR,4417.63,,,,,,,Not verified,BIS candidate only,1896.9557527257,
+2025-06-30,EUR,4450.28,,,,,,,Not verified,BIS candidate only,1922.7183434986,
+2025-09-30,EUR,4487.8,,,,,,,Not verified,BIS candidate only,1960.2890150105,
+2025-12-31,EUR,4529.71,,,,,,,Not verified,BIS candidate only,1970.7490444839,
+2026-03-31,EUR,4568.84,,,,,,,Not verified,BIS candidate only,2023.9676523043,
+2026-06-30,EUR,4612.04,,,,,,,Not verified,BIS candidate only,,
+2021-12-31,GBP,2332.847,1614.15400262887,759.975,,,,,Not verified,Paired: APF only,,36.61530321657914
+2022-03-31,GBP,2411.947,1593.1326976288701,734.8979,,,,,Not verified,Paired: APF only,,35.5826557394864
+2022-06-30,GBP,2468.655,1634.26619262887,734.8979,,,,,Not verified,Paired: APF only,,36.43150997724955
+2022-09-30,GBP,2534.958,1626.1434426288695,725.8246,,,,,Not verified,Paired: APF only,,35.51612463121162
+2022-12-31,GBP,2590.757,1721.6954356288704,719.2434000000001,,,,,Not verified,Paired: APF only,,38.69340257032483
+2023-03-31,GBP,2645.721,1742.3549056288698,706.9050000000001,,,,,Not verified,Paired: APF only,,39.136776161540446
+2023-06-30,GBP,2697.563,1800.4348716288696,694.0475,,,,,Not verified,Paired: APF only,,41.014329290135926
+2023-09-30,GBP,2742.377,1779.71025062887,650.1993999999999,,,,,Not verified,Paired: APF only,,41.18729301729376
+2023-12-31,GBP,2766.446,1834.53783362887,638.5303999999999,,,,,Not verified,Paired: APF only,,43.23263254113293
+2024-03-31,GBP,2796.047,1860.26251462887,623.8784,,,,,Not verified,Paired: APF only,,44.219003279589714
+2024-06-30,GBP,2828.579,1893.28825462887,593.1005,,,,,Not verified,Paired: APF only,,45.96611070890613
+2024-09-30,GBP,2866.092,1938.1618616288704,561.5992000000001,,,,,Not verified,Paired: APF only,,48.02925592161279
+2024-12-31,GBP,2904.95,1996.88099962887,557.9304000000001,,,,,Not verified,Paired: APF only,,49.534436036037455
+2025-03-31,GBP,2955.008,2004.8874466288703,530.5574,,,,,Not verified,Paired: APF only,,49.89259070123906
+2025-06-30,GBP,2993.211,2054.69547562887,499.07649999999995,,,,,Not verified,Paired: APF only,,51.9715775342557
+2025-09-30,GBP,3019.982,2093.78738862887,469.9865,,,,,Not verified,Paired: APF only,,53.76856182019859
+2025-12-31,GBP,3044.594,2125.58720062887,465.9302,,,,,Not verified,Paired: APF only,,54.51160320978331
+2026-03-31,GBP,3076.302,2143.84969762887,441.4123000000001,,,,,Not verified,Paired: APF only,,55.340385879828126
+2026-06-30,GBP,3106.042,2216.0197006288695,436.5672,,,,,Not verified,Paired: APF only,,57.29003344542248
+2021-12-31,NZD,352.675,126.345,2.55,,,,,Not verified,Paired,,35.101722549089104
+2022-03-31,NZD,358.424,128.345,2.55,,,,,Not verified,Paired,,35.09670111376471
+2022-06-30,NZD,365.126,130.745,2.55,,,,,Not verified,Paired,,35.10979771366597
+2022-09-30,NZD,376.221,134.3,2.75,,,,,Not verified,Paired,,34.96615021490029
+2022-12-31,NZD,385.277,140.984,2.9,,,,,Not verified,Paired,,35.84018770910281
+2023-03-31,NZD,393.768,147.767,3.15,,,,,Not verified,Paired,,36.726448060787064
+2023-06-30,NZD,401.969,135.507,2.9,,,,,Not verified,Paired,,32.98935987601034
+2023-09-30,NZD,408.586,146.662,4.4,,,,,Not verified,Paired,,34.81812886393562
+2023-12-31,NZD,412.528,151.66400000000002,4.4,,,,,Not verified,Paired,,35.6979405034325
+2024-03-31,NZD,417.405,159.22400000000002,4.55,,,,,Not verified,Paired,,37.056096596830415
+2024-06-30,NZD,420.885,157.65900000000002,4.55,,,,,Not verified,Paired,,36.3778704396688
+2024-09-30,NZD,423.31,168.558,4.7,,,,,Not verified,Paired,,38.70874772625263
+2024-12-31,NZD,427.665,177.813,4.7,,,,,Not verified,Paired,,40.4786456689231
+2025-03-31,NZD,432.021,186.56799999999998,4.7,,,,,Not verified,Paired,,42.09702769078355
+2025-06-30,NZD,435.461,179.803,4.45,,,,,Not verified,Paired,,40.26835927901695
+2025-09-30,NZD,440.302,189.438,4.45,,,,,Not verified,Paired,,42.01389046608918
+2025-12-31,NZD,445.966,198.538,4.65,,,,,Not verified,Paired,,43.475960050766204
+2026-03-31,NZD,451.543,202.643,5.05,,,,,Not verified,Paired,,43.759509061152535
+2026-06-30,NZD,456.843,198.678,4.9,,,,,Not verified,Paired,,42.41676024367233
+2021-12-31,SEK,5417.76,655.98295,334.714,2022-01-11,https://www.riksgalden.se/contentassets/b91cc48b023c43c3a8a650fc22af4db5/central-government-debt-dec-2021.pdf,,,Not verified,Paired,,5.929922144945512
+2022-03-31,SEK,5505.33,668.48295,344.214,2022-04-07,https://www.riksgalden.se/contentassets/a6587c10dc984f3bb9c481f203b188b4/report-central-government-debt-march-2022.pdf,,,Not verified,Paired,,5.890091057211828
+2022-06-30,SEK,5620.407,577.66645,286.129,2022-07-07,https://www.riksgalden.se/contentassets/1bc42c76820f4c709c4418dd71a72120/report-central-government-debt-jun-2022.pdf,,,Not verified,Paired,,5.18712345920856
+2022-09-30,SEK,5735.267,583.66645,288.429,2022-10-07,https://www.riksgalden.se/contentassets/0a8330b006b84a489c648f00785c8498/report-central-government-debt-september-2022.pdf,,,Not verified,Paired,,5.147754237073881
+2022-12-31,SEK,5816.415,593.66645,290.629,2023-01-10,https://www.riksgalden.se/contentassets/c4ef2ff80cf24c1095fdbeeb9599e2f4/report-central-government-debt-december-2022.pdf,,,Not verified,Paired,,5.210038313978629
+2023-03-31,SEK,5927.282,603.66645,290.629,2023-04-11,https://www.riksgalden.se/contentassets/e885fbc0afd046c0851e880a75b78dc3/report-central-government-debt-march-2023.pdf,,,Not verified,Paired,,5.2812984096251885
+2023-06-30,SEK,5994.028,615.66645,281.629,2023-07-07,https://www.riksgalden.se/contentassets/e5975a879e954f6685be1b122dafe9e7/report-central-government-debt-jun-2023.pdf,,,Not verified,Paired,,5.572837664421988
+2023-09-30,SEK,6085.274,625.66645,277.429,2023-10-06,https://www.riksgalden.se/contentassets/b51f624a55954f22b5f9bf09c59b0074/report-central-government-debt-september-2023.pdf,,,Not verified,Paired,,5.722625636906408
+2023-12-31,SEK,6143.187,535.03145,209.42,2024-01-09,https://www.riksgalden.se/contentassets/0594c7398d7142d881b4395bf06e404a/report-central-government-debt-december-2023.pdf,,,Not verified,Paired,,5.300366894252121
+2024-03-31,SEK,6222.053,552.55045,193.82,2024-04-08,https://www.riksgalden.se/contentassets/e5eea2cad6854060bf292d36ae4e2725/report-central-government-debt-march-2024.pdf,,,Not verified,Paired,,5.765467603699293
+2024-06-30,SEK,6301.337,565.65045,176.72,2024-07-05,https://www.riksgalden.se/contentassets/4d296bd5108f484594be72ec10497bb3/report-central-government-debt-june-2024.pdf,,,Not verified,Paired,,6.172189330613486
+2024-09-30,SEK,6351.846,581.65045,171.77,2024-10-07,https://www.riksgalden.se/contentassets/6a15547734204fe3a318df6c4a2c7ffd/report-central-government-debt-september-2024.pdf,,,Not verified,Paired,,6.452934312324324
+2024-12-31,SEK,6443.039,605.65045,154.725,2025-01-10,https://www.riksgalden.se/contentassets/85b1eb8dc8bf411b801ca6d4bb3618dd/report-central-government-debt-dec-2024.pdf,,,Not verified,Paired,,6.998645359744058
+2025-03-31,SEK,6469.314,630.65045,140.265,2025-04-07,https://www.riksgalden.se/contentassets/f6adb5cf97c44c83812e2fdb516d6101/central-government-debt-march-2025.pdf,,,Not verified,Paired,,7.580176970850386
+2025-06-30,SEK,6517.614,578.95145,78.349,2025-07-07,https://www.riksgalden.se/contentassets/afcc33fe12344f89a0452e724ddda65b/report-central-government-debt-jun-2025.pdf,,,Not verified,Paired,,7.680762469210359
+2025-09-30,SEK,6569.174,602.95145,73.749,2025-10-07,https://www.riksgalden.se/contentassets/f97bc565ec4346e482c154f406036aa2/report-central-government-debt-sep-2025.pdf,,,Not verified,Paired,,8.055844616081108
+2025-12-31,SEK,6644.105,638.95145,58.649,2026-01-12,https://www.riksgalden.se/contentassets/e9a5250b7c7c409eb4f7ddf7045ec1f1/report-central-government-debt-dec-2025.pdf,,,Not verified,Paired,,8.734095111380691
+2026-03-31,SEK,6701.544,698.95145,58.6371,2026-04-09,https://www.riksgalden.se/contentassets/894b4829c97342c79f0311245da01114/central-government-debt-mar-2026.pdf,,,Not verified,Paired,,9.55472873117001
+2026-06-30,SEK,6784.842,748.95145,58.367,2026-07-07,https://www.riksgalden.se/contentassets/655c4484c015484abc95576aa1a4b476/central-government-debt-june-2026.pdf,,,Not verified,Paired,,10.178342399130297

@@ -1,0 +1,21 @@
+{
+  "source": "data/refresh/Foreign_Spread_5Y10Y_2026-10-09.xlsx",
+  "sha256": "bdfb0fc1b213fbc640ab24bd75c6e9ddd0f7f97a63c7dde9e58725550ec2e3a2",
+  "refresh_blocks": 54,
+  "numeric_quotes": 51839,
+  "retained_history_quotes": 7,
+  "retained_variables": [
+    "cad_sofr_irs_10y_cdso10"
+  ],
+  "min_series_end": "2026-10-08",
+  "max_series_end": "2026-10-09",
+  "max_history_revision_bps": 0.8399999999999963,
+  "government_cip_good_matches": 20,
+  "rho_diagnostic_good": 20,
+  "eq6_max_residual_bps": 1.1368683772161605e-13,
+  "notes": [
+    "Historical fallback is an observed same-ticker quote, not forward fill.",
+    "Only the fixed-eight SOFR-regime series are extended; JPY/NOK and other maturities remain baseline.",
+    "The public benchmark ends in June 2025; later dates have no independent public match."
+  ]
+}

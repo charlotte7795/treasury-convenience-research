@@ -1,0 +1,17 @@
+currency,tenor,regime,n_regimes,first_date,last_date,swap_variable,government_variable,floating_benchmark
+AUD,10y,sofr,1,2023-01-03,2026-05-29,aud_ibor_irs_10y_adsw10q,aud_sofr_govt_10y_bv100127,3M Bank Bill
+AUD,5y,sofr,1,2023-01-03,2026-05-29,aud_sofr_irs_5y_adswap5q,aud_sofr_govt_5y_bv050127,3M Bank Bill
+CAD,10y,sofr,1,2023-01-03,2026-05-29,cad_sofr_irs_10y_cdso10,cad_sofr_govt_10y_bv100101,CORRA
+CAD,5y,sofr,1,2023-01-03,2026-05-29,cad_sofr_irs_5y_cdso5,cad_sofr_govt_5y_bv050101,CORRA
+CHF,10y,sofr,1,2023-01-03,2026-05-29,chf_sofr_irs_10y_sfsnt10,chf_sofr_govt_10y_bv100256,SARON Fixing  (At Close)
+CHF,5y,sofr,1,2023-01-03,2026-05-29,chf_sofr_irs_5y_sfsnt5,chf_sofr_govt_5y_bv050256,SARON Fixing  (At Close)
+DKK,10y,sofr,1,2023-01-03,2026-05-29,dkk_ibor_irs_10y_dksw10v3,dkk_sofr_govt_10y_bv100267,3M Cibor
+DKK,5y,sofr,1,2023-01-03,2026-05-29,dkk_ibor_irs_5y_dksw5v3,dkk_sofr_govt_5y_bv050267,3M Cibor
+EUR,10y,sofr,1,2023-01-03,2026-05-29,eur_sofr_irs_10y_eeswe10,eur_sofr_govt_10y_bv100910,ESTR
+EUR,5y,sofr,1,2023-01-03,2026-05-29,eur_sofr_irs_5y_eeswe5,eur_sofr_govt_5y_bv050910,ESTR
+GBP,10y,sofr,1,2023-01-03,2026-05-29,gbp_sofr_irs_10y_bpsws10,gbp_sofr_govt_10y_bv100110,SONIA
+GBP,5y,sofr,1,2023-01-03,2026-05-29,gbp_sofr_irs_5y_bpsws5,gbp_sofr_govt_5y_bv050110,SONIA
+NZD,10y,sofr,1,2023-01-04,2026-05-29,nzd_sofr_irs_10y_ndso10,nzd_sofr_govt_10y_bv100250,3M Bank Bill
+NZD,5y,sofr,1,2023-01-04,2026-05-29,nzd_sofr_irs_5y_ndso5,nzd_sofr_govt_5y_bv050250,3M Bank Bill
+SEK,10y,sofr,1,2023-01-03,2026-05-29,sek_ibor_irs_10y_sksw10,sek_sofr_govt_10y_bv100259,3M Stibor
+SEK,5y,sofr,1,2023-01-03,2026-05-29,sek_ibor_irs_5y_sksw5,sek_sofr_govt_5y_bv050259,3M Stibor

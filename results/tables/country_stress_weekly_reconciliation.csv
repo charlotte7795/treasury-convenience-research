@@ -1,0 +1,9 @@
+tenor,metric,max_weekly_mean_error_bps
+5y,x_govt_raw_bps,1.4210854715202004e-14
+5y,x_rf_raw_bps,5.995204332975845e-15
+5y,us_swap_spread_bps,1.4221263056057865e-14
+5y,foreign_swap_spread_bps,1.4654943925052066e-14
+10y,x_govt_raw_bps,1.4654943925052066e-14
+10y,x_rf_raw_bps,8.43769498715119e-15
+10y,us_swap_spread_bps,2.1316282072803006e-14
+10y,foreign_swap_spread_bps,1.1934897514720433e-14

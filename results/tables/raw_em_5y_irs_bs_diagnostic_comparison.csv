@@ -1,0 +1,8 @@
+currency,basis_sign,n_overlap,date_min,date_max,corr,mae_bps,mean_diff_bps,basis_variable,swap_variable,govt_variable,status
+HUF,1,3741,2006-10-04,2021-12-31,0.9949399428957246,20.897305904051695,-20.545394302340927,huf_ibor_bs_5y_hfebs5,huf_ibor_irs_5y_hfsw5,huf_ibor_govt_5y_c1145y,REVIEW
+MXN,-1,4486,2003-11-05,2022-03-28,0.9515553310395771,9.515375773735624,8.29609516972314,mxn_ibor_bs_5y_mpbs5e,mxn_ibor_irs_5y_mpsw5e,mxn_ibor_govt_5y_c4765y,REVIEW
+PLN,1,3898,2005-03-18,2021-12-31,0.9781371431336989,19.408875922413166,-18.72859717382415,pln_ibor_bs_5y_pzbsec5,pln_ibor_irs_5y_pzsw5,pln_ibor_govt_5y_c1195y,REVIEW
+CLP,-1,2437,2007-11-27,2017-08-01,0.993636368225628,9.704781324151828,9.417025834787855,clp_ibor_bs_5y_chusbs5,clp_ibor_irs_5y_chswp5,clp_ibor_govt_5y_c9905y,USABLE_DIAGNOSTIC
+THB,1,3857,2006-11-22,2022-03-23,0.9927463608148969,10.402284656929476,-10.37542828306378,thb_ibor_bs_5y_tbbs5,thb_ibor_irs_5y_tbswni5,thb_ibor_govt_5y_c1225y,USABLE_DIAGNOSTIC
+ILS,1,3835,2006-02-10,2022-06-08,0.9933783989734764,2.7555687391395045,1.3121383054498053,ils_ibor_bs_5y_isbs5,ils_ibor_irs_5y_issw5,ils_ibor_govt_5y_i32505y,VALIDATED
+MYR,1,3546,2007-01-03,2022-03-07,0.9994298188618981,0.7125515126085727,0.4304058062633967,myr_ibor_bs_5y_mrbs5,myr_ibor_irs_5y_mrswni5,myr_ibor_govt_5y_c1285y,VALIDATED

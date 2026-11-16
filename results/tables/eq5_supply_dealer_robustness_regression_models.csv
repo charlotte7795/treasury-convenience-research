@@ -1,0 +1,11 @@
+target,spec,n_months,date_min,date_max,r_squared,adj_r_squared
+x_govt_raw_bps_5y,full_supply_level_with_trend,305,2001-01-31,2026-05-31,0.733854696760225,0.7320921450831404
+x_govt_raw_bps_5y,full_supply_controls_level_with_trend,258,2004-12-31,2026-05-31,0.7920174820144412,0.7861939715108456
+x_govt_raw_bps_5y,full_supply_controls_12m_change,246,2005-12-31,2026-05-31,0.3810767297362405,0.3655389070517947
+x_govt_raw_bps_5y,post2013_supply_dealer_controls_level_with_trend,153,2013-04-30,2026-05-31,0.6950758540542368,0.6758848238898181
+x_govt_raw_bps_5y,post2013_supply_dealer_controls_12m_change,136,2014-04-30,2026-05-31,0.4849071562936764,0.452460362989341
+x_govt_raw_bps_10y,full_supply_level_with_trend,305,2001-01-31,2026-05-31,0.7370851669682597,0.7353440091336123
+x_govt_raw_bps_10y,full_supply_controls_level_with_trend,258,2004-12-31,2026-05-31,0.6358052935639082,0.6256078417836977
+x_govt_raw_bps_10y,full_supply_controls_12m_change,246,2005-12-31,2026-05-31,0.09095581372918993,0.06813462076841648
+x_govt_raw_bps_10y,post2013_supply_dealer_controls_level_with_trend,153,2013-04-30,2026-05-31,0.7070834974396656,0.6886481930827215
+x_govt_raw_bps_10y,post2013_supply_dealer_controls_12m_change,136,2014-04-30,2026-05-31,0.3044891403104635,0.26067743261348475

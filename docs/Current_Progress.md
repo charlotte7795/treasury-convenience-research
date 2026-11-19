@@ -7,7 +7,7 @@ This is an upload of recorded work, not a market-data refresh.
 
 The [executed notebook](../notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication_executed.ipynb)
 is the canonical research log. Use Section 15C for the reviewed monthly accounting and
-Sections 15E-15J for the later extensions. The existing presentation is an earlier
+Sections 15E-15K for the later extensions. The existing presentation is an earlier
 descriptive snapshot; it does not include every November extension.
 
 ## Findings And Limits
@@ -23,6 +23,7 @@ descriptive snapshot; it does not include every November extension.
 | Supply screen, 15H | Fixed October 2022 IMF debt vintage gives positive slopes; intervals cross zero without tariff weeks | Gross general-government debt is not net marketable bond stock |
 | Net-supply sensitivity, 15I | Positive slopes across four designs, including six markets; net-minus-gross intervals all cover zero | No established explanatory-power gain, no causal result, incomplete historical vintages |
 | Monthly stationarity, 15J | Both fixed-eight baskets have level ADF p-values above 0.05 and level KPSS p-values ≤0.01. After differencing, ADF p-values are below 0.001 and KPSS p-values are ≥0.10 | The 10Y trend result is lag-sensitive. See the [full tests](../results/tables/treasury_stationarity_tests.csv) and the [extension slides](../results/extensions.pptx). |
+| Weekly 5Y model selection, 15K | The no-drift MA(1) and AR(1) have training AICc values of 380.93 and 381.40, respectively. See the [full candidate table](../results/tables/treasury_model_selection.csv). | The ranking summarizes training fit and does not establish an advantage out of sample. |
 
 ## New Data
 

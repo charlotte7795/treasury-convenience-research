@@ -1767,6 +1767,35 @@ These monthly diagnostics support testing first differences in a forecasting ext
     ),
     md(
         r"""
+## 15K. Weekly 5Y Model Selection and Parameter Estimation
+
+We compare low-order ARMA models for $X_t = \Phi_t - \Phi_{t-1}$, the weekly change in the 5Y equal-weight basket, measured in basis points. The training sample contains 95 observed weeks from January 20, 2023 through December 20, 2024. The fit preserves missing calendar weeks in the state-space model. The monthly results in Section 15J motivate the choice of differences. Selecting on weekly differences does not itself test their stationarity.
+
+We fit 16 candidates by Gaussian maximum likelihood. The grid uses $p,q$ from 0 to 2 with $p+q$ at most 3, allowing or omitting a constant in each specification. A nonzero mean of weekly changes implies a drift in the level. AIC penalizes the parameter count, including the innovation variance. AICc adds the finite-sample correction $2k(k+1)/(n-k-1)$, using the observed training count $n$ and the number of estimated parameters $k$. Lower values indicate a better trade-off between training fit and complexity.
+"""
+    ),
+    code(
+        r"""
+from src.analyze_treasury_model_selection import estimate_candidates, selection_summary, training_changes
+
+weekly_model_selection = estimate_candidates(training_changes())
+display(selection_summary(weekly_model_selection).set_index("Weekly first-difference model"))
+weekly_no_drift_parameters = weekly_model_selection.query(
+    "not allow_drift and ((p == 0 and q == 1) or (p == 1 and q == 0))"
+)
+display(weekly_no_drift_parameters[["p", "q", "ar_l1", "ma_l1", "innovation_variance_bps2"]]
+        .round(4).reset_index(drop=True))
+"""
+    ),
+    md(
+        r"""
+Both AIC and AICc favor the no-drift MA(1). The runner-up under AICc is the no-drift AR(1), just 0.48 AICc points higher. The AR(1) coefficient is -0.281 and the MA(1) coefficient is -0.303 under the convention $X_t=\varepsilon_t+\theta\varepsilon_{t-1}$. The negative coefficients describe short-horizon reversal in weekly changes. The MA(1) relates today's change to last week's innovation, while the AR(1) relates it to last week's observed change. The no-drift white-noise model for weekly changes corresponds to a random walk in the level.
+
+The close AICc rankings justify retaining both simple models and the random walk for later out-of-sample comparison. All entries in this section are training-sample estimates. The [complete candidate table](../results/tables/treasury_model_selection.csv) contains all 16 fits, parameter estimates, innovation variances, and both information criteria.
+"""
+    ),
+    md(
+        r"""
 ## 16. Current Findings
 
 ### Completed
@@ -1783,6 +1812,7 @@ These monthly diagnostics support testing first differences in a forecasting ext
 - Foreign-spread raw-leg decomposition: all 16 pairs decline; alternative windows and one-country exclusions preserve the relative-convenience rebound. Mechanism remains untested.
 - September 2026 refreshed accounting: 720 fixed-cohort country-tenor-months, 20/20 selected government-CIP checks, positive 5Y/10Y rebound under alternative baselines and endpoints. Section 15C is the controlling final evidence.
 - Monthly stationarity diagnostics (Section 15J): level tests do not support stationarity around a fixed mean for either basket, while first differences are consistent with stationarity over the 45-month sample.
+- Weekly 5Y model selection (Section 15K): no-drift MA(1) leads the training AICc at 380.93, followed by no-drift AR(1) at 381.40. Both remain candidates for out-of-sample evaluation.
 - Post-meeting measurement sensitivity: excluding NZD or NZD/DKK preserves the rebound. NZD metadata remains REVIEW; reassigning its tenor adjustment between components leaves Treasury convenience unchanged.
 - Archived weekly VIX-only diagnostic through May 29, 2026: post-2023 relative-convenience betas remain negative. Sections 15E-15F supersede its missing-input status and qualify the risk interpretation.
 - November 2 risk exports: all 12 series contain numeric data through September 30. Section 15E implements matched-sample equity/IG/HY tests through the week of September 25; the earlier missing-input status is superseded.

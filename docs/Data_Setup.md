@@ -6,6 +6,8 @@ The November 16 sync includes the recorded public inputs, user-authorized Bloomb
 
 Start with `python src/restore_shared_data.py`. This verifies the checksums and restores the scripts' expected local paths. Then run `python -m unittest discover -s tests` and `python -m src.build_research_notebook --execute`. Some tests now use archived data; no Bloomberg login or live download is needed. The optional public-source collector uses `xlrd` for the older UK spreadsheet and `pypdf`/`lxml` for the Swedish source archive.
 
+The sovereign-CDS [input inventory](../data/refresh/sovereign_cds_2026-11-19/) lists the two local source workbooks required for `python -m src.analyze_sovereign_cds`. The published notebook displays the archived aggregate results if the local workbooks are unavailable. To run the measured U.S.-relative specifications, follow the [U.S. input schema](../data/README.md#sovereign-cds).
+
 ## Required Local Inputs
 
 The final-core scripts expect these local paths relative to the repository root. The bundled data restore these paths, except for the six original Excel containers:

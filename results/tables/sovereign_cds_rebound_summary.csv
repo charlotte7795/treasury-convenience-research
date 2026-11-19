@@ -1,0 +1,5 @@
+tenor,sample,currencies,n_countries,average_cds_change,actual_bond_minus_swap_change,fitted_bond_minus_swap_change,fitted_ci_low,fitted_ci_high,signed_share_pct,full8_actual_bond_minus_swap_change
+5y,full_window,CAD CHF EUR NZD,4,-15.0996495,39.2745979,-3.8470302,-5.98708735,-1.70697304,-9.79521218,36.8814775
+5y,near_full_window,AUD CAD CHF EUR NZD,5,-14.2917505,37.9124922,-3.64119681,-5.66675129,-1.61564232,-9.60421379,36.8814775
+10y,full_window,CAD CHF NZD,3,-19.1105158,38.3203111,-4.43661305,-7.6899061,-1.18332,-11.5777062,39.0487168
+10y,near_full_window,CAD CHF EUR GBP NZD,5,-14.2602976,41.6624131,-3.31060779,-5.73822029,-0.882995286,-7.94626989,39.0487168

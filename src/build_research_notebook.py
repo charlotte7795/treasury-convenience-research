@@ -16,18 +16,18 @@ def cell_id(prefix: str) -> str:
     return f"{prefix}-{next(_CELL_IDS):03d}"
 
 
-def md(source: str) -> dict:
+def md(source: str, identifier: str | None = None) -> dict:
     return {
-        "id": cell_id("md"),
+        "id": identifier or cell_id("md"),
         "cell_type": "markdown",
         "metadata": {},
         "source": source.strip() + "\n",
     }
 
 
-def code(source: str) -> dict:
+def code(source: str, identifier: str | None = None) -> dict:
     return {
-        "id": cell_id("code"),
+        "id": identifier or cell_id("code"),
         "cell_type": "code",
         "execution_count": None,
         "metadata": {},
@@ -43,9 +43,9 @@ cells = [
 
 ## Raw Bloomberg Replication Notebook
 
-Updated: 2026-11-03. CIP outcomes retain the October 9 quote snapshot and monthly accounting through September 30. The new risk/NZD exports contain observations through September 30; weekly risk models use complete weeks through September 25. U.S. supply/inventory regressions still end in May 2026. Section 15D's older VIX-only test ends May 29 and is retained as a historical snapshot.
+Updated: 2026-11-19. CIP outcomes retain the October 9 quote snapshot and monthly accounting through September 30. The new risk/NZD exports contain observations through September 30; weekly risk models use complete weeks through September 25. U.S. supply/inventory regressions still end in May 2026. Section 15D's older VIX-only test ends May 29 and is retained as a historical snapshot.
 
-**Reviewed accounting baseline: Section 15C. Latest research: Sections 15E-15I.** Sections 15E-15G cover risk tests and country stress attribution. Sections 15H-15I compare pre-sample debt exposures and a narrower net bond stock on matched stress weeks. Convenience levels rebounded, but the recent stress-week evidence does not establish restored safe-haven behavior. These are relative-price associations, not causal effects or exact Table 5 replication.
+**Reviewed accounting baseline: Section 15C.** Extension 1 covers sovereign CDS, followed by Extension 2 on stationarity, forecasting and trading.  Sections 15E-15G cover risk tests and country stress attribution. Sections 15H-15I compare pre-sample debt exposures and a narrower net bond stock on matched stress weeks. Convenience levels rebounded, but the recent stress-week evidence does not establish restored safe-haven behavior. These are relative-price associations, not causal effects or exact Table 5 replication.
 
 The deliverable is a bounded raw G10 5Y/10Y replication plus a descriptive relative-convenience extension. It does not claim exact replication of every paper figure/table or causal identification.
 
@@ -1740,6 +1740,93 @@ The net-stock signal is worth reporting as a sensitivity, **not as a standalone 
     ),
     md(
         r"""
+## Extension 1. Sovereign CDS and the Foreign Leg
+
+Can changes in sovereign credit spreads account for the foreign contribution to the Treasury convenience rebound? We use the change in **local government yield minus the local swap rate** as the outcome. It is minus the repo’s foreign swap spread and therefore enters the Eq. 6 convenience decomposition with a positive sign.
+
+The two source workbooks agree on all 12,111 foreign CDS observations across eight currencies and two tenors. German CDS represents the EUR market. We treat the CDS values as spread basis points. Bloomberg reference entity and quote-unit metadata, particularly for CANPAC, remain to be confirmed directly.
+
+Match CDS, rates and maturities by actual observation date. Average the matched days into Friday-ending weeks, requiring three matched days per week and the same swap regime in each pair of consecutive weeks. The main regression includes both country and calendar-week fixed effects. With country effects only, we compare VIX, S&P 500, IG and HY with the identical baseline plus CDS on the same observations. The uncertainty estimates allow contemporaneous dependence across countries and serial dependence across weeks, using HAC on the calendar-week scores.
+""",
+        "cds-intro",
+    ),
+    code(
+        r"""
+from src.analyze_sovereign_cds import FOREIGN_WORKBOOKS, INPUT as CDS_INPUT, run as run_sovereign_cds
+
+cds_archive_tables = PROJECT_ROOT / "results" / "tables"
+cds_archive_figures = PROJECT_ROOT / "results" / "figures"
+if all((CDS_INPUT / workbook).is_file() for workbook in FOREIGN_WORKBOOKS):
+    run_sovereign_cds()
+    cds_table_dir = cds_figure_dir = TABLE_DIR
+else:
+    cds_table_dir = cds_archive_tables
+    cds_figure_dir = cds_archive_figures
+cds_coverage = pd.read_csv(cds_table_dir / "sovereign_cds_coverage.csv")
+display(cds_coverage[["tenor", "country", "first_cds", "change_weeks", "matched_2023_months",
+                      "matched_2026_months", "matched_2023_cds", "matched_2026_cds", "matched_change_cds"]].round(2))
+cds_coefficients = pd.read_csv(cds_table_dir / "sovereign_cds_regressions.csv")
+cds_main = cds_coefficients.query("sample == 'main' and factor == 'd_cds' and hac_weeks == 4")
+display(cds_main[["tenor", "spec", "outcome", "n", "beta", "ci_low", "ci_high"]].round(3))
+cds_increment = pd.read_csv(cds_table_dir / "sovereign_cds_market_incremental_fit.csv")
+display(cds_increment[["tenor", "outcome", "within_r2_base", "within_r2_plus", "delta_within_r2"]].round(6))
+""",
+        "cds-fit",
+    ),
+    md(
+        r"""
+The two-way fixed-effects slope is +0.255 at 5Y and +0.232 at 10Y for the yield-minus-swap spread. On the same sample, the swap-rate slope is more negative than the yield slope. The market-factor specification produces much smaller spread coefficients with intervals crossing zero. Leaving one market out at a time preserves the positive direction, although the 5Y interval crosses zero when Germany is omitted. See the [full specifications and robustness results](../results/tables/sovereign_cds_regressions.csv).
+
+### Rebound magnitude
+
+Use the 2023 full-year average as the same baseline as the project’s rebound accounting. Use January–September 2026 as the latest complete nine-month window shared with the CDS export. Monthly averages limit dependence on a single date or event, and each qualifying month receives equal weight. Require 15 joint daily observations per month. Four 5Y markets and three 10Y markets qualify for all 12 baseline and 9 rebound months. Australian 5Y lacks a qualifying December 2023. German and UK 10Y start on January 26, 2023, leaving January below the threshold. Other excluded markets lack 2023 quotes. Report an 11-month sensitivity alongside the strict panel.
+
+Multiply the weekly CDS slope by the change between the two average CDS levels. This is a magnitude diagnostic with a maintained relationship across horizons. The CDS-implied changes are negative even though the actual foreign contribution was positive on the same matched dates.
+""",
+        "cds-rebound-intro",
+    ),
+    code(
+        r"""
+cds_rebound = pd.read_csv(cds_table_dir / "sovereign_cds_rebound_summary.csv")
+display(cds_rebound.round(2))
+display(Image(filename=str(cds_figure_dir / "sovereign_cds_country_rebound.png")))
+""",
+        "cds-rebound",
+    ),
+    md(
+        r"""
+### Foreign CDS relative to U.S. CDS
+
+The new regressor is $\Delta(CDS_{i,t}-CDS_{US,t})$ at the same tenor. Use a common U.S. weekly change for all countries. The week fixed effects absorb that common U.S. component, so absolute and relative CDS have identical slope and standard error **on an identical sample**. The country-FE market-factor specification estimates the relative variable on U.S.-matched weeks and also fits both CDS legs separately.
+
+For the rebound, the formula is $\hat\beta[\Delta\overline{CDS}_{i}-\Delta\overline{CDS}_{US}]$, where each $\Delta\overline{CDS}$ compares the two window averages. Even with equal weekly slopes, subtracting the U.S. window change alters the implied contribution. The table reports the U.S. move required for the fitted contribution to reach zero and to equal the actual change, holding the foreign-only common-window sample and slope fixed.
+
+Supply the daily U.S. CDS series as `data/refresh/sovereign_cds_2026-11-19/us_sovereign_cds.csv` with `date,tenor,us_cds` columns to populate the numeric relative comparisons. The archived foreign workbook does not contain the U.S. 5Y or 10Y series. Without those quotes the threshold columns are sensitivities, and blank numeric results indicate unavailable U.S.-matched observations.
+""",
+        "cds-relative-intro",
+    ),
+    code(
+        r"""
+relative_cds_file = cds_table_dir / "sovereign_cds_relative_regressions.csv"
+if relative_cds_file.is_file():
+    relative_cds_fits = pd.read_csv(relative_cds_file)
+    if not relative_cds_fits.empty:
+        display(relative_cds_fits.query("hac_weeks == 4 and outcome == 'bond_minus_swap'").round(3))
+relative_cds_rebound = pd.read_csv(cds_table_dir / "sovereign_cds_relative_rebound_summary.csv")
+display(relative_cds_rebound.round(2))
+""",
+        "cds-relative",
+    ),
+    md(
+        """
+## Extension 2. Time-Series Forecasting and Paper Trading
+
+Sections 15J through 15O cover stationarity, model selection, forecasting, volatility and a paper-trading sensitivity.
+""",
+        "cds-extension-2",
+    ),
+    md(
+        r"""
 ## 15J. Stationarity of Treasury Convenience
 
 We test whether the monthly government-bond CIP deviation, measured in basis points, is consistent with a stable level, a deterministic trend, or stationary changes. The results inform the choice of transformation for later forecasting work.
@@ -1776,10 +1863,18 @@ We fit 16 candidates by Gaussian maximum likelihood. The grid uses $p,q$ from 0 
     ),
     code(
         r"""
-from src.analyze_treasury_model_selection import estimate_candidates, selection_summary, training_changes
+from src.analyze_treasury_model_selection import comparison_models, selection_summary
 
-weekly_model_selection = estimate_candidates(training_changes())
-display(selection_summary(weekly_model_selection).set_index("Weekly first-difference model"))
+weekly_model_comparison = comparison_models()
+weekly_model_selection = weekly_model_comparison.query("tenor == '5y' and market == 'basket'")
+basket_aicc = pd.concat([
+    selection_summary(weekly_model_comparison.query("tenor == @tenor and market == 'basket'"))
+    .set_index("Weekly first-difference model").rename(columns={"AICc": tenor.upper()})
+    for tenor in ("5y", "10y")
+], axis=1)
+display(basket_aicc)
+bilateral_aicc_winners = weekly_model_comparison.query("market != 'basket'").groupby(["tenor", "market"]).head(1)
+display(bilateral_aicc_winners[["tenor", "market", "p", "q", "allow_drift", "aicc"]].round(2))
 weekly_no_drift_parameters = weekly_model_selection.query(
     "not allow_drift and ((p == 0 and q == 1) or (p == 1 and q == 0))"
 )
@@ -1791,7 +1886,7 @@ display(weekly_no_drift_parameters[["p", "q", "ar_l1", "ma_l1", "innovation_vari
         r"""
 Both AIC and AICc favor the no-drift MA(1). The runner-up under AICc is the no-drift AR(1), just 0.48 AICc points higher. The AR(1) coefficient is -0.281 and the MA(1) coefficient is -0.303 under the convention $X_t=\varepsilon_t+\theta\varepsilon_{t-1}$. The negative coefficients describe short-horizon reversal in weekly changes. The MA(1) relates today's change to last week's innovation, while the AR(1) relates it to last week's observed change. The no-drift white-noise model for weekly changes corresponds to a random walk in the level.
 
-The close AICc rankings justify retaining both simple models and the random walk for later out-of-sample comparison. All entries in this section are training-sample estimates. The [complete candidate table](../results/tables/treasury_model_selection.csv) contains all 16 fits, parameter estimates, innovation variances, and both information criteria.
+The close AICc rankings justify retaining both simple models and the random walk for later out-of-sample comparison. The same grid fits the supplemental 10Y basket and bilateral series. The common out-of-sample forecasts use the 5Y basket’s candidate specifications. All entries in this section are training-sample estimates. The [complete candidate table](../results/tables/treasury_model_selection.csv) contains all 16 fits, parameter estimates, innovation variances, and both information criteria.
 """
     ),
     md(
@@ -1863,15 +1958,16 @@ Equal weight allocates one eighth of budget per market. EWMA and GARCH inverse-v
         r"""
 one_week_paper_trades = paper_trade_summary(blp_points, volatility_points, forecast_weekly_panel)
 paper_trade_display_columns = [
-    "Signal", "Position rule", "Trades", "P&L at 0.00 bps cost", "P&L at 0.25 bps cost",
-    "P&L at 0.50 bps cost", "Break-even cost", "Delayed entry P&L at 0.25 bps",
+    "Signal", "Position rule", "Trades", "P&L at 0.00 bps cost", "P&L at 0.10 bps cost",
+    "P&L at 0.25 bps cost", "P&L at 0.50 bps cost", "P&L at 1.00 bps cost",
+    "Break-even cost", "Delayed entry P&L at 0.25 bps",
 ]
 display(one_week_paper_trades[paper_trade_display_columns].round(3))
 """
     ),
     md(
         r"""
-Equal weight is profitable at zero cost for both signals. At 0.50 bps only the GARCH-filtered rules have positive proxy P&L, with substantially less DV01 deployed. At a 0.25 bps cost, delaying entry by one week removes nearly all positive net P&L on the commonly observable delay sample. The base case starts at a weekly mean even though the forecast requires that full week's data. These marks, assumed costs, lack of financing and carry, and the short sample limit conclusions about executable profitability. See the [complete simulation table](../results/tables/treasury_one_week_paper_trades.csv) for the 0.10 and 1.00 bps scenarios, exposure, drawdown, and exploratory block bootstrap intervals.
+Equal weight is profitable at zero cost for both signals. At 0.50 bps only the GARCH-filtered rules have positive proxy P&L, with substantially less DV01 deployed. At a 0.25 bps cost, delaying entry by one week removes nearly all positive net P&L on the commonly observable delay sample. The base case starts at a weekly mean even though the forecast requires that full week's data. These marks, assumed costs, lack of financing and carry, and the short sample limit conclusions about executable profitability. See the [complete simulation table](../results/tables/treasury_one_week_paper_trades.csv) for exposure, drawdown, and exploratory block bootstrap intervals.
 """
     ),
     md(
@@ -1891,6 +1987,7 @@ Equal weight is profitable at zero cost for both signals. At 0.50 bps only the G
 - Reviewed fixed-cohort interim results, reconciled nominal supply, additive rebound bridge, full-window break exclusion, calendar-aware HAC, and cohort/composition/COVID sensitivity.
 - Foreign-spread raw-leg decomposition: all 16 pairs decline; alternative windows and one-country exclusions preserve the relative-convenience rebound. Mechanism remains untested.
 - September 2026 refreshed accounting: 720 fixed-cohort country-tenor-months, 20/20 selected government-CIP checks, positive 5Y/10Y rebound under alternative baselines and endpoints. Section 15C is the controlling final evidence.
+- Sovereign CDS (Extension 1): positive two-way FE weekly spread slopes at 5Y and 10Y, with negative CDS-implied changes over the rebound window in the matched foreign sample.
 - Monthly stationarity diagnostics (Section 15J): level tests do not support stationarity around a fixed mean for either basket, while first differences are consistent with stationarity over the 45-month sample.
 - Weekly 5Y model selection (Section 15K): no-drift MA(1) leads the training AICc at 380.93, followed by no-drift AR(1) at 381.40. Both remain candidates for out-of-sample evaluation.
 - Weekly forecasting and paper trading (Sections 15L-15O): the random walk leads for both baskets. GARCH leads basket volatility forecasting, while simulated spread profits remain sensitive to costs and entry timing.

@@ -1,0 +1,3 @@
+tenor,n_countries,foreign_cds_change,us_cds_change,relative_cds_change,actual_change,relative_fitted,absolute_fitted,reference_foreign_cds_change,reference_actual_change,us_change_for_zero_fitted,us_change_to_match_observed
+5y,0,,,,,,,-15.0996495,39.2745979,-15.0996495,-169.253018
+10y,0,,,,,,,-19.1105158,38.3203111,-19.1105158,-184.173572

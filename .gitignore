@@ -62,3 +62,5 @@ __pycache__/
 !/templates/*.xlsx
 !/outputs/samim-stress-supply/*.xlsx
 !/outputs/samim-stress-supply/*.csv
+!/data/refresh/sovereign_cds_2026-11-19/
+!/data/refresh/sovereign_cds_2026-11-19/README.md

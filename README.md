@@ -1,8 +1,8 @@
 # Treasury Convenience: Raw Replication and the Recent Rebound
 
-Research workspace for Charlotte Liu and Qiyuan Cong. Synchronized November 16, 2026; latest research run November 3. CIP outcomes use the October 9 quote snapshot, monthly accounting ends September 30, weekly risk tests end September 25, and the earlier U.S. supply/inventory regressions end May 2026. This synchronization is not a new market-data download.
+Research workspace for Charlotte Liu and Qiyuan Cong. Updated November 19, 2026, with the sovereign-CDS and time-series extensions. CIP outcomes use the October 9 quote snapshot, monthly accounting ends September 30, weekly risk tests end September 25, and the earlier U.S. supply/inventory regressions end May 2026. This synchronization is not a new market-data download.
 
-**Latest research:** the [executed canonical notebook](notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication_executed.ipynb) now includes Sections 15E-15I: credit-risk tests, fixed-rule stress weeks, country attribution, and gross-versus-net sovereign-supply sensitivities. Start with the [current progress summary](docs/Current_Progress.md). The [approved proposal](assignment/Project_Proposal.docx) is unchanged by this sync.
+**Latest research:** the [executed canonical notebook](notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication_executed.ipynb) includes Extension 1 on sovereign CDS and Extension 2 on Treasury-convenience forecasts and paper trading. Start with the [current progress summary](docs/Current_Progress.md). The [project proposal](assignment/Project%20Proposal.pdf) describes the planned extensions.
 
 ## Research Question
 
@@ -20,6 +20,8 @@ We reconstruct government-bond covered interest parity (CIP) deviations from Blo
 - Credit-risk extension: HY adds only about 0.11/0.12 percentage points of recent in-sample R-squared beyond VIX, equity returns and IG. This is not predictive validation.
 - A VIX-only threshold calibrated on 2010-2022 identifies 13 recent stress weeks. Treasury-convenience stress-minus-ordinary contrasts are approximately -1.24/-1.26 bps at 5Y/10Y. A level rebound is not evidence of restored safe-haven behavior.
 - AUD, Germany/EUR and SEK have the largest negative country contrasts on the same dates. The common U.S. term is counted once; this is accounting, not causal attribution.
+- Sovereign CDS: country and week fixed-effects slopes for the foreign local yield-minus-swap spread are +0.255 at 5Y and +0.232 at 10Y. The CDS-implied 2023-to-2026 movement is negative while the actual foreign contribution is positive in the matched windows. The U.S.-relative specification is implemented and the deck reports the required U.S. CDS moves. Realized U.S.-relative estimates require the two missing daily U.S. series.
+- One-week forecasts: the random walk leads both fixed-eight baskets by RMSE. GARCH leads 5Y basket variance forecasts by QLIKE, while EWMA leads 5Y bilateral spreads. Paper-trading results are sensitive to costs and entry time.
 - Fixed-baseline net-supply associations remain positive in a six-market scope sensitivity. Standardized net-minus-gross intervals all include zero; historical release vintages are not fully verified. No stronger explanatory-power or causal claim is made.
 
 This is a completed **bounded raw replication plus descriptive extension**. It is not exact replication of every figure/table in the paper, independently validated dollar-convenience estimation, or causal identification.
@@ -27,8 +29,8 @@ This is a completed **bounded raw replication plus descriptive extension**. It i
 ## Start Here
 
 1. [Current progress, evidence dates and remaining gaps](docs/Current_Progress.md).
-2. [Full executed notebook](notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication_executed.ipynb), the canonical research log. Section 15C is the reviewed monthly accounting; 15E-15I contain the later extensions.
-3. [Presentation PDF](results/Treasury_Convenience_Final_Presentation.pdf) and [editable PowerPoint](results/Treasury_Convenience_Final_Presentation.pptx) preserve the earlier descriptive presentation, not all November extensions.
+2. [Full executed notebook](notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication_executed.ipynb), the canonical research log. Section 15C is the reviewed monthly accounting; Extension 1 precedes Sections 15J–15O, which form Extension 2.
+3. [Editable extensions deck](results/extensions.pptx) covers sovereign CDS, stationarity, model selection, forecast errors, volatility and paper trading. [Presentation PDF](results/Treasury_Convenience_Final_Presentation.pdf) and [editable PowerPoint](results/Treasury_Convenience_Final_Presentation.pptx) preserve the earlier descriptive presentation, not all November extensions.
 4. [Shared data and quick start](data/README.md): public inputs, authorized Bloomberg value exports, the refresh workbook and ready-to-analyze panels.
 5. [Notebook source](notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication.ipynb), [result tables](results/tables/) and [figures](results/figures/). Section 15D is the older May-end risk diagnostic, superseded by Sections 15E-15F.
 6. [Data setup and reproduction](docs/Data_Setup.md), [remaining work](docs/Research_Status.md), and [speaker notes](results/Treasury_Convenience_Presentation_Notes.md).

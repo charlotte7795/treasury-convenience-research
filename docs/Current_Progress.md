@@ -1,14 +1,12 @@
 # Current Research Progress
 
-Repository synchronization: November 16, 2026. Latest completed research run: November 3.
-This is an upload of recorded work, not a market-data refresh.
+Updated November 19, 2026, with the sovereign-CDS and time-series extensions.
 
 ## Read First
 
 The [executed notebook](../notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication_executed.ipynb)
 is the canonical research log. Use Section 15C for the reviewed monthly accounting and
-Sections 15E-15O for the later extensions. The existing presentation is an earlier
-descriptive snapshot; it does not include every November extension.
+Extension 1 for sovereign CDS and Extension 2 (15J–15O) for time-series forecasting and paper trading. See the [editable extension deck](../results/extensions.pptx).
 
 ## Findings And Limits
 
@@ -22,6 +20,8 @@ descriptive snapshot; it does not include every November extension.
 | Country attribution, 15G | AUD, Germany/EUR and SEK have the largest negative pair contrasts | Common U.S. contribution counted once; intervals and rankings exploratory |
 | Supply screen, 15H | Fixed October 2022 IMF debt vintage gives positive slopes; intervals cross zero without tariff weeks | Gross general-government debt is not net marketable bond stock |
 | Net-supply sensitivity, 15I | Positive slopes across four designs, including six markets; net-minus-gross intervals all cover zero | No established explanatory-power gain, no causal result, incomplete historical vintages |
+| Sovereign CDS, Extension 1 | [Weekly regressions](../results/tables/sovereign_cds_regressions.csv) give +0.255/+0.232 bps of spread per bp of CDS at 5Y/10Y with country and week effects. [Matched rebound comparisons](../results/tables/sovereign_cds_rebound_summary.csv) give −3.85/−4.44 bps implied versus +39.27/+38.32 bps actual on complete windows. | Swap rates have more negative slopes than yields. Market-adjusted spread slopes are small, with intervals crossing zero. |
+| U.S.-relative CDS, Extension 1 | [Rebound thresholds](../results/tables/sovereign_cds_relative_rebound_summary.csv) quantify the U.S. CDS changes needed to offset or match observed moves. | With week fixed effects the common U.S. change is absorbed on the same sample. Realized relative results require both missing U.S. tenors. |
 | Monthly stationarity, 15J | Both fixed-eight baskets have level ADF p-values above 0.05 and level KPSS p-values ≤0.01. After differencing, ADF p-values are below 0.001 and KPSS p-values are ≥0.10 | The 10Y trend result is lag-sensitive. See the [full tests](../results/tables/treasury_stationarity_tests.csv) and the [extension slides](../results/extensions.pptx). |
 | Weekly 5Y model selection, 15K | The no-drift MA(1) and AR(1) have training AICc values of 380.93 and 381.40, respectively. See the [full candidate table](../results/tables/treasury_model_selection.csv). | The ranking summarizes training fit and does not establish an advantage out of sample. |
 | One-week forecasts, 15L-15M | [BLP results](../results/tables/treasury_one_week_blp_rmse.csv) by tenor, sample and year. [Augmented regressions](../results/tables/treasury_one_week_augmented_rmse.csv) add each predictor separately. | Random walk leads for both baskets and the added 5Y predictors do not beat the best univariate comparison. |
@@ -30,6 +30,7 @@ descriptive snapshot; it does not include every November extension.
 
 ## New Data
 
+- November 19 foreign 5Y/10Y sovereign CDS [source inventory and input schema](../data/refresh/sovereign_cds_2026-11-19/). See [country coverage](../results/tables/sovereign_cds_coverage.csv).
 - November 2 saved-value risk/NZD workbooks: [data/refresh](../data/refresh/risk_extension_2026-11-02/).
 - November 3 public-source collection: [official inputs](../data/official/stress_supply_2026-11-03/).
 - Eight-market, 19-quarter collection: [Excel and CSV](../outputs/samim-stress-supply/).

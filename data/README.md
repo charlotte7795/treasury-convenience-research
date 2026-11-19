@@ -1,6 +1,6 @@
 # Shared Data: Where to Start
 
-Synchronized November 16, 2026. CIP outcomes retain the October 9 snapshot; risk/NZD workbooks were exported November 2 and public sovereign-supply sources collected November 3. Market accounting ends September 30; complete risk weeks end September 25; the earlier U.S. supply/inventory regressions end May 2026.
+Updated November 19, 2026, with sovereign-CDS provenance and aggregate results. CIP outcomes retain the October 9 snapshot; risk/NZD workbooks were exported November 2 and public sovereign-supply sources collected November 3. Market accounting ends September 30; complete risk weeks end September 25; the earlier U.S. supply/inventory regressions end May 2026.
 
 ## Read or Analyze the Results First
 
@@ -30,6 +30,7 @@ Pandas reads `.csv.gz` directly; decompression is only needed to restore paths e
 | `bloomberg/downloaded_bloomberg_workbook_summary.csv` | The recorded workbook-level quality summary. |
 | `refresh/Foreign_Spread_5Y10Y_2026-10-09.xlsx` | The actual saved-value 54-block refresh workbook, not an empty BDH template. |
 | `refresh/risk_extension_2026-11-02/` | Actual saved-value risk-factor and NZD benchmark-check workbooks. The similarly named files under `templates/` are empty download requests, not data. |
+| `refresh/sovereign_cds_2026-11-19/` | Source inventory and local input schema for eight foreign sovereigns at 5Y and 10Y. The published aggregate results are in `results/tables/`. |
 | `cip_dataset_v4.csv.gz` | The complete original public processed CIP V4 CSV, compressed without changing its contents. Public benchmark data end June 2025. |
 | `official/*.csv` | Recorded U.S. Treasury MSPD and NY Fed primary-dealer data. These are the historical cached vintages used in the study, not current API responses. |
 | `official/stress_supply_2026-11-03/` | OECD GDP, BoC, NZDM, RBA, Riksbank, UK DMO/BoE and ECB source snapshots. Swedish PDFs retain original publication evidence. The German general-government pair has a wider scope than federal-only Bunds. |
@@ -63,3 +64,9 @@ Public CIP source: [Jesse Schreger's CIP Data page](https://sites.google.com/vie
 Official sources: [Treasury MSPD](https://fiscaldata.treasury.gov/datasets/monthly-statement-public-debt/), [NY Fed primary-dealer statistics](https://www.newyorkfed.org/markets/counterparties/primary-dealers-statistics), and FRED series [GFDEBTN](https://fred.stlouisfed.org/series/GFDEBTN) and [GFDEGDQ188S](https://fred.stlouisfed.org/series/GFDEGDQ188S).
 
 Charlotte confirmed private-team sharing on October 22 and explicitly confirmed permission for public redistribution on November 16, requesting publication of this existing repository and its history. The manifest preserves both confirmations. This is the user's assertion, not an independent review of institutional contracts; publication does not grant readers a new license to third-party data. Check applicable rights before further redistribution.
+
+### Sovereign CDS
+
+`python -m src.analyze_sovereign_cds` recreates the weekly country regressions and rebound comparisons in `output/tables/`. This requires the two separately held source workbooks named in the [input inventory](refresh/sovereign_cds_2026-11-19/). Both workbooks cover USD senior sovereign CDS from the available dates through September 30, 2026. EUR uses German CDS. CAD uses the supplied CANPAC quotes, and the reported checks include omitting CAD. Quote-unit and reference-entity verification should use the Bloomberg description screens.
+
+For the U.S.-relative run, use a like-for-like daily USD senior sovereign CDS export for both 5Y and 10Y from January 2023 through September 2026. Supply a local `us_sovereign_cds.csv` with `date,tenor,us_cds` columns (ISO date, `5y` or `10y`, spread in bps) under the CDS snapshot directory, or pass `--us-cds PATH`. The original foreign workbooks do not contain either U.S. series. Without the U.S. file, the relative comparison table reports algebraic thresholds and leaves measured values blank.

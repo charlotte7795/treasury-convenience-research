@@ -1,4 +1,4 @@
-"""Select low-order ARMA models for weekly changes in 5Y Treasury convenience."""
+"""Select low-order ARMA models for weekly changes in Treasury convenience."""
 
 from itertools import product
 from pathlib import Path
@@ -17,17 +17,21 @@ COHORT = ("AUD", "CAD", "CHF", "DKK", "EUR", "GBP", "NZD", "SEK")
 REPORTED_MODELS = ((0, 1, False), (1, 0, False), (0, 1, True), (0, 0, False))
 
 
-def training_changes() -> pd.Series:
+def training_calendar(tenor="5y") -> pd.DataFrame:
     """Return pre-2025 weekly changes on the existing matched eight-country calendar."""
     source = pd.read_csv(INPUT, parse_dates=["week"])
-    country = source.query("tenor == '5y' and week < @TRAINING_END").pivot(
+    country = source.query("tenor == @tenor and week < @TRAINING_END").pivot(
         index="week", columns="currency", values="d_x_govt_raw_bps"
     ).asfreq("W-FRI")
     if set(country.columns) != set(COHORT) or not country.notna().all(axis=1).eq(
         country.notna().any(axis=1)
     ).all():
-        raise ValueError("Expected the archived fixed-eight 5Y weekly calendar.")
-    return country[list(COHORT)].mean(axis=1, skipna=False)
+        raise ValueError(f"Expected the archived fixed-eight {tenor} weekly calendar.")
+    return country[list(COHORT)]
+
+
+def training_changes() -> pd.Series:
+    return training_calendar().mean(axis=1, skipna=False)
 
 
 def estimate_candidates(changes: pd.Series) -> pd.DataFrame:
@@ -75,10 +79,23 @@ def selection_summary(results: pd.DataFrame) -> pd.DataFrame:
     })
 
 
+def comparison_models() -> pd.DataFrame:
+    """Reproduce the tenor and bilateral comparisons shown in the deck."""
+    results = []
+    for tenor in ("5y", "10y"):
+        country = training_calendar(tenor)
+        series = country.assign(basket=country.mean(axis=1, skipna=False))
+        for market in series:
+            results.append(estimate_candidates(series[market]).assign(tenor=tenor, market=market))
+    return pd.concat(results, ignore_index=True)
+
+
 def main() -> None:
-    results = estimate_candidates(training_changes())
+    comparison = comparison_models()
+    results = comparison.query("tenor == '5y' and market == 'basket'").drop(columns=["tenor", "market"])
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     results.to_csv(OUTPUT, index=False)
+    comparison.to_csv(OUTPUT.with_name("treasury_model_selection_comparison.csv"), index=False)
     print(selection_summary(results).to_string(index=False))
 
 

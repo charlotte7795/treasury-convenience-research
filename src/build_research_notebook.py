@@ -1740,6 +1740,33 @@ The net-stock signal is worth reporting as a sensitivity, **not as a standalone 
     ),
     md(
         r"""
+## 15J. Stationarity of Treasury Convenience
+
+We test whether the monthly government-bond CIP deviation, measured in basis points, is consistent with a stable level, a deterministic trend, or stationary changes. The results inform the choice of transformation for later forecasting work.
+
+The fixed eight-country panel has 45 consecutive monthly levels from January 2023 through September 2026 and 44 first differences. At each tenor, the basket is the equal-weight mean of the eight country values. ADF tests a unit root and KPSS tests stationarity around the chosen deterministic terms. We use an intercept for levels and first differences, and an intercept plus a linear trend for the trend specification. AIC selects the main ADF lag from zero to four months. KPSS uses automatic lag selection. Its reported endpoints are bounds.
+"""
+    ),
+    code(
+        r"""
+from src.analyze_treasury_stationarity import basket_summary, stationarity_tests
+
+stationarity_results = stationarity_tests()
+display(basket_summary(stationarity_results).set_index("Equal-weight eight-country basket"))
+trend_sensitivity = stationarity_results.query("market == 'basket' and lag_selection == 'fixed'")
+display(trend_sensitivity.pivot(index="lag", columns="tenor", values="p_value")
+        .round(4).rename_axis(index="Fixed trend ADF lag (months)", columns="Tenor"))
+"""
+    ),
+    md(
+        r"""
+At the 5% level, the level ADF fails to reject a unit root for both baskets and the level KPSS rejects stationarity around a fixed mean. After first differencing, the ADF rejects a unit root and the KPSS fails to reject stationarity for both tenors. The 10Y trend ADF has a p-value of 0.01646 (about 0.017 as originally reported), but the inference changes with the lag. The 45-month window limits what the tests can distinguish between a persistent series, a trend, and a changing regime.
+
+These monthly diagnostics support testing first differences in a forecasting extension. Weekly forecasting requires checks at the weekly frequency. The [full stationarity table](../results/tables/treasury_stationarity_tests.csv) contains the basket and bilateral tests with statistics, p-value bounds, and lag settings. The [editable slides](../results/extensions.pptx) summarize the question, method, and result.
+"""
+    ),
+    md(
+        r"""
 ## 16. Current Findings
 
 ### Completed
@@ -1755,6 +1782,7 @@ The net-stock signal is worth reporting as a sensitivity, **not as a standalone 
 - Reviewed fixed-cohort interim results, reconciled nominal supply, additive rebound bridge, full-window break exclusion, calendar-aware HAC, and cohort/composition/COVID sensitivity.
 - Foreign-spread raw-leg decomposition: all 16 pairs decline; alternative windows and one-country exclusions preserve the relative-convenience rebound. Mechanism remains untested.
 - September 2026 refreshed accounting: 720 fixed-cohort country-tenor-months, 20/20 selected government-CIP checks, positive 5Y/10Y rebound under alternative baselines and endpoints. Section 15C is the controlling final evidence.
+- Monthly stationarity diagnostics (Section 15J): level tests do not support stationarity around a fixed mean for either basket, while first differences are consistent with stationarity over the 45-month sample.
 - Post-meeting measurement sensitivity: excluding NZD or NZD/DKK preserves the rebound. NZD metadata remains REVIEW; reassigning its tenor adjustment between components leaves Treasury convenience unchanged.
 - Archived weekly VIX-only diagnostic through May 29, 2026: post-2023 relative-convenience betas remain negative. Sections 15E-15F supersede its missing-input status and qualify the risk interpretation.
 - November 2 risk exports: all 12 series contain numeric data through September 30. Section 15E implements matched-sample equity/IG/HY tests through the week of September 25; the earlier missing-input status is superseded.

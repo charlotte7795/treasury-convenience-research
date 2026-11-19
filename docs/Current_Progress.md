@@ -7,7 +7,7 @@ This is an upload of recorded work, not a market-data refresh.
 
 The [executed notebook](../notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication_executed.ipynb)
 is the canonical research log. Use Section 15C for the reviewed monthly accounting and
-Sections 15E-15I for the later extensions. The existing presentation is an earlier
+Sections 15E-15J for the later extensions. The existing presentation is an earlier
 descriptive snapshot; it does not include every November extension.
 
 ## Findings And Limits
@@ -22,6 +22,7 @@ descriptive snapshot; it does not include every November extension.
 | Country attribution, 15G | AUD, Germany/EUR and SEK have the largest negative pair contrasts | Common U.S. contribution counted once; intervals and rankings exploratory |
 | Supply screen, 15H | Fixed October 2022 IMF debt vintage gives positive slopes; intervals cross zero without tariff weeks | Gross general-government debt is not net marketable bond stock |
 | Net-supply sensitivity, 15I | Positive slopes across four designs, including six markets; net-minus-gross intervals all cover zero | No established explanatory-power gain, no causal result, incomplete historical vintages |
+| Monthly stationarity, 15J | Both fixed-eight baskets have level ADF p-values above 0.05 and level KPSS p-values ≤0.01. After differencing, ADF p-values are below 0.001 and KPSS p-values are ≥0.10 | The 10Y trend result is lag-sensitive. See the [full tests](../results/tables/treasury_stationarity_tests.csv) and the [extension slides](../results/extensions.pptx). |
 
 ## New Data
 

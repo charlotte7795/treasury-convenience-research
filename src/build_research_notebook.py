@@ -1796,6 +1796,86 @@ The close AICc rankings justify retaining both simple models and the random walk
     ),
     md(
         r"""
+## 15L. One-Week Forecasts Using Best Linear Prediction
+
+We predict next week's change in Treasury convenience, $X_{t+1}=\Phi_{t+1}-\Phi_t$, in basis points. Here 5Y and 10Y denote bond tenors. At each tenor, **Basket** is one equal-weight series of eight bilateral spreads, which is forecast directly. **Bilateral spreads** are eight separate series, one for each foreign market versus the United States. We estimate each separately and pool the individual squared forecast errors before taking the square root.
+
+We compare a random walk in levels, which predicts zero change, with the no-drift MA(1) and AR(1) from Section 15K. The specifications are fixed for both tenors and all markets. Maximum-likelihood parameter estimates use an expanding window ending at the forecast origin. For MA(1), the best linear predictor solves $\Gamma a=\gamma$ using the fitted model's autocovariances and the observed calendar positions. For AR(1), the projection reduces to $\hat\rho X_t$. We cross-check both predictions against the state-space implementation. The predictor and target must belong to consecutive observed weekly changes. The evaluation groups years by forecast origin, uses the same dates for all three models within each sample, and stops in September 2026. Lower RMSE is better.
+"""
+    ),
+    code(
+        r"""
+from src.analyze_treasury_forecasting import (
+    BASE, EXTRA_LABELS, INPUT, forecast_summary, run_forecasts, volatility_summary,
+)
+from src.analyze_treasury_paper_trades import paper_trade_summary
+
+forecast_weekly_panel = pd.read_csv(INPUT, parse_dates=["week"])
+blp_points, augmented_points, volatility_points = run_forecasts(forecast_weekly_panel)
+one_week_rmse = forecast_summary(blp_points, BASE, by_year=True)
+display(one_week_rmse.round(3))
+"""
+    ),
+    md(
+        r"""
+The random walk has the lowest aggregate RMSE for both baskets. MA(1) and AR(1) slightly improve pooled 5Y bilateral RMSE. At 10Y, AR(1) has the lowest pooled bilateral RMSE. In both cases, lower errors in 2026 drive the gains. The bilateral forecast count is the number of country-week predictions, which share the U.S. leg and market shocks. See the [full RMSE table](../results/tables/treasury_one_week_blp_rmse.csv).
+
+## 15M. One-Week Forecasts with Additional 5Y Predictors
+
+Each direct regression has an intercept and the current weekly convenience change. We fit three separate specifications, adding either the change in the foreign swap spread, both local yield legs that form that spread, or the change in log VIX. Each specification uses only data available at the forecast origin and compares with the three Section 15L baselines on the common eligible 5Y sample. Coefficients use only targets realized by the origin.
+"""
+    ),
+    code(
+        r"""
+augmented_rmse = forecast_summary(augmented_points, {**BASE, **EXTRA_LABELS}, by_year=False)
+display(augmented_rmse.round(3))
+"""
+    ),
+    md(
+        r"""
+None of the augmented regressions improves on the best univariate forecast for either 5Y sample. See the [comparison table](../results/tables/treasury_one_week_augmented_rmse.csv).
+
+## 15N. One-Week 5Y Volatility Forecasts
+
+We model the variance of weekly changes around the common zero-change prediction. We compare the expanding historical second moment, EWMA with decay 0.94, and Gaussian GARCH(1,1). GARCH parameters are fitted through 2024, then kept fixed as the variance updates at each origin. For missing observations the dynamic recursions carry forward the appropriate expected variance update. QLIKE compares the variance forecast with the squared realized change, with lower scores preferred. Coverage uses normal predictive intervals centered on zero.
+"""
+    ),
+    code(
+        r"""
+one_week_volatility = volatility_summary(volatility_points)
+coverage_columns = [c for c in one_week_volatility if "coverage" in c]
+display(one_week_volatility.style.format({**{c: "{:.1%}" for c in coverage_columns},
+                                         "Basket QLIKE": "{:.3f}", "Bilateral QLIKE": "{:.3f}"}))
+"""
+    ),
+    md(
+        r"""
+GARCH has the lowest basket QLIKE, while EWMA leads on the bilateral sample. The basket GARCH intervals cover 87.7% and 97.3% at nominal 80% and 95% coverage. The comparison assesses uncertainty around the mean forecast. See the [volatility results](../results/tables/treasury_one_week_volatility.csv).
+
+## 15O. Weekly 5Y Paper Trading
+
+The signal is the sign of each MA(1) or AR(1) bilateral forecast. A positive forecast of $\Phi$ opens a long U.S. Treasury position and a short USD-hedged foreign government bond position with matched USD DV01 on the two legs. A negative forecast reverses the positions. The spread P&L proxy is signed DV01 weight times the realized next-week change in the bilateral convenience spread. Each simulated position closes after one week.
+
+Equal weight allocates one eighth of budget per market. EWMA and GARCH inverse-volatility rules normalize $1/\hat\sigma$ across the eight markets to a shared absolute DV01 budget. Each filtered variant uses its corresponding weights only when $|\hat X_{t+1}|/\hat\sigma_{t+1}$ is at least 0.25. Unused weight stays unallocated. We deduct the assumed round-trip cost against the DV01 actually deployed. P&L is cumulative spread bps per unit of total DV01 budget. Break-even cost is gross P&L divided by cumulative deployed DV01.
+"""
+    ),
+    code(
+        r"""
+one_week_paper_trades = paper_trade_summary(blp_points, volatility_points, forecast_weekly_panel)
+paper_trade_display_columns = [
+    "Signal", "Position rule", "Trades", "P&L at 0.00 bps cost", "P&L at 0.25 bps cost",
+    "P&L at 0.50 bps cost", "Break-even cost", "Delayed entry P&L at 0.25 bps",
+]
+display(one_week_paper_trades[paper_trade_display_columns].round(3))
+"""
+    ),
+    md(
+        r"""
+Equal weight is profitable at zero cost for both signals. At 0.50 bps only the GARCH-filtered rules have positive proxy P&L, with substantially less DV01 deployed. At a 0.25 bps cost, delaying entry by one week removes nearly all positive net P&L on the commonly observable delay sample. The base case starts at a weekly mean even though the forecast requires that full week's data. These marks, assumed costs, lack of financing and carry, and the short sample limit conclusions about executable profitability. See the [complete simulation table](../results/tables/treasury_one_week_paper_trades.csv) for the 0.10 and 1.00 bps scenarios, exposure, drawdown, and exploratory block bootstrap intervals.
+"""
+    ),
+    md(
+        r"""
 ## 16. Current Findings
 
 ### Completed
@@ -1813,6 +1893,7 @@ The close AICc rankings justify retaining both simple models and the random walk
 - September 2026 refreshed accounting: 720 fixed-cohort country-tenor-months, 20/20 selected government-CIP checks, positive 5Y/10Y rebound under alternative baselines and endpoints. Section 15C is the controlling final evidence.
 - Monthly stationarity diagnostics (Section 15J): level tests do not support stationarity around a fixed mean for either basket, while first differences are consistent with stationarity over the 45-month sample.
 - Weekly 5Y model selection (Section 15K): no-drift MA(1) leads the training AICc at 380.93, followed by no-drift AR(1) at 381.40. Both remain candidates for out-of-sample evaluation.
+- Weekly forecasting and paper trading (Sections 15L-15O): the random walk leads for both baskets. GARCH leads basket volatility forecasting, while simulated spread profits remain sensitive to costs and entry timing.
 - Post-meeting measurement sensitivity: excluding NZD or NZD/DKK preserves the rebound. NZD metadata remains REVIEW; reassigning its tenor adjustment between components leaves Treasury convenience unchanged.
 - Archived weekly VIX-only diagnostic through May 29, 2026: post-2023 relative-convenience betas remain negative. Sections 15E-15F supersede its missing-input status and qualify the risk interpretation.
 - November 2 risk exports: all 12 series contain numeric data through September 30. Section 15E implements matched-sample equity/IG/HY tests through the week of September 25; the earlier missing-input status is superseded.

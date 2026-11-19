@@ -7,7 +7,7 @@ This is an upload of recorded work, not a market-data refresh.
 
 The [executed notebook](../notebooks/Decoupling_Dollar_Treasury_Privilege_Raw_Replication_executed.ipynb)
 is the canonical research log. Use Section 15C for the reviewed monthly accounting and
-Sections 15E-15K for the later extensions. The existing presentation is an earlier
+Sections 15E-15O for the later extensions. The existing presentation is an earlier
 descriptive snapshot; it does not include every November extension.
 
 ## Findings And Limits
@@ -24,6 +24,9 @@ descriptive snapshot; it does not include every November extension.
 | Net-supply sensitivity, 15I | Positive slopes across four designs, including six markets; net-minus-gross intervals all cover zero | No established explanatory-power gain, no causal result, incomplete historical vintages |
 | Monthly stationarity, 15J | Both fixed-eight baskets have level ADF p-values above 0.05 and level KPSS p-values ≤0.01. After differencing, ADF p-values are below 0.001 and KPSS p-values are ≥0.10 | The 10Y trend result is lag-sensitive. See the [full tests](../results/tables/treasury_stationarity_tests.csv) and the [extension slides](../results/extensions.pptx). |
 | Weekly 5Y model selection, 15K | The no-drift MA(1) and AR(1) have training AICc values of 380.93 and 381.40, respectively. See the [full candidate table](../results/tables/treasury_model_selection.csv). | The ranking summarizes training fit and does not establish an advantage out of sample. |
+| One-week forecasts, 15L-15M | [BLP results](../results/tables/treasury_one_week_blp_rmse.csv) by tenor, sample and year. [Augmented regressions](../results/tables/treasury_one_week_augmented_rmse.csv) add each predictor separately. | Random walk leads for both baskets and the added 5Y predictors do not beat the best univariate comparison. |
+| Volatility, 15N | [Volatility comparison](../results/tables/treasury_one_week_volatility.csv) covers expanding historical variance, EWMA and GARCH(1,1). | GARCH leads basket QLIKE and EWMA leads bilateral QLIKE. |
+| Paper trading, 15O | [Simulation table](../results/tables/treasury_one_week_paper_trades.csv) reports the MA(1) and AR(1) signals with five position rules. | Weekly mean marks and assumed costs make the results a spread P&L proxy. Delayed entry erodes simulated gains. |
 
 ## New Data
 
